@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_153259) do
+ActiveRecord::Schema.define(version: 2019_08_19_154746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,12 +23,28 @@ ActiveRecord::Schema.define(version: 2019_08_19_153259) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "facility_categories", force: :cascade do |t|
+  create_table "facilities", force: :cascade do |t|
     t.string "name"
-    t.bigint "facility_id"
+    t.string "address"
+    t.string "photo"
+    t.integer "rating"
+    t.string "website_link"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "user_id"
+    t.bigint "city_id"
+    t.bigint "facility_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["facility_id"], name: "index_facility_categories_on_facility_id"
+    t.index ["city_id"], name: "index_facilities_on_city_id"
+    t.index ["facility_category_id"], name: "index_facilities_on_facility_category_id"
+    t.index ["user_id"], name: "index_facilities_on_user_id"
+  end
+
+  create_table "facility_categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,4 +59,7 @@ ActiveRecord::Schema.define(version: 2019_08_19_153259) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "facilities", "cities"
+  add_foreign_key "facilities", "facility_categories"
+  add_foreign_key "facilities", "users"
 end
