@@ -11,6 +11,7 @@ Review.destroy_all
 Facility.destroy_all
 User.destroy_all
 City.destroy_all
+FacilityCategory.destroy_all
 
 user1 = User.create!(email: "user1@a.a", password: "password")
 user2 = User.create!(email: "user2@a.a", password: "password")
