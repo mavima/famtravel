@@ -2,9 +2,10 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <!-- search -->
-
-<%= simple_form_for [@facility, @facility_category] do |f| %>
-<%= f.input :city %>
-<%= f.association :facility_category, as: :radio_buttons %>
+<% categories = FacilityCategory.all %>
+<%= simple_form_for :search, method: :get do |f| %>
+<%= f.input :keyword, label: "What city you are travelling?" %>
+<%= f.input :facility_category, collection: categories %>
 <%= f.submit "search", class: "btn btn-primary" %>
 <% end %>
+
