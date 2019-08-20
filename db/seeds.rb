@@ -8,69 +8,72 @@
 puts "starting seed"
 
 Review.destroy_all
+FeatureCategory.destroy_all
 Feature.destroy_all
-FacilityCategory.destroy_all
+Category.destroy_all
 Facility.destroy_all
 User.destroy_all
 City.destroy_all
-FacilityCategory.destroy_all
+Category.destroy_all
 
 user1 = User.create!(email: "user1@a.a", password: "password")
 user2 = User.create!(email: "user2@a.a", password: "password")
 
 
-london = City.create(name:"London", country:"United Kingdom")
-paris = City.create(name:"Paris", country:"France")
-madrid = City.create(name:"Madrid", country:"Spain")
+london = City.create!(name:"London", country:"United Kingdom")
+paris = City.create!(name:"Paris", country:"France")
+madrid = City.create!(name:"Madrid", country:"Spain")
 
 
 #Categories DO NOT DESTROY THIS
-restaurant = FacilityCategory.create(name:"Restaurant")
-playground = FacilityCategory.create(name:"Playground")
-activity = FacilityCategory.create(name:"Activity")
-wc = FacilityCategory.create(name:"Restroom")
+restaurant = Category.create!(name:"Restaurant")
+playground = Category.create!(name:"Playground")
+activity = Category.create!(name:"Activity")
+wc = Category.create!(name:"Restroom")
 
 #Features DO NOT DESTROY THIS
-high_chair = Feature.create(name:"High chairs", facility_category: restaurant)
-pram = Feature.create(name:"Accessible with pram", facility_category: restaurant)
-kids_menu = Feature.create(name:"Kid’s menu", facility_category: restaurant)
-healthy = Feature.create(name:"Healthy options", facility_category: restaurant)
-buffet = Feature.create(name:"Buffet", facility_category: restaurant)
-fast = Feature.create(name:"Fast service", facility_category: restaurant)
-quality_price = Feature.create(name:"Good quality for price", facility_category: restaurant)
-corner = Feature.create(name:"Kids’ corner", facility_category: restaurant)
-good_toilets = Feature.create(name:"Good toilets", facility_category: restaurant)
-changing_room = Feature.create(name:"Baby changing room", facility_category: restaurant)
-changing_table = Feature.create(name:"Changing table", facility_category: restaurant)
-age_1 = Feature.create(name:"Suitable for 1-4 years", facility_category: playground)
-age_2 = Feature.create(name:"Suitable for 5-8 years", facility_category: playground)
-age_3 = Feature.create(name:"Suitable for 9-12 years", facility_category: playground)
-wc_close = Feature.create(name:"Toilets nearby", facility_category: playground)
-water_games = Feature.create(name:"Water games", facility_category: playground)
-enclosed = Feature.create(name:"Enclosed", facility_category: playground)
-nature = Feature.create(name:"Near nature", facility_category: playground)
-football = Feature.create(name:"Football field", facility_category: playground)
-basket = Feature.create(name:"Basketball field", facility_category: playground)
-pingpong = Feature.create(name:"Pingpong tables", facility_category: playground)
-potty = Feature.create(name:"Potty available", facility_category: wc)
-diapers = Feature.create(name:"Diapers available", facility_category: wc)
-changing_room = Feature.create(name:"Baby changing room", facility_category: wc)
-changing_table = Feature.create(name:"Changing table", facility_category: wc)
-pram = Feature.create(name:"Accessible with pram", facility_category: wc)
-kid_activities = Feature.create(name:"Organised activities for kids", facility_category: activity)
-interactive = Feature.create(name:"Interactive exhibit for kids", facility_category: activity)
-age_1 = Feature.create(name:"Suitable for 1-4 years", facility_category: activity)
-age_2 = Feature.create(name:"Suitable for 5-8 years", facility_category: activity)
-age_3 = Feature.create(name:"Suitable for 9-12 years", facility_category: activity)
-pram = Feature.create(name:"Accessible with pram", facility_category: activity)
-resto = Feature.create(name:"Restaurant on-site", facility_category: activity)
-good_toilets = Feature.create(name:"Good toilets", facility_category: activity)
+high_chair = Feature.create!(name:"High chairs")
+
+high_chair_restaurant = FeatureCategory.create!(category: restaurant, feature: high_chair)
+# resto_pram = Feature.create!(name:"Accessible with pram", category: restaurant)
+# kids_menu = Feature.create!(name:"Kid’s menu", category: restaurant)
+# healthy = Feature.create!(name:"Healthy options", category: restaurant)
+# buffet = Feature.create!(name:"Buffet", category: restaurant)
+# fast = Feature.create!(name:"Fast service", category: restaurant)
+# quality_price = Feature.create!(name:"Good quality for price", category: restaurant)
+# corner = Feature.create!(name:"Kids’ corner", category: restaurant)
+# good_toilets = Feature.create!(name:"Good toilets", category: restaurant)
+# resto_changing_room = Feature.create!(name:"Baby changing room", category: restaurant)
+# resto_changing_table = Feature.create!(name:"Changing table", category: restaurant)
+# age_1 = Feature.create!(name:"Suitable for 1-4 years", category: playground)
+# age_2 = Feature.create!(name:"Suitable for 5-8 years", category: playground)
+# age_3 = Feature.create!(name:"Suitable for 9-12 years", category: playground)
+# wc_close = Feature.create!(name:"Toilets nearby", category: playground)
+# water_games = Feature.create!(name:"Water games", category: playground)
+# enclosed = Feature.create!(name:"Enclosed", category: playground)
+# nature = Feature.create!(name:"Near nature", category: playground)
+# football = Feature.create!(name:"Football field", category: playground)
+# basket = Feature.create!(name:"Basketball field", category: playground)
+# pingpong = Feature.create!(name:"Pingpong tables", category: playground)
+# potty = Feature.create!(name:"Potty available", category: wc)
+# diapers = Feature.create!(name:"Diapers available", category: wc)
+# changing_room = Feature.create!(name:"Baby changing room", category: wc)
+# changing_table = Feature.create!(name:"Changing table", category: wc)
+# act_pram = Feature.create!(name:"Accessible with pram", category: wc)
+# kid_activities = Feature.create!(name:"Organised activities for kids", category: activity)
+# interactive = Feature.create!(name:"Interactive exhibit for kids", category: activity)
+# act_age_1 = Feature.create!(name:"Suitable for 1-4 years", category: activity)
+# act_age_2 = Feature.create!(name:"Suitable for 5-8 years", category: activity)
+# act_age_3 = Feature.create!(name:"Suitable for 9-12 years", category: activity)
+# act_pram = Feature.create!(name:"Accessible with pram", category: activity)
+# resto = Feature.create!(name:"Restaurant on-site", category: activity)
+# act_good_toilets = Feature.create!(name:"Good toilets", category: activity)
 
 
 Facility.create!(
   name: "Resto Kiddy",
   user: user2,
-  facility_category: restaurant,
+  category: restaurant,
   address: "Hyde Park",
   city: london,
   website_link: "www.restokiddy.co.uk",
@@ -79,7 +82,7 @@ Facility.create!(
 Facility.create!(
   name: "Resto Doudou",
   user: user2,
-  facility_category: restaurant,
+  category: restaurant,
   address: "Rue Rodin",
   city: paris,
   website_link: "www.restodoudou.fr",
@@ -88,7 +91,7 @@ Facility.create!(
 Facility.create!(
   name: "Parc Tintin",
   user: user2,
-  facility_category: playground,
+  category: playground,
   address: "Rue Rodin",
   city: paris,
   )
@@ -96,7 +99,7 @@ Facility.create!(
 Facility.create!(
   name: "WC publique Louvre",
   user: user2,
-  facility_category: wc,
+  category: wc,
   address: "Rue Moulin",
   city: paris,
   website_link: "www.lelouvre.fr",
@@ -105,7 +108,7 @@ Facility.create!(
 Facility.create!(
   name: "London Dungeons",
   user: user1,
-  facility_category: activity,
+  category: activity,
   address: "Baker Street 3",
   city: london,
   website_link: "www.dungeons.co.uk",
@@ -114,7 +117,7 @@ Facility.create!(
 Facility.create!(
   name: "Bungee jumping loco loco",
   user: user1,
-  facility_category: activity,
+  category: activity,
   address: "Plaza Mayor",
   city: madrid,
   website_link: "www.locoloco.es",
