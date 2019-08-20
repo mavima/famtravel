@@ -16,9 +16,9 @@ user1 = User.create!(email: "user1@a.a", password: "password")
 user2 = User.create!(email: "user2@a.a", password: "password")
 
 
-london = City.create(name:"London")
-paris = City.create(name:"Paris")
-madrid = City.create(name:"Madrid")
+london = City.create(name:"London", country:"United Kingdom")
+paris = City.create(name:"Paris", country:"France")
+madrid = City.create(name:"Madrid", country:"Spain")
 
 restaurant = FacilityCategory.create(name:"Restaurant")
 playground = FacilityCategory.create(name:"Playground")
