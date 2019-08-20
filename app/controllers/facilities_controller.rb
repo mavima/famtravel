@@ -1,7 +1,7 @@
 class FacilitiesController < ApplicationController
   def index
-    if params[:search][:keyword].present?
-      @facilities = Facility.where("name ILIKE ?", "%#{params[:search][:keyword]}%")
+    if params[:keyword].present?
+      @facilities = Facility.joins(:city).where("cities.name ILIKE ?", "%#{params[:keyword]}%").where(facility_category_id: params[:facilities_category_id])
     else
       @facilities = Facility.all
     end
@@ -11,6 +11,5 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
   end
 end
-
 
 

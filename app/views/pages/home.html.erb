@@ -3,7 +3,7 @@
 
 <!-- search -->
 <% categories = FacilityCategory.all %>
-<%= simple_form_for :search, method: :get do |f| %>
+<%= simple_form_for :search, url: search_path do |f| %>
 <%= f.input :keyword, label: "What city you are travelling?" %>
 <%= f.input :facility_category, collection: categories %>
 <%= f.submit "search", class: "btn btn-primary" %>
