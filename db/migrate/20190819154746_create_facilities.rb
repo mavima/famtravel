@@ -10,7 +10,6 @@ class CreateFacilities < ActiveRecord::Migration[5.2]
       t.float :longitude
       t.references :user, foreign_key: true
       t.references :city, foreign_key: true
-      t.references :facility_category, foreign_key: true
 
       t.timestamps
     end
