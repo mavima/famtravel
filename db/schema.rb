@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_124728) do
+ActiveRecord::Schema.define(version: 2019_08_20_150533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -34,27 +40,21 @@ ActiveRecord::Schema.define(version: 2019_08_20_124728) do
     t.float "longitude"
     t.bigint "user_id"
     t.bigint "city_id"
-    t.bigint "facility_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_facilities_on_category_id"
     t.index ["city_id"], name: "index_facilities_on_city_id"
-    t.index ["facility_category_id"], name: "index_facilities_on_facility_category_id"
     t.index ["user_id"], name: "index_facilities_on_user_id"
   end
 
-  create_table "facility_categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "feature_facilities", force: :cascade do |t|
+  create_table "feature_categories", force: :cascade do |t|
+    t.bigint "category_id"
     t.bigint "feature_id"
-    t.bigint "facility_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["facility_id"], name: "index_feature_facilities_on_facility_id"
-    t.index ["feature_id"], name: "index_feature_facilities_on_feature_id"
+    t.index ["category_id"], name: "index_feature_categories_on_category_id"
+    t.index ["feature_id"], name: "index_feature_categories_on_feature_id"
   end
 
   create_table "features", force: :cascade do |t|
@@ -87,11 +87,11 @@ ActiveRecord::Schema.define(version: 2019_08_20_124728) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "facilities", "categories"
   add_foreign_key "facilities", "cities"
-  add_foreign_key "facilities", "facility_categories"
   add_foreign_key "facilities", "users"
-  add_foreign_key "feature_facilities", "facilities"
-  add_foreign_key "feature_facilities", "features"
+  add_foreign_key "feature_categories", "categories"
+  add_foreign_key "feature_categories", "features"
   add_foreign_key "reviews", "facilities"
   add_foreign_key "reviews", "users"
 end
