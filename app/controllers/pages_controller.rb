@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   end
 
   def search
-    redirect_to category_facilities_path(params[:search][:category], keyword: params[:search][:keyword])
+    redirect_to facilities_category_facilities_path(params[:search][:category], keyword: params[:search][:keyword])
   end
 end
