@@ -1,4 +1,7 @@
-<h1>Index page</h1>
+<div class="card-facility">
+  <div class="image-space">
+    </div>
+    <div class="textetc">
 <% @facilities.each do |facility| %>
    <%#= link_to facility.name, category_facility_path(facility) %>
    <%= facility.address %>
@@ -8,3 +11,5 @@
 <%= link_to "Add a facility", new_category_facility_path(@facilities) %>
 <br>
 <%= link_to "Home page", root_path %>
+</div>
+</div>
