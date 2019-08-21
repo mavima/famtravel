@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   post "search", to: "pages#search"
-  resources :facilities_categories, only: [:index, :new, :create] do
+  resources :categories, only: [:index, :new, :create] do
     resources :facilities
   end
   resources :city, only: [:new, :create]
