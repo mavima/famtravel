@@ -7,14 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "starting seed"
 
+
 City.destroy_all
 Facility.destroy_all
-Category.destroy_all
-Feature.destroy_all
 FeatureCategory.destroy_all
 FeatureFacility.destroy_all
-Review.destroy_all
+Category.destroy_all
+Feature.destroy_all
 User.destroy_all
+Review.destroy_all
+
 
 puts "destroyed all models"
 
