@@ -1,7 +1,10 @@
 <h1>Index page</h1>
 <% @facilities.each do |facility| %>
-   <%= facility.name %>
+   <%#= link_to facility.name, category_facility_path(facility) %>
    <%= facility.address %>
    <%= facility.rating %> - <%= facility.city.name %>
    <br>
 <% end %>
+<%= link_to "Add a facility", new_category_facility_path(@facilities) %>
+<br>
+<%= link_to "Home page", root_path %>
