@@ -5,4 +5,8 @@ class Facility < ApplicationRecord
   has_many :reviews
   has_many :features, through: :feature_facilities
   mount_uploader :photo, PhotoUploader
+
+  validates :name, presence: true
+  validates :adress, presence: true
+  validates :rating, presence: true
 end
