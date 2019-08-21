@@ -1,8 +1,14 @@
 class FacilitiesController < ApplicationController
   def index
+    if params[:search][:keyword] == ""
+      flash[:notice] = "Please put a location"
+      redirect_to root_path
+      return
+    end
     @facilities = Facility.all
-    @facilities = @facilities.joins(:city).where("cities.name ILIKE ?", params[:search][:keyword]) if params[:search][:keyword].present?
-    @facilities = @facilities.joins(:category).where("categories.id = ?", params[:search][:category][1]) if params[:search][:category].present?
+    @facilities = @facilities.joins(:city).where("cities.name ILIKE ?", params[:search][:keyword])
+    @facilities = @facilities.joins(:category).where("categories.id = ?", params[:search][:category]) if params[:search][:category].present?
+
   end
 
   def new
