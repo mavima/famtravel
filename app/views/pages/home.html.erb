@@ -5,7 +5,7 @@
 <% cat = Category.all %>
 <%= simple_form_for :search, url: facilities_path, method: :get do |f| %>
 <%= f.input :keyword, label: "What city you are travelling?" %>
-<%= f.input :category, collection: cat %>
+<%= f.input :category, collection: cat, include_blank: false %>
 <%= f.submit "search", class: "btn btn-primary" %>
 <% end %>
 

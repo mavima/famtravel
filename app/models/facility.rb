@@ -9,5 +9,6 @@ class Facility < ApplicationRecord
 
   validates :name, presence: true
   validates :address, presence: true
+  validates :city_id, presence: true
 
 end
