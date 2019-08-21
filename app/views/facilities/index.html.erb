@@ -1,1 +1,7 @@
 <h1>Index page</h1>
+<% @facilities.each do |facility| %>
+   <%= facility.name %>
+   <%= facility.address %>
+   <%= facility.rating %> - <%= facility.city.name %>
+   <br>
+<% end %>
