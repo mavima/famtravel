@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @facility = Facility.find(params[:facility_id])
     @review.facility = @facility
     if @review.save
-      redirect_to "some path" # pending complete
+      redirect_to category_facility_path(@facilities) # pending complete
     else
       render :new
     end
