@@ -1,4 +1,4 @@
 class FeatureFacility < ApplicationRecord
-  belongs_to :facility
-  belongs_to :feature
+  belongs_to :facility, dependent: :destroy
+  belongs_to :feature, dependent: :destroy
 end
