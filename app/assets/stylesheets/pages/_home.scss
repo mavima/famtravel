@@ -1,1 +1,32 @@
 // Specific CSS for your home-page
+.banner {
+  background-image: url("https://i.pinimg.com/originals/a6/14/89/a61489795fdcebc376112cd24a75d76c.jpg");
+  background-size: cover;
+  height: 736px;
+}
+
+.container-home {
+  padding: 15px;
+}
+
+.logo-home {
+  padding-top: 200px;
+  padding-left: 150px;
+  padding-bottom: 100px;
+}
+
+.search-bar {
+  width: 300px;
+  position: relative;
+  padding-left: 70px;
+}
+
+.search button {
+  position: absolute;
+  right: 100px;
+  top: 505px;
+}
+
+
+
+
