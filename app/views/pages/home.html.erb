@@ -5,13 +5,17 @@
         <div class="logo-home"><h1>Famtravel</h1></div>
         <div class="form-search">
           <% cat = Category.all %>
-          <%= simple_form_for :search, url: facilities_path do |f| %>
+          <%= simple_form_for :search, method: :get, url: facilities_path do |f| %>
 
-          <div class="checkbox"><%= f.input :category, as: :check_boxes, collection: cat, wrapper: :vertical_collection_inline %></div>
+            <div class="checkbox">
+              <%= f.input :category, as: :check_boxes, collection: cat, wrapper: :vertical_collection_inline %>
+            </div>
 
-          <div class="search-bar"><%= f.input :keyword, label: "What city you are travelling?" %></div>
+            <div class="search-bar">
+              <%= f.input :keyword, label: "What city you are travelling?" %>
+            </div>
 
-          <button type="submit"><i class="fa fa-search"></i></button>
+            <button type="submit"><i class="fa fa-search"></i></button>
           <% end %>
         </div>
       </div>
