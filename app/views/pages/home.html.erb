@@ -5,17 +5,31 @@
         <div class="logo-home"><h1>Famtravel</h1></div>
         <div class="form-search">
           <% cat = Category.all %>
+
           <%= simple_form_for :search, method: :get, url: facilities_path do |f| %>
 
-            <div class="checkbox">
-              <%= f.input :category, as: :check_boxes, collection: cat, wrapper: :vertical_collection_inline %>
-            </div>
+          <div class="checkbox">
 
-            <div class="search-bar">
-              <%= f.input :keyword, label: "What city you are travelling?" %>
-            </div>
+            <% cat.each do |category| %>
 
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <input type="radio" class="hidden" value="<%= category.id %>" name="post[category_ids][]" id="post_category_ids_<%= category.id %>">
+            <label for="post_category_ids_<%= category.id %>">
+              <%= category.name %>
+              <i class="fa fa-check"></i>
+            </label>
+
+
+
+
+            <% end %>
+
+          </div>
+
+          <div class="search-bar">
+            <%= f.input :keyword, label: "What city you are travelling?" %>
+          </div>
+
+          <button type="submit"><i class="fa fa-search"></i></button>
           <% end %>
         </div>
       </div>
