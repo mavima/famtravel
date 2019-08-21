@@ -1,6 +1,6 @@
 .login-form-our-famtravel-app {
   width: 100%;
-  padding: 50px 50px 50px 50px !important;
+  padding: 90px 50px 50px 50px !important;
   margin: 0px !important;
 .simple_form{
   margin: 0px 0px 0px 0px;
@@ -13,5 +13,34 @@ padding: 0px 0px 0px 0px;
 }
 .btn {
   border: 1px solid black;
+}
+.session-form {
+  height: 700px;
+}
+h2{
+  margin-bottom: 55px;
+}
+.email_field{
+  margin: 0px 10px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 24px;
+}
+.password_field{
+  margin: 10px 10px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 24px;
+}
+.remember_me_part {
+  margin: 4px 10px 10px 0px;
+}
+.two_last_buttons {
+  margin: 48px 10px 6px 0px;
+  display: flex;
+}
+.form-group {
+  margin-bottom: 0rem;
+}
+a{
+margin: 0px;
 }
 }
