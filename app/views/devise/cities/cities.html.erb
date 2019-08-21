@@ -1,0 +1,16 @@
+  <div class="addcity-form-our-famtravel-app">
+  <h2>Log in</h2>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs session-form">
+      <%= f.input :country,
+                  required: false,
+                  autofocus: true,
+                  label_html:  { class: "country_field" }%>
+      <%= f.input :city,
+                  required: false,
+                  label_html:  { class: "city_field"}  %>
+      <%= f.button :submit, class: "two_last_buttons" %>
+      <%= render "devise/shared/links" %>
+      <% end %>
+      </div>
+    </div>
