@@ -7,23 +7,28 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "starting seed"
 
-Review.destroy_all
+City.destroy_all
+Facility.destroy_all
+Category.destroy_all
+Feature.destroy_all
 FeatureCategory.destroy_all
 FeatureFacility.destroy_all
-Feature.destroy_all
-Category.destroy_all
-Facility.destroy_all
+Review.destroy_all
 User.destroy_all
-City.destroy_all
+
+puts "destroyed all models"
 
 
-user1 = User.create!(email: "user1@a.a", password: "password")
-user2 = User.create!(email: "user2@a.a", password: "password")
+user1 = User.create!(email: "user1@a.a", password: "password", first_name: "Emilie", last_name: "Moulin", country: "France", kids_age_group: "none")
+user2 = User.create!(email: "user2@a.a", password: "password", first_name: "Marta", last_name: "Sanchez", country: "Spain", kids_age_group: "3-5")
 
+puts "created users"
 
 london = City.create!(name:"London", country:"United Kingdom")
 paris = City.create!(name:"Paris", country:"France")
 madrid = City.create!(name:"Madrid", country:"Spain")
+
+puts "created cities"
 
 
 #Categories DO NOT DESTROY THIS
@@ -31,6 +36,8 @@ restaurant = Category.create!(name:"Restaurant")
 playground = Category.create!(name:"Playground")
 activity = Category.create!(name:"Activity")
 wc = Category.create!(name:"Restroom")
+
+puts "created categories"
 
 #Features DO NOT DESTROY THIS
 high_chair = Feature.create!(name: "High chair")
@@ -94,32 +101,30 @@ resto = Feature.create!(name:"Restaurant on-site")
 pg_resto = FeatureCategory.create!(feature: resto, category: activity)
 act_good_toilets = FeatureCategory.create!(feature: toilet, category: activity)
 
+puts "created features and features categories"
 
-Facility.create!(
-  name: "Resto Kiddy",
-  user: user2,
-  category: restaurant,
-  address: "Hyde Park",
-  city: london,
-  website_link: "www.restokiddy.co.uk",
-  )
+Facility.create(name: "teste", user: user2, category: restaurant, address: "barcelona", city: paris)
 
+
+puts "resto test"
 Facility.create!(
   name: "Resto Doudou",
   user: user2,
   category: restaurant,
   address: "Rue Rodin",
   city: paris,
-  website_link: "www.restodoudou.fr",
+  website_link: "www.restodoudou.fr"
   )
+
 
 Facility.create!(
   name: "Parc Tintin",
   user: user2,
   category: playground,
   address: "Rue Rodin",
-  city: paris,
+  city: paris
   )
+
 
 Facility.create!(
   name: "WC publique Louvre",
@@ -127,8 +132,9 @@ Facility.create!(
   category: wc,
   address: "Rue Moulin",
   city: paris,
-  website_link: "www.lelouvre.fr",
+  website_link: "www.lelouvre.fr"
   )
+
 
 Facility.create!(
   name: "London Dungeons",
@@ -136,8 +142,9 @@ Facility.create!(
   category: activity,
   address: "Baker Street 3",
   city: london,
-  website_link: "www.dungeons.co.uk",
+  website_link: "www.dungeons.co.uk"
   )
+
 
 Facility.create!(
   name: "Bungee jumping loco loco",
@@ -145,8 +152,10 @@ Facility.create!(
   category: activity,
   address: "Plaza Mayor",
   city: madrid,
-  website_link: "www.locoloco.es",
+  website_link: "www.locoloco.es"
   )
 
+
+puts "created facilities"
 
 puts "seeding done"

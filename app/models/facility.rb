@@ -7,6 +7,6 @@ class Facility < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   validates :name, presence: true
-  validates :adress, presence: true
-  validates :rating, presence: true
+  validates :address, presence: true
+
 end
