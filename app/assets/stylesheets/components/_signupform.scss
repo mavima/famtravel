@@ -1,4 +1,4 @@
-.login-form-our-famtravel-app {
+.sign-up-form-our-famtravel-app {
   width: 100%;
   padding: 90px 50px 50px 50px !important;
   margin: 0px !important;
@@ -41,7 +41,7 @@ h2{
   margin-bottom: 0rem;
 }
 a{
-margin: 0px;
+margin: 0px 0px 0px 8px;
 }
 .password-confirmation-field {
   margin: 10px 0px 0px 0px;
@@ -49,8 +49,13 @@ margin: 0px;
 .two_last_buttons_signup {
   margin: 20px 0px 0px 0px;
 }
-.user_password_confirmation{
-  color: green;
+.password-confirmation-field {
+ margin-top: 16px;
+ }
+.d-flex {
+  display: flex !important;
+  align-items: baseline !important;
+  margin-top: 34px !important;
 }
 }
 
