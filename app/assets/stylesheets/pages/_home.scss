@@ -1,13 +1,12 @@
 // Specific CSS for your home-page
 .banner {
-  background-image: url("https://www.dasinsurance.co.uk/getmedia/68b632a6-9eb5-45e0-b474-a51ddd738e04/iStock-612227320-min.jpg");
+  background-image: url("https://i.pinimg.com/originals/a6/14/89/a61489795fdcebc376112cd24a75d76c.jpg");
   background-size: cover;
   height: 736px;
 }
 
 .container-home {
   padding: 15px;
-  color: white;
 }
 
 .logo-home {
@@ -17,13 +16,17 @@
 }
 
 .search-bar {
-  width: 250px;
+  width: 300px;
   position: relative;
+  padding-left: 70px;
 }
 
 .search button {
   position: absolute;
-  right: 150px;
-  top: 520px;
+  right: 100px;
+  top: 505px;
 }
+
+
+
 
