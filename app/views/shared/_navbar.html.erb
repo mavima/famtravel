@@ -1,8 +1,8 @@
 <div class="container-nav">
 
-    <li class="burger dropdown" >
+    <div class="burger dropdown" >
       <img class="avatar dropdown-toggle" id="openSlideOut" src="https://cdn3.iconfinder.com/data/icons/menu-icons-1/100/menu-512.png"/>
-    </li>
+    </div>
 
 </div>
 
@@ -15,7 +15,13 @@
     </div>
     <ul>
       <li>
-        Hello Inou!
+        <%= current_user.email %>
+      </li>
+      <li>
+        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" alt="">
+      </li>
+      <li>
+        <%= link_to "Home", root_path  %>
       </li>
     </ul>
   </header>
