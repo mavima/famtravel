@@ -1,24 +1,45 @@
-<div class="container">
-
-  <div class="banner_show">
-    <h1><%= @facility.name  %></h1>
-  </div>
-
-  <% @features.each do |feature| %>
-  <p><%= feature.name %></p>
-  <% end %>
-
-  <h4><%= @facility.city.name %></h4>
-  <h4><%= @facility.address %></h4>
-  <h4>Rating: <%= @facility.rating %></h4>
-  <h4><%= @facility.website_link %></h4>
-
-
-
-
-
-    <div>
-      <br>
-     <p>Here we will have all the reviews</p>
-   </div>
+<div id="banner-show-override" class="banner-show banner-picture-show-border" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill %>')">
 </div>
+
+<!-- <div class="container"> -->
+<!--   <div class="row">
+    <div class="col-sm-12 col-md-10"> -->
+      <div class="show-container">
+        <h2><%= @facility.name  %></h2>
+
+        <ul>
+          <% @features.each do |feature| %>
+          <li><i class="fa fa-check"></i> <%= feature.name %></li>
+          <% end %>
+        </ul>
+        <h6><%= @facility.city.name %></h6>
+        <h6><%= @facility.address %></h6>
+        <!--   <h6>Rating: <%#= @facility.review.average_rating %></h6> -->
+        <h6><%= @facility.website_link %></h6>
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+
+
+
+
+
+        <div>
+          <br>
+          <div class="review-box">
+            <h5>Reviewer name and city, kids: 2-5 years:</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+          <br>
+          <div class="review-box">
+            <h5>Reviewer name and city, kids: 2-5 years:</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+        </div>
+  <!--     </div>
+    </div> -->
+<!--   </div> -->
