@@ -39,6 +39,8 @@ class FacilitiesController < ApplicationController
 
   end
 
+
+
   def facility_params
     params.require(:facility).permit(:city_id, :name, :address, :rating, :photo, :website_link, :latitude, :longitude)
   end
