@@ -116,6 +116,7 @@ Facility.create!(
   address: "Rue Rodin",
   city: paris,
   website_link: "www.restodoudou.fr"
+  photo: ""
   )
 
 
