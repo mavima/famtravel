@@ -3,7 +3,7 @@ import './slideout.min.js';
 const slideout = new Slideout({
   'panel': document.getElementById('panel'),
   'menu': document.getElementById('menu'),
-  'padding': 256,
+  'padding': 320,
   'tolerance': 70
 });
 
@@ -11,6 +11,6 @@ document.getElementById('openSlideOut').addEventListener('click', (e) => {
   slideout.open()
 })
 
-document.getElementById('closeSlideOut').addEventListener('click', (e) => {
+document.getElementById('panel').addEventListener('click', (e) => {
   slideout.close()
 })
