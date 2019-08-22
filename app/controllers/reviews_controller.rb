@@ -24,6 +24,10 @@ class ReviewsController < ApplicationController
     # pending complete!!!
   end
 
+  def average_rating
+    self.average(:rating)
+  end
+
   def review_strong_params
     params.require(:reviews).permit(:content, :rating, :photo)
   end
