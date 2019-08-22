@@ -26,12 +26,14 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
 
-
+        <%= link_to "Home page", root_path, class: "btn btn-primary" %>
+         <%= link_to "Back to the list", :back, class: "btn btn-primary" %>
 
 
         <%= link_to "add review", new_facility_review_path(@facility) %>
         <div>
           <br>
+            <%#= link_to "Add a new review", new_review_path, class: "btn btn-primary" %>
           <div class="review-box">
             <h5>Reviewer name and city, kids: 2-5 years:</h5>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
