@@ -1,31 +1,28 @@
 
 <div class="entire-page">
-<div class="top-of-page">
-  <div class="banner-photo">
-    <%= link_to "Add a facility", new_category_facility_path(@facilities), class: "first-link" %>
-    <%= link_to "Home page", root_path, class: "second-link" %>
-  </div>
-  <% @facilities.each do |facility| %>
-    <div class="card-facility">
-    <div class="card-facility-photo"></div>
-    <div class="card-facility-content">
-      <div class="card-facility-text">
-        <%#= link_to facility.name, category_facility_path(facility) %>
-        <%= facility.address %>
-        <%= facility.rating %> - <%= facility.city.name %>
-      </div>
-      <div class="card-facility-rating">
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-      </div>
+  <div class="top-of-page">
+    <div class="banner-photo">
+      <%= link_to "Add a facility", new_category_facility_path(@facilities), class: "first-link" %>
+      <%= link_to "Home page", root_path, class: "second-link" %>
     </div>
-  <% end %>
+    <% @facilities.each do |facility| %>
+      <div class="card-facility">
+        <div class="card-facility-photo"></div>
+        <div class="card-facility-content">
+          <div class="card-facility-text">
+            <%#= link_to facility.name, category_facility_path(facility) %>
+            <%= facility.address %>
+            <%= facility.rating %> - <%= facility.city.name %>
+          </div>
+          <div class="card-facility-rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-</div>
-
-<%= link_to "Add a facility", new_facility_path(category_id:  params[:search][:category_id]) %>
-<br>
-<%= link_to "Home page", root_path %>
