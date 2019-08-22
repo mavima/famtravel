@@ -4,7 +4,8 @@
    <%= facility.address %>
    <%= facility.rating %> - <%= facility.city.name %>
    <br>
+
 <% end %>
-<%= link_to "Add a facility", new_category_facility_path(@facilities) %>
+<%= link_to "Add a facility", new_facility_path(category_id: params[:post][:category_ids][0]) %>
 <br>
 <%= link_to "Home page", root_path %>
