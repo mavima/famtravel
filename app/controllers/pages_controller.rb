@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:home]
   def home
+    @playground = Category.where(name: "Playground").first
+    @activity = Category.where(name: "Activity").first
+    @restaurant = Category.where(name: "Restaurant").first
+    @restroom = Category.where(name: "Restroom").first
   end
 
-  def search
-    redirect_to facilities_category_facilities_path(params[:search][:category], keyword: params[:search][:keyword])
-  end
 end

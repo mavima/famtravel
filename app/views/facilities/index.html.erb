@@ -1,3 +1,4 @@
+
 <div class="entire-page">
 <div class="top-of-page">
   <div class="banner-photo">
@@ -24,3 +25,7 @@
   <% end %>
 </div>
 </div>
+
+<%= link_to "Add a facility", new_facility_path(category_id:  params[:search][:category_id]) %>
+<br>
+<%= link_to "Home page", root_path %>

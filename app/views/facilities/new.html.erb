@@ -1,18 +1,23 @@
+<div class="container">
+
 <h2>Share your tip to other users</h2>
 
-
-
+<%= Category.find(params[:category_id]).name %>
 <div>
-    <%= simple_form_for ([@category, @facility]) do |f| %>
+    <%= simple_form_for @facility do |f| %>
     <%= f.input :name, label: "Name" %>
     <%= f.input :address, label: "Address" %>
+    <%= f.input :website_link, label: "Website" %>
     <%= f.input :rating, collection: 1..5, prompt: "Give a rating", selected: 5 %>
     <%= f.association :features, collection: @features, as: :check_boxes %>
     <%= f.input :photo %>
+    <%= f.input :category_id, collection: @categories, as: :hidden %>
     <%= f.input :city_id, collection: @cities %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit "Add your #{@category.name}", class: "btn btn-primary" %>
+    <%= f.submit "Add", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
+</div>
+
 </div>

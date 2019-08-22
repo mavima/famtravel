@@ -6,10 +6,10 @@ class User < ApplicationRecord
   has_many :facilities
   has_many :reviews, dependent: :destroy
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :email, presence: true
-  validates :password, presence: true
-  validates :country, presence: true
-  validates :kids_age_group, presence: true
+  validates :first_name, presence: true, on: :update
+  validates :last_name, presence: true, on: :update
+  validates :email, presence: true, on: :update
+  validates :password, presence: true, on: :update
+  validates :country, presence: true, on: :update
+  validates :kids_age_group, presence: true, on: :update
 end
