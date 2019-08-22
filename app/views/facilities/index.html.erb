@@ -1,3 +1,5 @@
+<%#= render "shared/navbar" %>
+
 <h1>Index page</h1>
 <% @facilities.each do |facility| %>
    <%= link_to facility.name, facility_path(facility) %>
