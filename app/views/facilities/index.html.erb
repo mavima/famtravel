@@ -1,10 +1,5 @@
 
-<h1>Index page</h1>
-<% @facilities.each do |facility| %>
-<%= link_to facility.name, facility_path(facility) %>
-<%= facility.address %>
-<%= facility.rating %> - <%= facility.city.name %>
-<br>
+
 
 
 <div class="entire-page">
@@ -32,6 +27,6 @@
         </div>
       </div>
     </div>
-    <% end %>
+
   </div>
 </div>
