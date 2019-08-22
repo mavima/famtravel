@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
   def new
     @review = Review.new
+    @facility = Facility.find(params[:facility_id])
+    @category = Category.find(@facility.category_id)
   end
 
   def create
@@ -9,7 +11,7 @@ class ReviewsController < ApplicationController
     @facility = Facility.find(params[:facility_id])
     @review.facility = @facility
     if @review.save
-      redirect_to "some path" # pending complete
+      redirect_to facility_path(@facility) # pending complete
     else
       render :new
     end
@@ -29,6 +31,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_strong_params
-    params.require(:reviews).permit(:content, :rating, :photo)
+    params.require(:review).permit(:content, :rating, :photo)
   end
 end
