@@ -10,7 +10,11 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= yield %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+    <%= render "shared/navbar" %>
+    <main id="panel">
+      <%= yield %>
+    </main>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
 
