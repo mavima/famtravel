@@ -13,7 +13,7 @@
       <div class="card-facility-photo"></div>
       <div class="card-facility-content">
         <div class="card-facility-text">
-          <%#= link_to facility.name, category_facility_path(facility) %>
+           <%= link_to facility.name, facility_path(facility) %>
           <%= facility.address %>
           <%= facility.rating %> - <%= facility.city.name %>
         </div>
