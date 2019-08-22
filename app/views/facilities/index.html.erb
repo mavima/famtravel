@@ -1,11 +1,7 @@
-
-
-
-
 <div class="entire-page">
   <div class="top-of-page">
     <div class="banner-photo">
-      <%= link_to "Add a facility", new_category_facility_path(@facilities), class: "first-link" %>
+      <%= link_to "Add a facility", new_category_facility_path(params[:search][:category_id]), class: "first-link" %>
       <%= link_to "Home page", root_path, class: "second-link" %>
     </div>
     <% @facilities.each do |facility| %>
@@ -13,6 +9,7 @@
       <div class="card-facility-photo"></div>
       <div class="card-facility-content">
         <div class="card-facility-text">
+
            <%= link_to facility.name, facility_path(facility) %>
           <%= facility.address %>
           <%= facility.rating %> - <%= facility.city.name %>
