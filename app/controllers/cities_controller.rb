@@ -6,13 +6,15 @@ class CitiesController < ApplicationController
   def create
     @city = City.new(city_strong_params)
     if @city.save
-      redirect_to "city show page" # pending complete
+      redirect_to new_facility_path(@facilities)
     else
       render :new
     end
   end
 
+  private
+
   def city_strong_params
-    params.require(:cities).permit(:name, :longitude, :latitude)
+    params.require(:city).permit(:name, :country_city)
   end
 end
