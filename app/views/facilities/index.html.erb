@@ -1,11 +1,11 @@
 <h1>Index page</h1>
 <% @facilities.each do |facility| %>
-   <%#= link_to facility.name, category_facility_path(facility) %>
+   <%= link_to facility.name, facility_path(facility) %>
    <%= facility.address %>
    <%= facility.rating %> - <%= facility.city.name %>
    <br>
 
 <% end %>
-<%= link_to "Add a facility", new_facility_path(category_id: params[:post][:category_ids][0]) %>
+<%= link_to "Add a facility", new_facility_path(category_id:  params[:search][:category_id]) %>
 <br>
 <%= link_to "Home page", root_path %>
