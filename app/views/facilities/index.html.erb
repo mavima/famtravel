@@ -1,15 +1,18 @@
-<div class="card-facility">
-  <div class="image-space">
-    </div>
-    <div class="textetc">
+<div class="top-of-page">
+<div class="banner-photo">
+  <%= link_to "Add a facility", new_category_facility_path(@facilities), class: "first-link" %>
+<br>
+<%= link_to "Home page", root_path, class: "second-link" %>
+</div>
+<div class="card-index-page">
 <% @facilities.each do |facility| %>
+  <div class="photo-space"></div>
+  <div class="text-section">
    <%#= link_to facility.name, category_facility_path(facility) %>
    <%= facility.address %>
    <%= facility.rating %> - <%= facility.city.name %>
    <br>
 <% end %>
-<%= link_to "Add a facility", new_category_facility_path(@facilities) %>
-<br>
-<%= link_to "Home page", root_path %>
 </div>
 </div>
+
