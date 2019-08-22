@@ -45,7 +45,7 @@ class FacilitiesController < ApplicationController
 
   def set_cats_and_feats
     @cities = City.all
-     @category = Category.find(params[:category_id])
+    @category = Category.find(params[:category_id])
     @feature_categories = FeatureCategory.where(category_id: @category.id)
     @features = @feature_categories.map do |fc|
       fc = Feature.find(fc.feature_id)
