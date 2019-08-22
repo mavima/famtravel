@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:home]
   def home
     @playground = Category.where(name: "Playground").first
     @activity = Category.where(name: "Activity").first

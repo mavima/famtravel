@@ -1,4 +1,5 @@
 class FacilitiesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
   def index
     if params[:search][:keyword] == ""
       flash[:notice] = "Please put a location"
@@ -14,20 +15,21 @@ class FacilitiesController < ApplicationController
 
   def new
     @facility = Facility.new
+    @facility.category_id = params[:category_id]
     set_cats_and_feats
   end
 
   def create
     @facility = Facility.new(facility_params)
     set_cats_and_feats
-    @facility.user_id = current_user.id
-    @facility.category_id = params[:category_id]
+    @facility.user = current_user
     if @facility.save
       redirect_to root_path
         params[:facility][:feature_ids].each do |feat_id|
           FeatureFacility.create(feature_id: feat_id, facility_id: @facility.id)
         end
     else
+      @categories = Category.all
       render :new
     end
   end
@@ -42,13 +44,12 @@ class FacilitiesController < ApplicationController
 
 
   def facility_params
-    params.require(:facility).permit(:city_id, :name, :address, :rating, :photo, :website_link, :latitude, :longitude)
+    params.require(:facility).permit(:city_id, :name, :address, :rating, :photo, :website_link, :latitude, :longitude, :category_id, :photo_cache, feature_ids: [])
   end
 
   def set_cats_and_feats
     @cities = City.all
-    @category = Category.find(params[:category_id])
-    @feature_categories = FeatureCategory.where(category_id: @category.id)
+    @feature_categories = FeatureCategory.where(category_id: @facility.category_id)
     @features = @feature_categories.map do |fc|
       fc = Feature.find(fc.feature_id)
     end
