@@ -8,7 +8,7 @@ class FacilitiesController < ApplicationController
     @facilities = Facility.all
 
     @facilities = @facilities.joins(:city).where("cities.name ILIKE ?", params[:search][:keyword])
-    @facilities = @facilities.joins(:category).where("categories.id = ?", params[:search][:category]) if params[:search][:category].present?
+    @facilities = @facilities.joins(:category).where("categories.id = ?", params[:search][:category_id]) if params[:search][:category_id].present?
 
   end
 

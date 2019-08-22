@@ -4,30 +4,39 @@
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
         <div class="logo-home"><h1>Famtravel</h1></div>
         <div class="form-search">
-          <% cat = Category.all %>
 
           <%= simple_form_for :search, method: :get, url: facilities_path do |f| %>
 
-          <div class="checkbox">
+          <div class="checkboxjs">
+            <p>Choose a category:</p>
 
-            <% cat.each do |category| %>
-
-            <input type="radio" class="hidden" value="<%= category.id %>" name="post[category_ids][]" id="post_category_ids_<%= category.id %>">
-            <label for="post_category_ids_<%= category.id %>">
-              <%= category.name %>
-              <i class="fa fa-check"></i>
+            <input type="radio" class="hidden" value="<%= @playground.id %>" name="search[category_id]" id="post_category_ids_<%= @playground.id %>">
+            <label for="post_category_ids_<%= @playground.id %>">
+              <%= image_tag("playground.png", class: "cat-icon") %>
             </label>
 
 
+            <input type="radio" class="hidden" value="<%= @activity.id %>" name="search[category_id]" id="post_category_ids_<%= @activity.id %>">
+            <label for="post_category_ids_<%= @activity.id %>">
+              <%= image_tag("activity.png", class: "cat-icon") %>
+            </label>
 
+            <input type="radio" class="hidden" value="<%= @restaurant.id %>" name="search[category_id]" id="post_category_ids_<%= @restaurant.id %>">
+            <label for="post_category_ids_<%= @restaurant.id %>">
+              <%= image_tag("restaurant.png", class: "cat-icon") %>
+            </label>
 
-            <% end %>
+            <input type="radio" class="hidden" value="<%= @restroom.id %>" name="search[category_id]" id="post_category_ids_<%= @restroom.id %>">
+            <label for="post_category_ids_<%= @restroom.id %>">
+              <%= image_tag("restroom.png", class: "cat-icon") %>
+            </label>
+
 
           </div>
 
 
           <div class="search-bar">
-            <%= f.input :keyword, label: "What city you are travelling?" %>
+            <%= f.input :keyword, label: "What city you are travelling to?" %>
           </div>
 
           <button type="submit"><i class="fa fa-search"></i></button>
