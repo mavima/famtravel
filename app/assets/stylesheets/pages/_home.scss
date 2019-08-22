@@ -11,8 +11,15 @@
 
 .logo-home {
   padding-top: 200px;
-  padding-left: 150px;
   padding-bottom: 100px;
+  opacity: .9;
+}
+
+.checkboxjs {
+p{
+  padding-left: 23px;
+}
+
 }
 
 .search-bar {
@@ -28,14 +35,14 @@
 }
 
 .cat-icon {
-  height: 55px;
-  &:hover {
-    box-shadow: inset 0 1px 1px #000000;
-  }
+  height: 68px;
+  padding-left: 3px;
+  opacity: .7;
 }
 
 .selected {
-  box-shadow: inset 0 1px 1px #000000;
+  box-shadow: inset 1px 1px 1px 2px #ccc;
+  opacity: 1;
 }
 
 .hidden {
