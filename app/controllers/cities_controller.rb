@@ -10,6 +10,7 @@ class CitiesController < ApplicationController
     else
       render :new
     end
+    authorize @city
   end
 
   private
