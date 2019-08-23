@@ -26,9 +26,9 @@ user2 = User.create!(email: "user2@a.a", password: "password", first_name: "Mart
 
 puts "created users"
 
-london = City.create!(name:"London", country:"United Kingdom")
-paris = City.create!(name:"Paris", country:"France")
-madrid = City.create!(name:"Madrid", country:"Spain")
+london = City.create!(name:"London", country_city:"United Kingdom")
+paris = City.create!(name:"Paris", country_city:"France")
+madrid = City.create!(name:"Madrid", country_city:"Spain")
 
 puts "created cities"
 
