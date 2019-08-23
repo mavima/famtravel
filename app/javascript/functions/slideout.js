@@ -8,7 +8,14 @@ const slideout = new Slideout({
 });
 
 document.getElementById('openSlideOut').addEventListener('click', (e) => {
-  slideout.open()
+  if (slideout._opened)
+    {
+      slideout.close();
+    }
+  else
+  {
+    slideout.open()
+  }
 })
 
 document.getElementById('panel').addEventListener('click', (e) => {
