@@ -8,7 +8,8 @@
   </div>
     <% @facilities.each do |facility| %>
       <div class="card-facility">
-        <div class="card-facility-photo" style="background-image: url(<%= Facility.find_by(id: params[:search][:facility_id].to_i).photo.url %>); background-size: cover"></div>
+        <div class="card-facility-photo" style="background-image: url(<%= facility.photo.url %>); background-size: cover; min-width: 25vw">
+        </div>
         <div class="card-facility-content">
           <div class="card-facility-text">
             <%= link_to facility.name, facility_path(facility) %>
@@ -22,10 +23,8 @@
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star"></span>
           </div>
-
         </div>
       </div>
-    </div>
     <% end %>
   </div>
 </div>
