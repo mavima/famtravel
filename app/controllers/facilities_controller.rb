@@ -27,9 +27,6 @@ class FacilitiesController < ApplicationController
     @facility.user = current_user
     if @facility.save
       redirect_to root_path
-        params[:facility][:feature_ids].each do |feat_id|
-          FeatureFacility.create(feature_id: feat_id, facility_id: @facility.id)
-        end
     else
       @categories = Category.all
       render :new
