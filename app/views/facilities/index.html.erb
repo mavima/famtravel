@@ -16,6 +16,10 @@
       <% if facility.photo.url %>
       <%= cl_image_tag facility.photo, height: 300, width: 400, crop: :fill %>
       <% end %>
+      <%#part added%>
+      <% if current_user.admin? %>
+      <%= link_to "delete", facility_path(facility), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
 
       <div class="card-facility-content">
        <%= link_to facility.name, facility_path(facility) %>

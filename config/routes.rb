@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :new, :create] do
     resources :facilities, only: [:new, :create]
   end
-  resources :facilities, only: [:index, :show, :new, :create] do
+  resources :facilities, only: [:index, :show, :new, :create, :destroy] do #part added
     resources :reviews, only: [:new, :create, :edit, :update]
   end
 
