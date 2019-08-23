@@ -13,17 +13,17 @@ class Facility < ApplicationRecord
 
   def average_rating
     # @facility = Facility.find(params[:id])
-    @reviews = self.reviews
-    sum = 0
-    if self[:review].present?
-      @reviews.each do |review|
+    reviews = self.reviews
+    average_rating = 0
+    if reviews.length > 0
+      sum = 0
+      reviews.each do |review|
         sum += review.rating
       end
-    num = @reviews.count
-    average_rating = (sum / num).to_i
-    return average_rating
-    raise
-  end
+      num = reviews.count
+      average_rating = (sum / num)
+    end
+    average_rating
   end
 
 
