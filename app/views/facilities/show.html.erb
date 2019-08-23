@@ -15,14 +15,14 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
   <%#= cl_image_tag @facility.photo, height: 300, width: 400, crop: :fill %>
   <h6><%= @facility.city.name %></h6>
   <h6><%= @facility.address %></h6>
-  <!--   <h6>Rating: <%#= @facility.review.average_rating %></h6> -->
   <h6><%= @facility.website_link %></h6>
 
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
+  <% @facility.average_rating.times do%>
+ <span class="fa fa-star checked"></span>
+<% end %>
+  <% (5 -@facility.average_rating).times do%>
+ <span class="fa fa-star empty"></span>
+<% end %>
 
   <br>
   <%= link_to "Home page", root_path, class: "btn btn-primary" %>
@@ -34,7 +34,14 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
       <% @facility.reviews.each do |review| %>
       <div class="review-box">
       <h5><%  review.user.email %> from <% review.user.country %></h5>
-      <p>Rating: <%= review.rating %><br>
+      <p><% review.rating.times do %>
+ <span class="fa fa-star checked"></span>
+<% end %>
+
+  <% (5 - review.rating).times do  %>
+ <span class="fa fa-star empty"></span>
+<% end %>
+
         <%= review.content %></p>
         <% if review.photo.present? %>
         <%= cl_image_tag review.photo, height: 150, width: 200, crop: :fill %></p>

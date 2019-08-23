@@ -10,7 +10,7 @@
                   required: false,
                   label_html:  { class: "password_field"}  %>
       <%= f.input :remember_me, wrapper_html: { class: "remember_me_part" }, as: :boolean if devise_mapping.rememberable? %>
-      <%= f.button :submit, class: "two_last_buttons" %>
+      <%= f.button :submit, "Log in!", class: "two_last_buttons" %>
       <%= render "devise/shared/links" %>
       <% end %>
       </div>

@@ -13,5 +13,5 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create, :edit, :update]
   end
 
-  resources :city, only: [:new, :create]
+  resources :cities, only: [:new, :create]
 end
