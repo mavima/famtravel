@@ -1,11 +1,11 @@
 <div class="entire-page">
   <div class="top-of-page">
-    <div class="banner-photo">
-
-      <%= cl_image_tag Category.find_by(id: params[:search][:category_id].to_i).photo %>
+    <div class="banner-photo-is" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(255,255,255,0.7)), url(<%= Category.find_by(id: params[:search][:category_id].to_i).photo.url %>); background-size: cover">
+      <%#= cl_image_tag  %>
       <%= link_to "Add a facility", new_facility_path(category_id: params[:search][:category_id]), class: "first-link" %>
       <%= link_to "Home page", root_path, class: "second-link" %>
     </div>
+  </div>
     <% @facilities.each do |facility| %>
       <div class="card-facility">
         <div class="card-facility-photo"></div>

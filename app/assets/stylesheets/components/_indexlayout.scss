@@ -1,11 +1,14 @@
 .top-of-page {
-  .banner-photo {
+  .banner-photo-is {
     background-color: $alabaster;
     height: 250px;
     background-size: cover;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+  }
+  a {
+    color: black;
   }
 }
 .entire-page {
@@ -28,7 +31,6 @@
 
   .card-facility-text {
     margin-left: 8px;
-    margin-top: 40px;
   }
 
   .first-link {
