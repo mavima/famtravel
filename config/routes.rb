@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
 
   resources :city, only: [:new, :create]
+  get 'users/profile/:id', to: 'users#show', as: 'user'
 end
