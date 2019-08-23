@@ -119,7 +119,60 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
   )
 
+Facility.create!(
+  name: "Restaurant du quartier",
+  user: user1,
+  category: restaurant,
+  address: "Rue du pasteur",
+  city: paris,
+  website_link: "www.restoduquartier.fr",
+  remote_photo_url: "https://images.unsplash.com/photo-1556742393-d75f468bfcb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+  )
 
+Facility.create!(
+  name: "The English Rose Cafe and Tea Shop",
+  user: user2,
+  category: restaurant,
+  address: "4 Lower Grosvenor Place, Londres SW1W 0EJ, Reino Unido",
+  city: london,
+  website_link: "theenglishrosecafe.co.uk",
+  remote_photo_url: "https://images.unsplash.com/photo-1517740642137-bc729c123aa5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80"
+  )
+
+Facility.create!(
+  name: "Mother Mash",
+  user: user1,
+  category: restaurant,
+  address: "26 Ganton Street, Londres W1F 7QZ, Reino Unido",
+  city: london,
+  website_link: "mothermash.co.uk",
+  remote_photo_url: "https://images.unsplash.com/photo-1484659619207-9165d119dafe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+  )
+
+
+Facility.create!(
+  name: "El sur",
+  user: user2,
+  category: restaurant,
+  address: "Calle de la Torrecilla del Leal, 12, 28012 Madrid",
+  city: madrid,
+  website_link: "Web site in construction",
+  remote_photo_url: "https://images.unsplash.com/photo-1526069631228-723c945bea6b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+  )
+
+Facility.create!(
+  name: "Juana la Loca",
+  user: user1,
+  category: restaurant,
+  address: "Plaza de Puerta de Moros, 4",
+  city: london,
+  website_link: "juanalalocamadrid.com",
+  remote_photo_url: "https://images.unsplash.com/photo-1500482176473-ccba10e1e880?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+  )
+
+
+
+puts "create playground"
 Facility.create!(
   name: "Parc Tintin",
   user: user2,
@@ -129,7 +182,53 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1460788150444-d9dc07fa9dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
   )
 
+Facility.create!(
+  name: "Parc de Jeux",
+  user: user1,
+  category: playground,
+  address: "Jardin du Luxembourg, 75006 París, Francia, Luxembourg, 6ème",
+  city: paris,
+  remote_photo_url: "https://images.unsplash.com/photo-1552537595-b30edb7afd9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+  )
 
+Facility.create!(
+  name: "Fortune Street Park",
+  user: user2,
+  category: playground,
+  address: "Nr Black Lion Gate, Broad Walk, London W2 2UH",
+  city: london,
+  remote_photo_url: "https://images.unsplash.com/photo-1556863402-b5d84ed0b6d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+  )
+
+Facility.create!(
+  name: "Allen Gardens",
+  user: user2,
+  category: playground,
+  address: "Buxton Street, Londres E1 5AT, Reino Unido",
+  city: london,
+  remote_photo_url: "https://images.unsplash.com/photo-1553158399-3796bdbc82fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+  )
+
+Facility.create!(
+  name: "Zona de Recreo",
+  user: user2,
+  category: playground,
+  address: "Calle de Alfonso XII, s/n, Madrid",
+  city: madrid,
+  remote_photo_url: "https://images.unsplash.com/photo-1560831269-3faa2fc0b932?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
+  )
+
+Facility.create!(
+  name: "Parque Félix",
+  user: user2,
+  category: playground,
+  address: "Calle Villamanín, s/n,Madrid",
+  city: madrid,
+  remote_photo_url: "https://images.unsplash.com/photo-1521220609214-a8552380c7a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80"
+  )
+
+
+puts "create WC"
 Facility.create!(
   name: "WC publique Louvre",
   user: user2,
@@ -137,10 +236,62 @@ Facility.create!(
   address: "Rue Moulin",
   city: paris,
   website_link: "www.lelouvre.fr",
-  remote_photo_url: "https://images.unsplash.com/photo-1511405622496-1facf569089a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+  remote_photo_url: "https://images.unsplash.com/photo-1551514349-61a9c164186c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1039&q=80"
+  )
+
+Facility.create!(
+  name: "WC de la gare",
+  user: user2,
+  category: wc,
+  address: "Place du 11 Novembre 1918, 75010 París, Francia",
+  city: paris,
+  website_link: "",
+  remote_photo_url: "https://images.unsplash.com/photo-1518618750560-8f07abde4e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1150&q=80"
+  )
+
+Facility.create!(
+  name: "WC of the station",
+  user: user1,
+  category: wc,
+  address: "Euston Road, Londres N1C 4QP, Reino Unido",
+  city: london,
+  website_link: "",
+  remote_photo_url: "https://images.unsplash.com/photo-1465257474426-bd133d4db35e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
+  )
+
+Facility.create!(
+  name: "Liverpool Street Station",
+  user: user2,
+  category: wc,
+  address: "Liverpool Street, Londres EC2M 7PP, Reino Unido",
+  city: london,
+  website_link: "",
+  remote_photo_url: "https://images.unsplash.com/photo-1533429408967-dcefa1c13fd5?ixlib=rb-1.2.1&auto=format&fit=crop&w=957&q=80"
+  )
+
+Facility.create!(
+  name: "WC de la estacion",
+  user: user1,
+  category: wc,
+  address: "Avenida de los Estados, 28945 Madrid",
+  city: madrid,
+  website_link: "",
+  remote_photo_url: "https://images.unsplash.com/photo-1544093722-c84672dd328a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+  )
+
+Facility.create!(
+  name: "WC gloria",
+  user: user1,
+  category: wc,
+  address: "Paseo del Rey s/n, 28008 Madrid",
+  city: madrid,
+  website_link: "",
+  remote_photo_url: "https://images.unsplash.com/photo-1538724792994-cbeb7b4dc860?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
   )
 
 
+
+puts "create activity"
 Facility.create!(
   name: "London Dungeons",
   user: user1,
@@ -151,6 +302,25 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1561649170-8bde352e0369?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
   )
 
+Facility.create!(
+  name: "The Regent’s Park",
+  user: user1,
+  category: activity,
+  address: "Chester Road, Londres NW1 4NR, Reino Unido",
+  city: london,
+  website_link: "royalparks.org.uk",
+  remote_photo_url: "https://images.unsplash.com/photo-1446844805183-9f5af45f89ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
+  )
+
+Facility.create!(
+  name: "Estanque Grande del Buen Retiro",
+  user: user2,
+  category: activity,
+  address: "Paseo de Colombia, 2, 28014 Madrid",
+  city: madrid,
+  website_link: "",
+  remote_photo_url: "https://images.unsplash.com/photo-1552676382-77b33d7639fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+  )
 
 Facility.create!(
   name: "Bungee jumping loco loco",
@@ -161,6 +331,26 @@ Facility.create!(
   website_link: "www.locoloco.es",
   remote_photo_url: "https://images.unsplash.com/photo-1560111137-72f7022e94c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
 )
+
+Facility.create!(
+  name: "Le Parc des Buttes Chaumont",
+  user: user2,
+  category: activity,
+  address: "1 rue Botzaris, 75019 París, Francia",
+  city: paris,
+  website_link: "www.paris.fr",
+  remote_photo_url: "https://staygenerator.com/web/media/parallel/paris/neighbourhoods/parcdechuttes.jpg?mode=max&quality=100"
+  )
+
+Facility.create!(
+  name: "Bois de Boulogne",
+  user: user2,
+  category: activity,
+  address: "Bois de Boulogne, PARIS 75016",
+  city: paris,
+  website_link: "",
+  remote_photo_url: "https://www.transilien.com/sites/default/files/styles/editorial/public/thumbnails/image/bois-de-boulogne_atlantis-fotolia_com_414x311.jpg?itok=wWFJ_-33"
+  )
 
 puts "created facilities"
 
