@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
     @facility = Facility.find(params[:facility_id])
     @category = Category.find(@facility.category_id)
+    authorize @review
   end
 
   def create
@@ -15,19 +16,19 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
+    authorize @review
   end
 
   def edit
     @review = Review.find(params[:id])
+    authorize @review
   end
 
   def update
     @review = Review.find(params[:id])
+    authorize @review
     # pending complete!!!
-  end
-
-  def average_rating
-    self.average(:rating)
+    authorize @review
   end
 
   def review_strong_params

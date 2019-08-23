@@ -1,0 +1,51 @@
+<div class="container-nav">
+
+    <div class="burger dropdown" >
+      <img class="avatar dropdown-toggle" id="openSlideOut" src="https://cdn3.iconfinder.com/data/icons/menu-icons-1/100/menu-512.png"/>
+    </div>
+
+</div>
+
+
+<nav id="menu">
+  <header>
+    <div id="closeSlideOut">
+
+ </div>
+ <div class="slide-content">
+  <% if current_user.present? %>
+    <ul>
+      <li>
+        <%= current_user.email %>
+      </li>
+      <li>
+        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" alt="">
+      </li>
+      <li>
+        <%= link_to "Home", root_path  %>
+      </li>
+      <li>
+          <%= link_to "Add a restaurant", new_category_facility_path(Category.find_by_name("Restaurant").id) %>
+      </li>
+      <li>
+          <%= link_to "Add a playground", new_category_facility_path(Category.find_by_name("Playground").id) %>
+      </li>
+      <li>
+          <%= link_to "Add a activity", new_category_facility_path(Category.find_by_name("Activity").id) %>
+      </li>
+      <li>
+          <%= link_to "Add a restroom", new_category_facility_path(Category.find_by_name("Restroom").id) %>
+      </li>
+      </ul>
+      <div class="logout">
+        <%= link_to "Log out", destroy_user_session_path  %>
+      </div>
+
+      <% else %>
+      <h3>Welcome to Famtravel</h3>
+      <p><%= link_to "Log in", new_user_session_path, method: :delete  %></p>
+      <% end %>
+      </div>
+
+  </header>
+</nav>

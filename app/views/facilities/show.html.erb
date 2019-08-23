@@ -4,46 +4,50 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
   </div>
 <% end %>
 
-<!-- <div class="container"> -->
-<!--   <div class="row">
-    <div class="col-sm-12 col-md-10"> -->
-      <div class="show-container">
-        <h2><%= @facility.name  %></h2>
+<div class="show-container">
+  <h2><%= @facility.name  %></h2>
 
-        <ul>
-          <% @features.each do |feature| %>
-          <li><i class="fa fa-check"></i> <%= feature.name %></li>
-          <% end %>
-        </ul>
-        <h6><%= @facility.city.name %></h6>
-        <h6><%= @facility.address %></h6>
-        <!--   <h6>Rating: <%#= @facility.review.average_rating %></h6> -->
-        <h6><%= @facility.website_link %></h6>
+  <ul>
+    <% @features.each do |feature| %>
+    <li><i class="fa fa-check"></i> <%= feature.name %></li>
+    <% end %>
+  </ul>
+  <h6><%= @facility.city.name %></h6>
+  <h6><%= @facility.address %></h6>
+  <h6><%= @facility.website_link %></h6>
 
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
+  <% @facility.average_rating.times do%>
+ <span class="fa fa-star checked"></span>
+<% end %>
+  <% (5 -@facility.average_rating).times do%>
+ <span class="fa fa-star empty"></span>
+<% end %>
 
-        <%= link_to "Home page", root_path, class: "btn btn-primary" %>
-         <%= link_to "Back to the list", :back, class: "btn btn-primary" %>
+  <br>
+  <%= link_to "Home page", root_path, class: "btn btn-primary" %>
+  <%= link_to "Back to the list", :back, class: "btn btn-primary" %>
 
+  <%= link_to "Add a review", new_facility_review_path(@facility), class: "btn btn-primary" %>
+  <div>
+    <br>
+      <% @facility.reviews.each do |review| %>
+      <div class="review-box">
+      <h5><%  review.user.email %> from <% review.user.country %></h5>
+      <p><% review.rating.times do %>
+ <span class="fa fa-star checked"></span>
+<% end %>
 
-        <%= link_to "add review", new_facility_review_path(@facility) %>
-        <div>
-          <br>
-            <%#= link_to "Add a new review", new_review_path, class: "btn btn-primary" %>
-          <div class="review-box">
-            <h5>Reviewer name and city, kids: 2-5 years:</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          </div>
-          <br>
-          <div class="review-box">
-            <h5>Reviewer name and city, kids: 2-5 years:</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          </div>
-        </div>
-  <!--     </div>
-    </div> -->
-<!--   </div> -->
+  <% (5 - review.rating).times do  %>
+ <span class="fa fa-star empty"></span>
+<% end %>
+
+        <%= review.content %></p>
+        <% if review.photo.present? %>
+        <%= cl_image_tag review.photo, height: 150, width: 200, crop: :fill %></p>
+        <% end %>
+      </div>
+        <br>
+        <% end %>
+        <br>
+      </div>
+    </div>

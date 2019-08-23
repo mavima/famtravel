@@ -34,10 +34,10 @@ puts "created cities"
 
 
 #Categories DO NOT DESTROY THIS
-restaurant = Category.create!(name:"Restaurant")
-playground = Category.create!(name:"Playground")
-activity = Category.create!(name:"Activity")
-wc = Category.create!(name:"Restroom")
+restaurant = Category.create!(name:"Restaurant", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566552522/zdkyetvnkev8ifzrhi7i.jpg")
+playground = Category.create!(name:"Playground", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566551433/guwif2kmsgqds87xlk8k.jpg")
+activity = Category.create!(name:"Activity", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566481865/ylnzudnosxkaarja9mxf.jpg")
+wc = Category.create!(name:"Restroom", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566420240/wolqy1kxaexriuy2aucg.jpg")
 
 puts "created categories"
 
@@ -115,7 +115,8 @@ Facility.create!(
   category: restaurant,
   address: "Rue Rodin",
   city: paris,
-  website_link: "www.restodoudou.fr"
+  website_link: "www.restodoudou.fr",
+  photo: ""
   )
 
 
