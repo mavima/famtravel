@@ -26,12 +26,9 @@ class ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:id])
+    authorize @review
     # pending complete!!!
     authorize @review
-  end
-
-  def average_rating
-    self.average(:rating)
   end
 
   def review_strong_params
