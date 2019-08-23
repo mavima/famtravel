@@ -1,6 +1,7 @@
 class CitiesController < ApplicationController
   def new
     @city = City.new
+    authorize @city
   end
 
   def create
