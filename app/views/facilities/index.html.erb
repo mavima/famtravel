@@ -9,7 +9,9 @@
       <div class="card-facility-photo"></div>
       <div class="card-facility-content">
         <div class="card-facility-text">
-
+           <% if facility.photo.url %>
+           <%= cl_image_tag facility.photo, height: 300, width: 400, crop: :fill %>
+           <% end  %>
            <%= link_to facility.name, facility_path(facility) %>
           <%= facility.address %>
           <%= facility.rating %> - <%= facility.city.name %>

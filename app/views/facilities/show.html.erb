@@ -12,6 +12,7 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
     <li><i class="fa fa-check"></i> <%= feature.name %></li>
     <% end %>
   </ul>
+  <%#= cl_image_tag @facility.photo, height: 300, width: 400, crop: :fill %>
   <h6><%= @facility.city.name %></h6>
   <h6><%= @facility.address %></h6>
   <!--   <h6>Rating: <%#= @facility.review.average_rating %></h6> -->

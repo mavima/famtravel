@@ -115,8 +115,8 @@ Facility.create!(
   category: restaurant,
   address: "Rue Rodin",
   city: paris,
-  website_link: "www.restodoudou.fr"
-  photo: ""
+  website_link: "www.restodoudou.fr",
+  remote_photo_url: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
   )
 
 
@@ -125,7 +125,8 @@ Facility.create!(
   user: user2,
   category: playground,
   address: "Rue Rodin",
-  city: paris
+  city: paris,
+  remote_photo_url: "https://images.unsplash.com/photo-1460788150444-d9dc07fa9dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
   )
 
 
@@ -135,7 +136,8 @@ Facility.create!(
   category: wc,
   address: "Rue Moulin",
   city: paris,
-  website_link: "www.lelouvre.fr"
+  website_link: "www.lelouvre.fr",
+  remote_photo_url: "https://images.unsplash.com/photo-1511405622496-1facf569089a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
   )
 
 
@@ -145,7 +147,8 @@ Facility.create!(
   category: activity,
   address: "Baker Street 3",
   city: london,
-  website_link: "www.dungeons.co.uk"
+  website_link: "www.dungeons.co.uk",
+  remote_photo_url: "https://images.unsplash.com/photo-1561649170-8bde352e0369?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
   )
 
 
@@ -155,9 +158,9 @@ Facility.create!(
   category: activity,
   address: "Plaza Mayor",
   city: madrid,
-  website_link: "www.locoloco.es"
-  )
-
+  website_link: "www.locoloco.es",
+  remote_photo_url: "https://images.unsplash.com/photo-1560111137-72f7022e94c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+)
 
 puts "created facilities"
 
