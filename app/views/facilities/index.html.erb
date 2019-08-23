@@ -3,26 +3,26 @@
     <div class="banner-photo">
 
       <%= cl_image_tag Category.find_by(id: params[:search][:category_id].to_i).photo %>
-      <%= link_to "Add a facility", new_category_facility_path(params[:search][:category_id]), class: "first-link" %>
+      <%= link_to "Add a facility", new_facility_path(category_id: params[:search][:category_id]), class: "first-link" %>
       <%= link_to "Home page", root_path, class: "second-link" %>
     </div>
     <% @facilities.each do |facility| %>
-    <div class="card-facility">
-      <div class="card-facility-photo"></div>
-      <div class="card-facility-content">
-        <div class="card-facility-text">
+      <div class="card-facility">
+        <div class="card-facility-photo"></div>
+        <div class="card-facility-content">
+          <div class="card-facility-text">
+            <%= link_to facility.name, facility_path(facility) %>
+            <%= facility.address %>
+            <%= facility.rating %> - <%= facility.city.name %>
+          </div>
+          <div class="card-facility-rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
 
-           <%= link_to facility.name, facility_path(facility) %>
-          <%= facility.address %>
-          <%= facility.rating %> - <%= facility.city.name %>
-        </div>
-        <% end %>
-        <div class="card-facility-rating">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
         </div>
       </div>
     </div>
