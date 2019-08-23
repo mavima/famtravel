@@ -1,9 +1,13 @@
 <div class="container-nav">
-
-    <div class="burger dropdown" >
+  <% if current_page?("/")  %>
+    <div class="burger dropdown">
       <img class="avatar dropdown-toggle" id="openSlideOut" src="https://cdn3.iconfinder.com/data/icons/menu-icons-1/100/menu-512.png"/>
     </div>
-
+  <% else %>
+  <div class="burger dropdown" style="background-color: RGBA(255,255,255,0.7)">
+      <img class="avatar dropdown-toggle" id="openSlideOut" src="https://cdn3.iconfinder.com/data/icons/menu-icons-1/100/menu-512.png"/>
+    </div>
+  <% end %>
 </div>
 
 
