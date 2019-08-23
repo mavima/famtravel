@@ -7,7 +7,7 @@ class CitiesController < ApplicationController
   def create
     @city = City.new(city_strong_params)
     if @city.save
-      redirect_to new_facility_path(@facilities)
+      redirect_to new_facility_path(category_id: params[:category_id])
     else
       render :new
     end

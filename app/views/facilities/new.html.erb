@@ -2,7 +2,7 @@
 
 <h2>Share your tip to other users</h2>
 
-<%= Category.find(params[:category_id]).name %>
+<%= Category.find(params[:category_id]).name if params[:category_id] %>
 <div>
     <%= simple_form_for @facility do |f| %>
     <%= f.input :name, label: "Name" %>
@@ -13,7 +13,7 @@
     <%= f.input :photo %>
     <%= f.input :category_id, collection: @categories, as: :hidden %>
     <%= f.input :city_id, collection: @cities %>
-    <%= link_to "Can't find your city?", new_city_path %>
+    <%= link_to "Can't find your city?", new_city_path(category_id: params[:category_id]) %>
     <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit "Add", class: "btn btn-primary" %>
     <% end %>
