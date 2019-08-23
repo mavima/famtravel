@@ -18,11 +18,13 @@
     display: flex;
     background-color: #E2F3E5;
   }
-
   .card-facility-photo {
     background-color: white;
     width: 90px;
     height: 100px;
+  }
+    a {
+    color: black;
   }
 
   .card-facility-rating {
@@ -31,6 +33,7 @@
 
   .card-facility-text {
     margin-left: 8px;
+    color: black;
   }
 
   .first-link {

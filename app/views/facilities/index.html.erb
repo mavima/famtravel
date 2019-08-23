@@ -8,7 +8,7 @@
   </div>
     <% @facilities.each do |facility| %>
       <div class="card-facility">
-        <div class="card-facility-photo"></div>
+        <div class="card-facility-photo" style="background-image: url(<%= Facility.find_by(id: params[:search][:facility_id].to_i).photo.url %>); background-size: cover"></div>
         <div class="card-facility-content">
           <div class="card-facility-text">
             <%= link_to facility.name, facility_path(facility) %>
