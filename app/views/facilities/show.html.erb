@@ -45,13 +45,13 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
     <br>
     <% @facility.reviews.each do |review| %>
     <div class="review-box">
-      <h5><%  review.user.email %> from <% review.user.country %></h5>
       <p><% review.rating.times do %>
        <span class="fa fa-star checked"></span>
        <% end %>
 
        <% (5 - review.rating).times do  %>
        <span class="fa fa-star empty"></span>
+       <p><%  review.user.email %> from <% review.user.country %></p>
        <% end %>
 
        <%= review.content %></p>
