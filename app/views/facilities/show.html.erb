@@ -5,8 +5,9 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
 <% end %>
 
 <div class="show-container">
+  <!-- code added for the map -->
+  <div id="map" style="width: 100%; height: 600px;"data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   <h2><%= @facility.name  %></h2>
-
   <ul>
     <% @features.each do |feature| %>
     <li><i class="fa fa-check"></i> <%= feature.name %></li>

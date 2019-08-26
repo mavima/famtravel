@@ -37,10 +37,15 @@ class FacilitiesController < ApplicationController
   def show
     @facility = Facility.find(params[:id])
     @features = @facility.features
+    @markers = [
+      {
+        lat: @facility.latitude,
+        lng: @facility.longitude
+      }
+    ]
     authorize @facility
   end
 
-   #part added
   def destroy
     @facility = Facility.find(params[:id])
     @facility.destroy
@@ -62,3 +67,4 @@ class FacilitiesController < ApplicationController
     end
   end
 end
+
