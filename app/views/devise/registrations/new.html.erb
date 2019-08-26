@@ -22,22 +22,35 @@
     <%= f.input :password_confirmation,
                 required: true,
                 label_html:  { class: "password-confirmation-field"}  %>
-      <input type="checkbox" name="user[baby]" id="baby">
-      <label for="baby">
+                <div class="icons">
+    <div>
+    <input type="checkbox" name="user[baby]" id="baby">
+    <label for="baby">
     <%= image_tag "pram.png", alt: "Le Wagon", width: 80 %>      </label>
+    <p>0-2 years</p>
+    </div>
     <%#= f.input :baby,
                 label_html:  { class: "pram"}  %>
-     <input type="checkbox" name="user[toddler]" id="toddler">
-      <label for="toddler">
+    <div>
+    <input type="checkbox" name="user[toddler]" id="toddler">
+    <label for="toddler">
     <%= image_tag "sandbox.png", alt: "Le Wagon", width: 80 %>      </label>
+    <p>3-5 years</p>
+    </div>
     <%#= f.input :child,
                 label_html:  { class: "bike"}  %>
+    <div>
     <input type="checkbox" name="user[child]" id="child">
-      <label for="child">
+    <label for="child">
     <%= image_tag "bike.png", alt: "Le Wagon", width: 80 %>      </label>
-      <div class="d-flex">
-       <%= f.button :submit, class: "two_last_buttons_signup" %>
-       <%= render "devise/shared/links" %>
+    <p>6-8 years</p>
+    </div>
+    </div>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <div class="d-flex">
+    <%= f.button :submit, class: "two_last_buttons_signup" %>
+    <%= render "devise/shared/links" %>
      </div>
 <% end %>
 </div>

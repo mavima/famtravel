@@ -61,10 +61,19 @@ margin: 0px 0px 0px 8px;
 .password-confirmation-field {
  margin-top: 16px;
  }
+p {
+  margin-left: 14px;
+}
+}
+.icons {
+  display: flex;
+  margin: 20px;
+}
 .d-flex {
   display: flex !important;
   align-items: baseline !important;
   margin-top: 34px !important;
+  .btn {
+    border: 1px solid black;
+  }
 }
-}
-

@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :facilities
   has_many :reviews, dependent: :destroy
 
+  mount_uploader :photo, PhotoUploader
+
   validates :first_name, presence: true, on: :update
   validates :last_name, presence: true, on: :update
   validates :email, presence: true, on: :update
