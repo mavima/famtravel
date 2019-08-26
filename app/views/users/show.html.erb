@@ -1,1 +1,21 @@
-<p>hola</p>
+
+<div class="container">
+<p><% user = current_user %></p>
+<p><%= user.email %></p>
+<h4>My favourites</h4>
+<% user.favourites.each do |favourite| %>
+<% @facility = favourite.facility %>
+<p><%= link_to favourite.facility.name,  facility_path(@facility)%>
+<%=  link_to "", favourite_path(favourite), method: :delete, data: { confirm: "are you sure?" }, class: "fa fa-trash" %></p>
+<br>
+<% end %>
+
+<h4>My reviews</h4>
+<% user.reviews.each do |review| %>
+<% @facility = review.facility %>
+<p><%= link_to review.facility.name,  facility_path(@facility)%>
+ <p> <%= review.content %> </p>
+<br>
+<% end %>
+
+</div>

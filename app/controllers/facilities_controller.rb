@@ -37,10 +37,27 @@ class FacilitiesController < ApplicationController
   def show
     @facility = Facility.find(params[:id])
     @features = @facility.features
+    @markers = [
+      {
+        lat: @facility.latitude,
+        lng: @facility.longitude
+      }
+    ]
     authorize @facility
   end
 
-   #part added
+  def edit
+    @facility = Facility.find(params[:id])
+    authorize @facility
+  end
+
+  def update
+    @facility = Facility.find(params[:id])
+    @facility.update(facility_params)
+    redirect_to facility_path(@facility)
+    authorize @facility
+  end
+
   def destroy
     @facility = Facility.find(params[:id])
     @facility.destroy
@@ -62,3 +79,4 @@ class FacilitiesController < ApplicationController
     end
   end
 end
+
