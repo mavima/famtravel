@@ -16,6 +16,16 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
   <h6><%= @facility.city.name %></h6>
   <h6><%= @facility.address %></h6>
   <h6><%= @facility.website_link %></h6>
+  <% if current_user.favorited?(@facility) %>
+    <% favourite = current_user.get_fav_instances(@facility) %>
+
+
+    <h6><%= link_to "Remove from favourites", favourite_path(favourite), method: :delete, class: "fas fa-heart-circle" %></h6>
+
+
+  <% else %>
+    <h6><%= link_to "", facility_favourites_path(@facility), method: :post, class: "fas fa-heart" %></h6>
+  <% end %>
 
   <% @facility.average_rating.times do%>
  <span class="fa fa-star checked"></span>

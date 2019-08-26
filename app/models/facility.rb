@@ -4,6 +4,7 @@ class Facility < ApplicationRecord
   belongs_to :category
   has_many :feature_facilities
   has_many :reviews, dependent: :destroy
+  has_many :favourites, dependent: :destroy
   has_many :features, through: :feature_facilities
   mount_uploader :photo, PhotoUploader
 

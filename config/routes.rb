@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   end
   resources :facilities, only: [:index, :show, :new, :create, :destroy] do #part added
     resources :reviews, only: [:new, :create, :edit, :update]
+    resources :favourites, only: :create
   end
 
   resources :city, only: [:new, :create]
+  resources :favourites, only: :destroy
   get 'users/profile/:id', to: 'users#show', as: 'user'
 
 end
