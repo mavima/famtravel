@@ -1,0 +1,26 @@
+.heart_checked {
+  color: $pink;
+
+  &:hover {
+  text-decoration: none;
+  font-size: 22px;
+  color: $pink;
+  opacity: 0.8;
+  }
+}
+.heart_unchecked {
+  color: $green;
+
+  &:hover {
+  font-size: 22px;
+  text-decoration: none;
+  color: $green;
+  opacity: 0.8;
+  }
+
+}
+
+
+
+
+

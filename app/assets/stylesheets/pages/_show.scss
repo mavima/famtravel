@@ -13,10 +13,15 @@
     font-size: 14px;
   }
 
+.show_info {
+  display: flex;
+  overflow: hidden;
+  align-items: space_between;
+}
 
 
   .review-box {
-    background-color: $alabaster;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
     padding: 10px;
     margin-right: 0;
     margin-left: 0;

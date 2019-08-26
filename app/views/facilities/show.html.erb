@@ -1,40 +1,41 @@
 <% if @facility.photo.url != nil %>
-  <div id="banner-show-override" class="banner-show banner-picture-show-border" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+<div id="banner-show-override" class="banner-show banner-picture-show-border" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
 url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill %>')">
-  </div>
+</div>
 <% end %>
 
 <div class="show-container">
   <!-- code added for the map -->
-  <div id="map" style="width: 100%; height: 600px;"data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  <h2><%= @facility.name  %></h2>
-  <ul>
-    <% @features.each do |feature| %>
-    <li><i class="fa fa-check"></i> <%= feature.name %></li>
-    <% end %>
-  </ul>
-  <%#= cl_image_tag @facility.photo, height: 300, width: 400, crop: :fill %>
-  <h6><%= @facility.city.name %></h6>
-  <h6><%= @facility.address %></h6>
-  <h6><%= @facility.website_link %></h6>
-  <% if current_user.favorited?(@facility) %>
-    <% favourite = current_user.get_fav_instances(@facility) %>
+  <div class="show_info">
 
+    <div class="facility_details">
+      <h2><%= @facility.name  %></h2>
+      <ul>
+        <% @features.each do |feature| %>
+        <li><i class="fa fa-check"></i> <%= feature.name %></li>
+        <% end %>
+      </ul>
+      <%#= cl_image_tag @facility.photo, height: 300, width: 400, crop: :fill %>
+      <h6><%= @facility.city.name %></h6>
+      <h6><%= @facility.address %></h6>
+      <h6><%= @facility.website_link %></h6>
+      <% if current_user&.favorited?(@facility) %>
+      <% favourite = current_user.get_fav_instances(@facility) %>
+      <h6><%= link_to "", favourite_path(favourite), method: :delete, class: "fas fa-heart heart_unchecked" %></h6>
 
-    <h6><%= link_to "Remove from favourites", favourite_path(favourite), method: :delete, class: "fas fa-heart-circle" %></h6>
+      <% else %>
+      <h6><%= link_to "", facility_favourites_path(@facility), method: :post, class: "fas fa-heart heart_checked" %></h6>
+      <% end %>
 
-
-  <% else %>
-    <h6><%= link_to "", facility_favourites_path(@facility), method: :post, class: "fas fa-heart" %></h6>
-  <% end %>
-
-  <% @facility.average_rating.times do%>
- <span class="fa fa-star checked"></span>
-<% end %>
-  <% (5 -@facility.average_rating).times do%>
- <span class="fa fa-star empty"></span>
-<% end %>
-
+      <% @facility.average_rating.times do%>
+      <span class="fa fa-star checked"></span>
+      <% end %>
+      <% (5 -@facility.average_rating).times do%>
+      <span class="fa fa-star empty"></span>
+      <% end %>
+    </div>
+    <div id="map" style="width: 200px; height: 200px;"data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
   <br>
   <%= link_to "Home page", root_path, class: "btn btn-primary" %>
   <%= link_to "Back to the list", :back, class: "btn btn-primary" %>
@@ -42,24 +43,24 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
   <%= link_to "Add a review", new_facility_review_path(@facility), class: "btn btn-primary" %>
   <div>
     <br>
-      <% @facility.reviews.each do |review| %>
-      <div class="review-box">
+    <% @facility.reviews.each do |review| %>
+    <div class="review-box">
       <h5><%  review.user.email %> from <% review.user.country %></h5>
       <p><% review.rating.times do %>
- <span class="fa fa-star checked"></span>
-<% end %>
+       <span class="fa fa-star checked"></span>
+       <% end %>
 
-  <% (5 - review.rating).times do  %>
- <span class="fa fa-star empty"></span>
-<% end %>
+       <% (5 - review.rating).times do  %>
+       <span class="fa fa-star empty"></span>
+       <% end %>
 
-        <%= review.content %></p>
-        <% if review.photo.present? %>
-        <%= cl_image_tag review.photo, height: 150, width: 200, crop: :fill %></p>
-        <% end %>
-      </div>
-        <br>
-        <% end %>
-        <br>
-      </div>
-    </div>
+       <%= review.content %></p>
+       <% if review.photo.present? %>
+       <%= cl_image_tag review.photo, height: 150, width: 200, crop: :fill %></p>
+       <% end %>
+     </div>
+     <br>
+     <% end %>
+     <br>
+   </div>
+ </div>
