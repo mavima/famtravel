@@ -5,14 +5,9 @@
 
       <%#= cl_image_tag Category.find_by(id: params[:search][:category_id].to_i).photo %>
     </div>
-    <div class="index-buttons">
-      <%= link_to "Add a facility", new_facility_path(category_id: params[:search][:category_id]), class: "btn btn-primary" %>
-
-      <%= link_to "Home page", root_path, class: "btn btn-primary" %>
-    </div>
-
-
-      <% @facilities.each do |facility| %>
+    <br>
+    <br>
+    <% @facilities.each do |facility| %>
       <div class="card-facility">
       <% if facility.photo.url %>
       <%= cl_image_tag facility.photo, height: 300, width: 400, crop: :fill %>
@@ -27,22 +22,36 @@
         <%= link_to "update", edit_facility_path(facility) %>
       <% end %>
 
-      <div class="card-facility-content">
-       <%= link_to facility.name, facility_path(facility) %>
-       <%= facility.address %>
-       <%= facility.rating %> - <%= facility.city.name %>
-       <br>
-     </div>
-
-     <div class="card-facility-rating">
-     <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-    </div>
-    </div>
+        <div class="card-facility-content">
+          <ul>
+            <li><%= link_to facility.name, facility_path(facility) %></li>
+            <li><%= facility.address %></li>
+            <li><%= facility.city.name %></li>
+          </ul>
+          <br>
+        </div>
+        <% if facility.reviews.any? %>
+          <div class="card-facility-rating">
+         <% facility.average_rating.times do%>
+         <span class="fa fa-star checked"></span>
+         <% end %>
+         <% (5 -facility.average_rating).times do%>
+         <span class="fa fa-star empty"></span>
+         <% end %>
+          </div>
+        <% else %>
+          <div class="card-facility-rating">
+          <% 5.times do%>
+            <span class="fa fa-star empty"></span>
+          <% end %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
 
+    <div class="push"></div>
+
+  </div>
 
   <div class="index-footer">
       <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Playground").id, keyword: params[:search][:keyword]} )) do %>
@@ -57,10 +66,6 @@
       <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Activity").id, keyword: params[:search][:keyword]} )) do %>
         <%= image_tag("activity.png", class: "cat-icon") %>
       <% end %>
-
   </div>
-  <br>
 </div>
 
-</div>
-</div>
