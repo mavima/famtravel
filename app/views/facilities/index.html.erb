@@ -9,15 +9,18 @@
     <br>
     <% @facilities.each do |facility| %>
       <div class="card-facility">
-        <% if facility.photo.url %>
-          <%= cl_image_tag facility.photo, height: 300, width: 400, crop: :fill %>
-        <% end %>
-        <% if current_user.nil? %>
-          <% facility_path(facility) %>
-        <% elsif current_user.admin? %>
-          <%= link_to "delete", facility_path(facility), method: :delete, data: { confirm: "Are you sure?" } %>
-          <%= link_to "update", edit_facility_path(facility) %>
-        <% end %>
+      <% if facility.photo.url %>
+      <%= cl_image_tag facility.photo, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <%#part added%>
+      <% if current_user.nil? %>
+        <% facility_path(facility) %>
+      <% elsif current_user == facility.user %>
+        <%= link_to "update", edit_facility_path(facility) %>
+      <% elsif current_user.admin? %>
+        <%= link_to "delete", facility_path(facility), method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to "update", edit_facility_path(facility) %>
+      <% end %>
 
         <div class="card-facility-content">
           <ul>
