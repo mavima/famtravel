@@ -26,7 +26,7 @@ class FacilitiesController < ApplicationController
     set_cats_and_feats
     @facility.user = current_user
     if @facility.save
-      redirect_to root_path
+      redirect_to facility_path(@facility)
     else
       @categories = Category.all
       render :new
