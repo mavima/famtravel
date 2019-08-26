@@ -11,5 +11,4 @@ class User < ApplicationRecord
   validates :email, presence: true, on: :update
   validates :password, presence: true, on: :update
   validates :country, presence: true, on: :update
-  validates :kids_age_group, presence: true, on: :update
 end
