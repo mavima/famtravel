@@ -114,7 +114,7 @@ Facility.create!(
   name: "Resto Doudou",
   user: user2,
   category: restaurant,
-  address: "Rue Rodin",
+  address: "8 Rue Tournefort, 75005 Paris",
   city: paris,
   website_link: "www.restodoudou.fr",
   remote_photo_url: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
@@ -124,7 +124,7 @@ Facility.create!(
   name: "Restaurant du quartier",
   user: user1,
   category: restaurant,
-  address: "Rue du pasteur",
+  address: "33 Boulevard Arago, 75013 Paris",
   city: paris,
   website_link: "www.restoduquartier.fr",
   remote_photo_url: "https://images.unsplash.com/photo-1556742393-d75f468bfcb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"

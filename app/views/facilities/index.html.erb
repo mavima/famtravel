@@ -20,6 +20,8 @@
       <%#part added%>
       <% if current_user.nil? %>
         <% facility_path(facility) %>
+      <% elsif current_user == facility.user %>
+        <%= link_to "update", edit_facility_path(facility) %>
       <% elsif current_user.admin? %>
         <%= link_to "delete", facility_path(facility), method: :delete, data: { confirm: "Are you sure?" } %>
         <%= link_to "update", edit_facility_path(facility) %>
