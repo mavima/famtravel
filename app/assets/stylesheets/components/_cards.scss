@@ -27,9 +27,13 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  ul {
+    padding: 0;
+    padding-left: 14px;
+  }
   li {
      list-style-type: none;
-     text-indent: -25px;
+     // text-indent: -25px;
   }
   a {
     font-weight: bolder;
@@ -51,6 +55,6 @@
 }
 
 .card-facility-rating {
-  padding-left: 295px;
+  padding-left: 275px;
   margin-top: -40px;
 }

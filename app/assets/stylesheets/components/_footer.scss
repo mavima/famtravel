@@ -1,0 +1,21 @@
+// .banner-photo {
+//   position: relative;
+// }
+
+.index-footer {
+  // background-color: white;
+  // position: absolute;
+  // top: 620px;
+  position: sticky;
+  top: 0;
+  display:flex;
+  justify-content: space-evenly;
+  background-color: white;
+}
+
+.cat-icon {
+  height: 60px;
+  padding-left: 3px;
+  opacity: .7;
+}
+
