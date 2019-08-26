@@ -46,6 +46,18 @@ class FacilitiesController < ApplicationController
     authorize @facility
   end
 
+  def edit
+    @facility = Facility.find(params[:id])
+    authorize @facility
+  end
+
+  def update
+    @facility = Facility.find(params[:id])
+    @facility.update(facility_params)
+    redirect_to facility_path(@facility)
+    authorize @facility
+  end
+
   def destroy
     @facility = Facility.find(params[:id])
     @facility.destroy

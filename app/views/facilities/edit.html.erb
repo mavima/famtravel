@@ -1,0 +1,24 @@
+<div class="container">
+
+<h2>Hi admin ! Update the information</h2>
+
+<%= Category.find(params[:category_id]).name if params[:category_id] %>
+<div>
+    <%= simple_form_for @facility do |f| %>
+    <%= f.input :name, label: "Name" %>
+    <%= f.input :address, label: "Address" %>
+    <%= f.input :website_link, label: "Website" %>
+    <%= f.input :rating, collection: 1..5, prompt: "Give a rating", selected: 5 %>
+    <%= f.association :features, collection: @features, as: :check_boxes %>
+    <%= f.input :photo %>
+    <%= f.input :category_id, collection: @categories, as: :hidden %>
+    <%= f.input :city_id, collection: @cities %>
+    <%= link_to "Can't find your city?", new_city_path(category_id: params[:category_id]) %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit "Add", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>
+
+</div>
