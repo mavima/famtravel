@@ -7,12 +7,13 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :favourites, dependent: :destroy
 
+  mount_uploader :photo, PhotoUploader
+
   validates :first_name, presence: true, on: :update
   validates :last_name, presence: true, on: :update
   validates :email, presence: true, on: :update
   validates :password, presence: true, on: :update
   validates :country, presence: true, on: :update
-  validates :kids_age_group, presence: true, on: :update
 
   def favorited?(facility)
     self.favourites.find_by(facility_id: facility.id).present?

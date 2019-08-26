@@ -21,9 +21,9 @@ Review.destroy_all
 puts "destroyed all models"
 
 
-user1 = User.create!(email: "user1@a.a", password: "password", first_name: "Emilie", last_name: "Moulin", country: "France", kids_age_group: "none")
-user2 = User.create!(email: "user2@a.a", password: "password", first_name: "Marta", last_name: "Sanchez", country: "Spain", kids_age_group: "3-5")
-admin = User.create!(email: "famtravel@gmail.com", password: "password", first_name: "fam", last_name: "travel", country: "spain", kids_age_group: "none", admin: true)
+user1 = User.create!(email: "user1@a.a", password: "password", first_name: "Emilie", last_name: "Moulin", country: "France")
+user2 = User.create!(email: "user2@a.a", password: "password", first_name: "Marta", last_name: "Sanchez", country: "Spain")
+admin = User.create!(email: "famtravel@gmail.com", password: "password", first_name: "fam", last_name: "travel", country: "spain", admin: true)
 
 puts "created users"
 
@@ -35,7 +35,11 @@ puts "created cities"
 
 
 #Categories DO NOT DESTROY THIS
-restaurant = Category.create!(name:"Restaurant", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566827695/wfipqov9if1sxhmmpwx3.jpg")
+
+restaurant = Category.create!(name:"Restaurant")
+
+
+
 playground = Category.create!(name:"Playground", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566551433/guwif2kmsgqds87xlk8k.jpg")
 activity = Category.create!(name:"Activity", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566481865/ylnzudnosxkaarja9mxf.jpg")
 wc = Category.create!(name:"Restroom", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566420240/wolqy1kxaexriuy2aucg.jpg")
