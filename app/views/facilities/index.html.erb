@@ -3,7 +3,7 @@
 
     <div class="banner-photo">
 
-      <%#= cl_image_tag Category.find_by(id: params[:search][:category_id].to_i).photo %>
+      <%= cl_image_tag City.find_by("name ILIKE ?", params[:search][:keyword]).photo, class: "city-photo" %>
     </div>
     <br>
     <br>
