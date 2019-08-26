@@ -1,7 +1,8 @@
-<div>
+<div class="form-add-city">
 <div>
   <h3>What city would you like to add?</h3>
 </div>
+<div>
     <%= simple_form_for(@city) do |f| %>
       <%= f.input :name, label: "What city would you like to add?" %>
       <%= f.input :country_city, label: "What country would you like to add?" %>

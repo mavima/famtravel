@@ -23,6 +23,7 @@ puts "destroyed all models"
 
 user1 = User.create!(email: "user1@a.a", password: "password", first_name: "Emilie", last_name: "Moulin", country: "France", kids_age_group: "none")
 user2 = User.create!(email: "user2@a.a", password: "password", first_name: "Marta", last_name: "Sanchez", country: "Spain", kids_age_group: "3-5")
+admin = User.create!(email: "famtravel@gmail.com", password: "password", first_name: "fam", last_name: "travel", country: "spain", kids_age_group: "none", admin: true)
 
 puts "created users"
 

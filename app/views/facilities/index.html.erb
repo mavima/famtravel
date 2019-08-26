@@ -1,5 +1,6 @@
 <div class="entire-page">
   <div class="top-of-page">
+
     <div class="banner-photo">
 
       <%#= cl_image_tag Category.find_by(id: params[:search][:category_id].to_i).photo %>
@@ -10,6 +11,12 @@
       <div class="card-facility">
         <% if facility.photo.url %>
           <%= cl_image_tag facility.photo, height: 300, width: 400, crop: :fill %>
+        <% end %>
+        <% if current_user.nil? %>
+          <% facility_path(facility) %>
+        <% elsif current_user.admin? %>
+          <%= link_to "delete", facility_path(facility), method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to "update", edit_facility_path(facility) %>
         <% end %>
 
         <div class="card-facility-content">

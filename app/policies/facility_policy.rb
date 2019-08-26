@@ -16,5 +16,17 @@ class FacilityPolicy < ApplicationPolicy
   def create?
     return true
   end
+ #part added
+  def destroy?
+    return true
+  end
+
+  def edit?
+    true
+  end
+
+  def update?
+    true
+  end
 
 end
