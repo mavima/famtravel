@@ -27,9 +27,6 @@ class FacilitiesController < ApplicationController
     @facility.user = current_user
     if @facility.save
       redirect_to root_path
-        params[:facility][:feature_ids].each do |feat_id|
-          FeatureFacility.create(feature_id: feat_id, facility_id: @facility.id)
-        end
     else
       @categories = Category.all
       render :new
@@ -37,12 +34,21 @@ class FacilitiesController < ApplicationController
     authorize @facility
   end
 
-
   def show
     @facility = Facility.find(params[:id])
     @features = @facility.features
     authorize @facility
   end
+
+   #part added
+  def destroy
+    @facility = Facility.find(params[:id])
+    @facility.destroy
+    redirect_to root_path
+    authorize @facility
+  end
+
+  private
 
   def facility_params
     params.require(:facility).permit(:city_id, :name, :address, :rating, :photo, :website_link, :latitude, :longitude, :category_id, :photo_cache, feature_ids: [])

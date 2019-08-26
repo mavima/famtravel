@@ -20,14 +20,21 @@
   <% if current_user.present? %>
     <ul>
       <li>
-        <%= current_user.email %>
+        <h5><%= current_user.email %></h5>
       </li>
       <li>
-        <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" alt="">
+        <img src="https://i.pinimg.com/originals/77/fd/f0/77fdf077b7dae33dc550d64142007a35.jpg" alt="">
+      </li>
+
+      <div class="slidepage">
+      <li>
+       <%= link_to "Home", root_path %>
+
       </li>
       <li>
-        <%= link_to "Home", root_path  %>
+        <%= link_to "My profile", user_path(current_user)  %>
       </li>
+
       <li>
           <%= link_to "Add a restaurant", new_category_facility_path(Category.find_by_name("Restaurant").id) %>
       </li>
@@ -35,19 +42,21 @@
           <%= link_to "Add a playground", new_category_facility_path(Category.find_by_name("Playground").id) %>
       </li>
       <li>
-          <%= link_to "Add a activity", new_category_facility_path(Category.find_by_name("Activity").id) %>
+          <%= link_to "Add an activity", new_category_facility_path(Category.find_by_name("Activity").id) %>
       </li>
       <li>
           <%= link_to "Add a restroom", new_category_facility_path(Category.find_by_name("Restroom").id) %>
       </li>
       </ul>
+      </div>
       <div class="logout">
-        <%= link_to "Log out", destroy_user_session_path  %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete  %>
       </div>
 
       <% else %>
       <h3>Welcome to Famtravel</h3>
-      <p><%= link_to "Log in", new_user_session_path, method: :delete  %></p>
+
+      <p><%= link_to "Log in", new_user_session_path %></p>
       <% end %>
       </div>
 
