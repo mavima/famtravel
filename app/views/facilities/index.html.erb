@@ -2,7 +2,7 @@
   <div class="top-of-page">
     <div class="banner-photo">
 
-      <%= cl_image_tag Category.find_by(id: params[:search][:category_id].to_i).photo %>
+      <%#= cl_image_tag Category.find_by(id: params[:search][:category_id].to_i).photo %>
     </div>
     <div class="index-buttons">
       <%= link_to "Add a facility", new_facility_path(category_id: params[:search][:category_id]), class: "btn btn-primary" %>
@@ -25,8 +25,7 @@
      </div>
 
      <div class="card-facility-rating">
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star"></span>
@@ -34,6 +33,22 @@
     </div>
     <% end %>
 
+
+  <div class="index-footer">
+      <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Playground").id, keyword: params[:search][:keyword]} )) do %>
+        <%= image_tag("playground.png", class: "cat-icon") %>
+      <% end %>
+      <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Restaurant").id, keyword: params[:search][:keyword]} )) do %>
+        <%= image_tag("restaurant.png", class: "cat-icon") %>
+      <% end %>
+      <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Restroom").id, keyword: params[:search][:keyword]} )) do %>
+        <%= image_tag("restroom.png", class: "cat-icon") %>
+      <% end %>
+      <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Activity").id, keyword: params[:search][:keyword]} )) do %>
+        <%= image_tag("activity.png", class: "cat-icon") %>
+      <% end %>
+
+  </div>
   <br>
 </div>
 
