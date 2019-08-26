@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'pages#home'
+  get '/about', to: 'pages#about'
 
   resources :categories, only: [:index, :new, :create] do
     resources :facilities, only: [:new, :create]
