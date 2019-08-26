@@ -65,6 +65,16 @@
   height: 100%;
 }
 
+.with-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .fa-home {
+    color: $pink;
+    font-size: 30px;
+    padding-right: 10px;
+  }
+}
 
 .slideout-menu {
   position: fixed;
@@ -108,3 +118,4 @@
 .slideout-open .slideout-menu {
   display: block;
 }
+

@@ -24,7 +24,10 @@
 
         <div class="card-facility-content">
           <ul>
+            <div class="with-distance">
             <li><%= link_to facility.name, facility_path(facility) %></li>
+            <li><p>300m</p></li>
+            </div>
             <li><%= facility.address %></li>
             <li><%= facility.city.name %></li>
           </ul>
