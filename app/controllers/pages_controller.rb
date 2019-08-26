@@ -6,4 +6,7 @@ class PagesController < ApplicationController
     @restaurant = Category.find_by(name: "Restaurant")
     @restroom = Category.find_by(name: "Restroom")
   end
+
+  def about
+  end
 end
