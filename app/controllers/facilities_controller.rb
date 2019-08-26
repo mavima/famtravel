@@ -65,6 +65,18 @@ class FacilitiesController < ApplicationController
     authorize @facility
   end
 
+  def map
+    @facility = Facility.find(params[:id])
+    @features = @facility.features
+    @markers = [
+      {
+        lat: @facility.latitude,
+        lng: @facility.longitude
+      }
+    ]
+    authorize @facility
+  end
+
   private
 
   def facility_params

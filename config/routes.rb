@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :favourites, only: :create
   end
 
+  get '/facilities/:id/map', to: 'facilities#map', as: 'facility_map'
+
   resources :favourites, only: :destroy
 
   resources :cities, only: [:new, :create]

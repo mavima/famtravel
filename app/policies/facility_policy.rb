@@ -33,4 +33,8 @@ class FacilityPolicy < ApplicationPolicy
     true
   end
 
+  def map?
+    true
+  end
+
 end
