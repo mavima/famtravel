@@ -1,0 +1,48 @@
+  .banner-photo {
+    background-color: $alabaster;
+    height: 250px;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+  }
+
+
+  .card-facility {
+    background: $alabaster;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: 10px;
+    padding-bottom: 10px;
+
+    img {
+      height: 100px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+.card-facility-content {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+
+.card-facility h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-facility p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
