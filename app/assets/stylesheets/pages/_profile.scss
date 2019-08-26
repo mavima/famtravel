@@ -1,0 +1,49 @@
+.js-tabs{
+  width: 100%;
+  padding-bottom: 0 !important;
+  position: relative;
+}
+.tabs-header{
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  padding-left: 20px;
+  background-color: $pink;
+  .tab{
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+    min-width: 90px;
+    transition: all 0.5s ;
+  }
+}
+
+.tab-content{
+  position:absolute;
+  width:100%;
+  height: auto;
+  transition: left 1s;
+  padding: 5%;
+  padding-bottom: 0px;
+  overflow: scroll;
+  -ms-overflow-style: none;  // IE 10+
+  &::-webkit-scrollbar {
+      display: none;  // Safari and Chrome
+  }
+
+  a {
+    color: black;
+  }
+
+  a:hover {
+    color: $pink;
+  }
+}
+.tab-content.tab-selected{
+  left: 0px;
+}
+.tab.tab-selected{
+  background-color: white;
+  color: #333;
+  height: 100%;
+}

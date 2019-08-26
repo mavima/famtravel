@@ -1,21 +1,46 @@
 
 <div class="container">
-<p><% user = current_user %></p>
-<p><%= user.email %></p>
-<h4>My favourites</h4>
-<% user.favourites.each do |favourite| %>
-<% @facility = favourite.facility %>
-<p><%= link_to favourite.facility.name,  facility_path(@facility)%>
-<%=  link_to "", favourite_path(favourite), method: :delete, data: { confirm: "are you sure?" }, class: "fa fa-trash" %></p>
-<br>
-<% end %>
+  <p><% user = current_user %></p>
+  <p><%= user.first_name%> <%= user.last_name%></p>
+  <p><%= user.email %></p>
 
-<h4>My reviews</h4>
-<% user.reviews.each do |review| %>
-<% @facility = review.facility %>
-<p><%= link_to review.facility.name,  facility_path(@facility)%>
- <p> <%= review.content %> </p>
-<br>
-<% end %>
 
-</div>
+
+
+  <div class="js-tabs">
+    <div class="tabs-header">
+      <h6 class="tab tab-selected">My tips</h6>
+      <h6 class="tab">My favourites</h6>
+      <h6 class="tab">My reviews</h6>
+    </div>
+
+    <div class="tab-content tab-selected" style="left: 0%">
+      <% user.facilities.each do |facility| %>
+        <p><%= link_to facility.name,  facility_path(facility)%>
+          in
+        <%= facility.city.name %> </p>
+        <br>
+       <% end %>
+    </div>
+    <div class="tab-content" style="left: 100%">
+      <% user.favourites.each do |favourite| %>
+        <% @facility = favourite.facility %>
+        <p><%= link_to favourite.facility.name,  facility_path(@facility)%>
+        in
+        <%= @facility.city.name %> </p>
+        <%=  link_to "", favourite_path(favourite), method: :delete, data: { confirm: "are you sure?" }, class: "fa fa-trash" %></p>
+        <br>
+      <% end %>
+    </div>
+    <div class="tab-content" style="left: 200%">
+      <% user.reviews.each do |review| %>
+        <% @facility = review.facility %>
+        <h5><%= link_to review.facility.name,  facility_path(@facility)%>
+          in
+        <%= review.facility.city.name %> </h5>
+        <p> <%= review.content %> </p>
+       <br>
+      <% end %>
+    </div>
+    </div>
+  </div>
