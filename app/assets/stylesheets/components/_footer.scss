@@ -7,11 +7,12 @@
   // position: absolute;
   // top: 620px;
 
-position: sticky;
-bottom: 0;
+  position: sticky;
+  bottom: 0;
   display:flex;
   justify-content: space-evenly;
   background-color: white;
+  padding: 6px;
 }
 
 .cat-icon {
@@ -20,3 +21,11 @@ bottom: 0;
   opacity: .7;
 }
 
+.selected {
+  box-shadow: 0 8px 6px -6px black;
+  opacity: .7;
+}
+
+.hidden {
+  opacity: 0;
+}
