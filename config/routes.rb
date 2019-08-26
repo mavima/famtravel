@@ -15,8 +15,10 @@ Rails.application.routes.draw do
     resources :favourites, only: :create
   end
 
-  resources :city, only: [:new, :create]
   resources :favourites, only: :destroy
+
+  resources :cities, only: [:new, :create]
+
   get 'users/profile/:id', to: 'users#show', as: 'user'
 
 end
