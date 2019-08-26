@@ -5,6 +5,10 @@ class FacilityPolicy < ApplicationPolicy
     end
   end
 
+  def index
+    true
+  end
+
   def show?
     return true
   end
@@ -19,6 +23,14 @@ class FacilityPolicy < ApplicationPolicy
  #part added
   def destroy?
     return true
+  end
+
+  def edit?
+    true
+  end
+
+  def update?
+    true
   end
 
 end

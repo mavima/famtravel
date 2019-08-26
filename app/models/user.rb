@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :facilities
   has_many :reviews, dependent: :destroy
+  has_many :favourites, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 
@@ -13,4 +14,12 @@ class User < ApplicationRecord
   validates :email, presence: true, on: :update
   validates :password, presence: true, on: :update
   validates :country, presence: true, on: :update
+
+  def favorited?(facility)
+    self.favourites.find_by(facility_id: facility.id).present?
+  end
+
+  def get_fav_instances(facility)
+    self.favourites.find_by(facility_id: facility.id)
+  end
 end

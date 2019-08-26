@@ -7,30 +7,38 @@
     align-items: flex-end;
 
   }
-
-
   .card-facility {
-    background: $alabaster;
+    border-radius: 6px;
+    background: transparent;
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
     margin: 10px;
     padding-bottom: 10px;
 
     img {
-      height: 100px;
+      height: 200px;
       width: 100%;
       object-fit: cover;
     }
   }
 
 .card-facility-content {
-  padding: 16px;
+  padding-top: 15px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  ul {
+    padding: 0;
+    padding-left: 14px;
+  }
+  li {
+     list-style-type: none;
+     // text-indent: -25px;
+  }
+  a {
+    font-weight: bolder;
+  }
 }
-
-
 
 .card-facility h2 {
   font-size: 16px;
@@ -46,3 +54,7 @@
   margin-top: 8px;
 }
 
+.card-facility-rating {
+  padding-left: 275px;
+  margin-top: -40px;
+}

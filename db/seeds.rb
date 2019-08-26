@@ -27,15 +27,19 @@ admin = User.create!(email: "famtravel@gmail.com", password: "password", first_n
 
 puts "created users"
 
-london = City.create!(name:"London", country_city:"United Kingdom")
-paris = City.create!(name:"Paris", country_city:"France")
-madrid = City.create!(name:"Madrid", country_city:"Spain")
+london = City.create!(name:"London", country_city:"United Kingdom", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566827895/photo-1505761671935-60b3a7427bad_pgxxw4.jpg")
+paris = City.create!(name:"Paris", country_city:"France", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566827938/photo-1524396309943-e03f5249f002_k6ibfr.jpg")
+madrid = City.create!(name:"Madrid", country_city:"Spain", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566827975/photo-1543783207-ec64e4d95325_ux2mzx.jpg")
 
 puts "created cities"
 
 
 #Categories DO NOT DESTROY THIS
+
 restaurant = Category.create!(name:"Restaurant")
+
+
+
 playground = Category.create!(name:"Playground", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566551433/guwif2kmsgqds87xlk8k.jpg")
 activity = Category.create!(name:"Activity", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566481865/ylnzudnosxkaarja9mxf.jpg")
 wc = Category.create!(name:"Restroom", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566420240/wolqy1kxaexriuy2aucg.jpg")
@@ -114,7 +118,7 @@ Facility.create!(
   name: "Resto Doudou",
   user: user2,
   category: restaurant,
-  address: "Rue Rodin",
+  address: "8 Rue Tournefort, 75005 Paris",
   city: paris,
   website_link: "www.restodoudou.fr",
   remote_photo_url: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
@@ -124,7 +128,7 @@ Facility.create!(
   name: "Restaurant du quartier",
   user: user1,
   category: restaurant,
-  address: "Rue du pasteur",
+  address: "33 Boulevard Arago, 75013 Paris",
   city: paris,
   website_link: "www.restoduquartier.fr",
   remote_photo_url: "https://images.unsplash.com/photo-1556742393-d75f468bfcb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"

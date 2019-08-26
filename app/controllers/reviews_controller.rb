@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     authorize @review
     # pending complete!!!
-    authorize @review
+    # authorize @review
   end
 
   def review_strong_params

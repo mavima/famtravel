@@ -5,15 +5,20 @@ Rails.application.routes.draw do
   end
 
   root to: 'pages#home'
+  get '/about', to: 'pages#about'
 
   resources :categories, only: [:index, :new, :create] do
     resources :facilities, only: [:new, :create]
   end
-  resources :facilities, only: [:index, :show, :new, :create, :destroy] do #part added
+  resources :facilities, only: [:index, :show, :new, :create, :destroy, :edit, :update] do #part added
     resources :reviews, only: [:new, :create, :edit, :update]
+    resources :favourites, only: :create
   end
 
-  resources :city, only: [:new, :create]
+  resources :favourites, only: :destroy
+
+  resources :cities, only: [:new, :create]
+
   get 'users/profile/:id', to: 'users#show', as: 'user'
 
 end
