@@ -13,11 +13,11 @@
     font-size: 14px;
   }
 
-.show_info {
-  display: flex;
-  overflow: hidden;
-  align-items: space_between;
-}
+  .show_info {
+    display: flex;
+    overflow: hidden;
+    align-items: space_between;
+  }
 
 
   .review-box {
@@ -36,8 +36,20 @@
       opacity: 0.8;
     }
   }
+}
 
+.back-btn .fa-arrow-circle-left {
+  font-size: 30px;
+  color: $pink;
+  opacity: .9;
+  margin-top: 640px;
+  margin-left: 15px;
+}
 
+.back-btn {
+  position: sticky;
+  bottom: 30px;
+  left: 30px;
 }
 
 
