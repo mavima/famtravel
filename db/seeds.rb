@@ -36,7 +36,7 @@ puts "created cities"
 
 #Categories DO NOT DESTROY THIS
 
-restaurant = Category.create!(name:"Restaurant")
+restaurant = Category.create!(name:"Restaurant", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566827695/wfipqov9if1sxhmmpwx3.jpg")
 
 
 
@@ -93,7 +93,9 @@ potty = Feature.create!(name:"Potty available")
 wc_potty = FeatureCategory.create!(feature: potty, category: wc)
 diapers = Feature.create!(name:"Diapers available")
 wc_diapers = FeatureCategory.create!(feature: diapers, category: wc)
+changing_room = Feature.create!(name:"Nice changing room")
 wc_changing_room = FeatureCategory.create!(feature: changing_room, category: wc)
+changing_table = Feature.create!(name:"Nice changing table")
 wc_changing_table = FeatureCategory.create!(feature: changing_table, category: wc)
 act_pram = FeatureCategory.create!(feature: pram, category: activity)
 activities = Feature.create!(name:"Organised activities for kids")
@@ -114,7 +116,7 @@ Facility.create(name: "teste", user: user2, category: restaurant, address: "barc
 
 
 puts "resto test"
-Facility.create!(
+facility1 = Facility.create!(
   name: "Resto Doudou",
   user: user2,
   category: restaurant,
@@ -124,7 +126,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
   )
 
-Facility.create!(
+facility2 = Facility.create!(
   name: "Restaurant du quartier",
   user: user1,
   category: restaurant,
@@ -134,7 +136,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1556742393-d75f468bfcb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
   )
 
-Facility.create!(
+facility3 = Facility.create!(
   name: "The English Rose Cafe and Tea Shop",
   user: user2,
   category: restaurant,
@@ -144,7 +146,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1517740642137-bc729c123aa5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80"
   )
 
-Facility.create!(
+facility4 = Facility.create!(
   name: "Mother Mash",
   user: user1,
   category: restaurant,
@@ -155,7 +157,7 @@ Facility.create!(
   )
 
 
-Facility.create!(
+facility5 = Facility.create!(
   name: "El sur",
   user: user2,
   category: restaurant,
@@ -165,7 +167,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1526069631228-723c945bea6b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
   )
 
-Facility.create!(
+facility6 = Facility.create!(
   name: "Juana la Loca",
   user: user1,
   category: restaurant,
@@ -178,7 +180,7 @@ Facility.create!(
 
 
 puts "create playground"
-Facility.create!(
+facility7 = Facility.create!(
   name: "Parc Tintin",
   user: user2,
   category: playground,
@@ -187,7 +189,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1460788150444-d9dc07fa9dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
   )
 
-Facility.create!(
+facility8 = Facility.create!(
   name: "Parc de Jeux",
   user: user1,
   category: playground,
@@ -196,7 +198,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1552537595-b30edb7afd9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
   )
 
-Facility.create!(
+facility9 = Facility.create!(
   name: "Fortune Street Park",
   user: user2,
   category: playground,
@@ -205,7 +207,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1556863402-b5d84ed0b6d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
   )
 
-Facility.create!(
+facility10 = Facility.create!(
   name: "Allen Gardens",
   user: user2,
   category: playground,
@@ -214,7 +216,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1553158399-3796bdbc82fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
   )
 
-Facility.create!(
+facility11 = Facility.create!(
   name: "Zona de Recreo",
   user: user2,
   category: playground,
@@ -223,7 +225,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1560831269-3faa2fc0b932?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
   )
 
-Facility.create!(
+facility12 = Facility.create!(
   name: "Parque Félix",
   user: user2,
   category: playground,
@@ -234,7 +236,7 @@ Facility.create!(
 
 
 puts "create WC"
-Facility.create!(
+ facility13 = Facility.create!(
   name: "WC publique Louvre",
   user: user2,
   category: wc,
@@ -244,7 +246,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1551514349-61a9c164186c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1039&q=80"
   )
 
-Facility.create!(
+facility14 = Facility.create!(
   name: "WC de la gare",
   user: user2,
   category: wc,
@@ -254,7 +256,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1518618750560-8f07abde4e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1150&q=80"
   )
 
-Facility.create!(
+facility15 = Facility.create!(
   name: "WC of the station",
   user: user1,
   category: wc,
@@ -264,7 +266,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1465257474426-bd133d4db35e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
   )
 
-Facility.create!(
+facility16 = Facility.create!(
   name: "Liverpool Street Station",
   user: user2,
   category: wc,
@@ -274,7 +276,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1533429408967-dcefa1c13fd5?ixlib=rb-1.2.1&auto=format&fit=crop&w=957&q=80"
   )
 
-Facility.create!(
+facility17 = Facility.create!(
   name: "WC de la estacion",
   user: user1,
   category: wc,
@@ -284,7 +286,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1544093722-c84672dd328a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
   )
 
-Facility.create!(
+facility18 = Facility.create!(
   name: "WC gloria",
   user: user1,
   category: wc,
@@ -297,7 +299,7 @@ Facility.create!(
 
 
 puts "create activity"
-Facility.create!(
+facility19 = Facility.create!(
   name: "London Dungeons",
   user: user1,
   category: activity,
@@ -307,7 +309,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1561649170-8bde352e0369?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
   )
 
-Facility.create!(
+facility20 = Facility.create!(
   name: "The Regent’s Park",
   user: user1,
   category: activity,
@@ -317,7 +319,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1446844805183-9f5af45f89ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
   )
 
-Facility.create!(
+facility21 = Facility.create!(
   name: "Estanque Grande del Buen Retiro",
   user: user2,
   category: activity,
@@ -327,7 +329,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1552676382-77b33d7639fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
   )
 
-Facility.create!(
+facility22 = Facility.create!(
   name: "Bungee jumping loco loco",
   user: user1,
   category: activity,
@@ -337,7 +339,7 @@ Facility.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1560111137-72f7022e94c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
 )
 
-Facility.create!(
+facility23 = Facility.create!(
   name: "Le Parc des Buttes Chaumont",
   user: user2,
   category: activity,
@@ -347,7 +349,7 @@ Facility.create!(
   remote_photo_url: "https://staygenerator.com/web/media/parallel/paris/neighbourhoods/parcdechuttes.jpg?mode=max&quality=100"
   )
 
-Facility.create!(
+facility24 = Facility.create!(
   name: "Bois de Boulogne",
   user: user2,
   category: activity,
@@ -356,6 +358,148 @@ Facility.create!(
   website_link: "",
   remote_photo_url: "https://www.transilien.com/sites/default/files/styles/editorial/public/thumbnails/image/bois-de-boulogne_atlantis-fotolia_com_414x311.jpg?itok=wWFJ_-33"
   )
+
+puts "create feature facilities"
+FeatureFacility.create!(
+  facility_id: facility1.id, feature_id: high_chair.id)
+FeatureFacility.create!(
+  facility_id: facility1.id, feature_id: pram.id)
+FeatureFacility.create!(
+  facility_id: facility1.id, feature_id: menu.id)
+FeatureFacility.create!(
+  facility_id: facility1.id, feature_id: health.id)
+FeatureFacility.create!(
+  facility_id: facility2.id, feature_id: quality.id)
+FeatureFacility.create!(
+  facility_id: facility2.id, feature_id: buff.id)
+FeatureFacility.create!(
+  facility_id: facility2.id, feature_id: fast.id)
+FeatureFacility.create!(
+  facility_id: facility2.id, feature_id: quality.id)
+FeatureFacility.create!(
+  facility_id: facility3.id, feature_id: corner.id)
+FeatureFacility.create!(
+  facility_id: facility3.id, feature_id: toilet.id)
+FeatureFacility.create!(
+  facility_id: facility3.id, feature_id: changing_room.id)
+FeatureFacility.create!(
+  facility_id: facility3.id, feature_id: changing_table.id)
+FeatureFacility.create!(
+  facility_id: facility3.id, feature_id: high_chair.id)
+FeatureFacility.create!(
+  facility_id: facility3.id, feature_id: pram.id)
+FeatureFacility.create!(
+  facility_id: facility4.id, feature_id: menu.id)
+FeatureFacility.create!(
+  facility_id: facility4.id, feature_id: health.id)
+FeatureFacility.create!(
+  facility_id: facility4.id, feature_id: quality.id)
+FeatureFacility.create!(
+  facility_id: facility5.id, feature_id: buff.id)
+FeatureFacility.create!(
+  facility_id: facility5.id, feature_id: fast.id)
+FeatureFacility.create!(
+  facility_id: facility6.id, feature_id: quality.id)
+FeatureFacility.create!(
+  facility_id: facility6.id, feature_id: corner.id)
+FeatureFacility.create!(
+  facility_id: facility6.id, feature_id: toilet.id)
+FeatureFacility.create!(
+  facility_id: facility1.id, feature_id: changing_room.id)
+FeatureFacility.create!(
+  facility_id: facility1.id, feature_id: changing_table.id)
+FeatureFacility.create!(
+  facility_id: facility8.id, feature_id: age_1.id)
+FeatureFacility.create!(
+  facility_id: facility8.id, feature_id: age_2.id)
+FeatureFacility.create!(
+  facility_id: facility8.id, feature_id: age_3.id)
+FeatureFacility.create!(
+  facility_id: facility8.id, feature_id: wc_close.id)
+FeatureFacility.create!(
+  facility_id: facility8.id, feature_id: water.id)
+FeatureFacility.create!(
+  facility_id: facility9.id, feature_id: enclosed.id)
+FeatureFacility.create!(
+  facility_id: facility9.id, feature_id: nature.id)
+FeatureFacility.create!(
+  facility_id: facility9.id, feature_id: football.id)
+FeatureFacility.create!(
+  facility_id: facility9.id, feature_id: basket.id)
+FeatureFacility.create!(
+  facility_id: facility10.id, feature_id: pingpong.id)
+FeatureFacility.create!(
+  facility_id: facility10.id, feature_id: age_1.id)
+FeatureFacility.create!(
+  facility_id: facility10.id, feature_id: age_2.id)
+FeatureFacility.create!(
+  facility_id: facility10.id, feature_id: age_3.id)
+FeatureFacility.create!(
+  facility_id: facility11.id, feature_id: wc_close.id)
+FeatureFacility.create!(
+  facility_id: facility11.id, feature_id: water.id)
+FeatureFacility.create!(
+  facility_id: facility11.id, feature_id: enclosed.id)
+FeatureFacility.create!(
+  facility_id: facility11.id, feature_id: nature.id)
+FeatureFacility.create!(
+  facility_id: facility11.id, feature_id: football.id)
+FeatureFacility.create!(
+  facility_id: facility11.id, feature_id: basket.id)
+FeatureFacility.create!(
+  facility_id: facility12.id, feature_id: pingpong.id)
+FeatureFacility.create!(
+  facility_id: facility12.id, feature_id: age_1.id)
+FeatureFacility.create!(
+  facility_id: facility12.id, feature_id: age_2.id)
+FeatureFacility.create!(
+  facility_id: facility12.id, feature_id: age_3.id)
+FeatureFacility.create!(
+  facility_id: facility12.id, feature_id: wc_close.id)
+FeatureFacility.create!(
+  facility_id: facility12.id, feature_id: water.id)
+FeatureFacility.create!(
+  facility_id: facility13.id, feature_id: diapers.id)
+FeatureFacility.create!(
+  facility_id: facility13.id, feature_id: potty.id)
+FeatureFacility.create!(
+  facility_id: facility13.id, feature_id: changing_room.id)
+FeatureFacility.create!(
+  facility_id: facility14.id, feature_id: changing_table.id)
+FeatureFacility.create!(
+  facility_id: facility14.id, feature_id: changing_table.id)
+FeatureFacility.create!(
+  facility_id: facility14.id, feature_id: diapers.id)
+FeatureFacility.create!(
+  facility_id: facility15.id, feature_id: changing_room.id)
+FeatureFacility.create!(
+  facility_id: facility16.id, feature_id: changing_table.id)
+FeatureFacility.create!(
+  facility_id: facility16.id, feature_id: potty.id)
+FeatureFacility.create!(
+  facility_id: facility17.id, feature_id: diapers.id)
+FeatureFacility.create!(
+  facility_id: facility17.id, feature_id: changing_room.id)
+FeatureFacility.create!(
+  facility_id: facility18.id, feature_id: changing_table.id)
+FeatureFacility.create!(
+  facility_id: facility19.id, feature_id: activities.id)
+FeatureFacility.create!(
+  facility_id: facility19.id, feature_id: interactive.id)
+FeatureFacility.create!(
+  facility_id: facility20.id, feature_id: resto.id)
+FeatureFacility.create!(
+  facility_id: facility20.id, feature_id: activities.id)
+FeatureFacility.create!(
+  facility_id: facility21.id, feature_id: interactive.id)
+FeatureFacility.create!(
+  facility_id: facility22.id, feature_id: resto.id)
+FeatureFacility.create!(
+  facility_id: facility23.id, feature_id: activities.id)
+FeatureFacility.create!(
+  facility_id: facility24.id, feature_id: resto.id)
+
+puts "created feature facilities"
 
 puts "created facilities"
 
