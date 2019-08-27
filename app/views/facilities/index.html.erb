@@ -24,12 +24,12 @@
 
         <div class="card-facility-content">
           <ul>
+            <div class="with-distance">
             <li><%= link_to facility.name, facility_path(facility) %></li>
-            <li>
-              <p>
-                <%= facility.get_distance(@user_location) %> km
-              </p>
-            </li>
+            <li><p>
+              <%= facility.get_distance(@user_location) %> km
+            </p></li>
+            </div>
             <li><%= facility.address %></li>
             <li><%= facility.city.name %></li>
           </ul>
