@@ -2,7 +2,7 @@
 
 .show-container {
   background-color: white;
-  padding: 10px;
+  padding: 15px;
   margin: 0px;
 
   ul {
@@ -12,6 +12,11 @@
 
   li {
     font-size: 15px;
+  }
+
+  h4 {
+    opacity: .9;
+    font-weight: bolder;
   }
 
 .show_info {
@@ -25,12 +30,15 @@
     font-weight: 300;
   }
   .facility_details {
-    padding: 10px;
+    padding-right: 5px;
   }
-
-
 }
 
+.show-name {
+  display: flex;
+  justify-content: space_between;
+  align-items: center;
+}
 
 
   .review-box {
@@ -60,13 +68,26 @@
   font-size: 30px;
   color: $pink;
   opacity: .9;
-  margin-left: 15px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  border-radius: 50%;
 }
 
 
 .back-btn {
   width: 100vw;
+  position: sticky;
+  bottom: 38px;
 }
+
+.review-btn {
+  padding: 10px;
+  display: flex;
+  justify-item: center;
+  background-color: $green;
+  border-radius: 12px;
+  color: white;
+}
+
 
 
 
