@@ -15,3 +15,26 @@
   background-color: #49A04E;
 }
 
+.button-pink {
+  background-color: $pink;
+  color: white;
+  border-radius: 12px;
+  padding: 8px 24px;
+
+}
+
+.button-ghost {
+  background-color: white;
+  color: $pink;
+  border-radius: 12px;
+  border: solid 1px $pink;
+  padding: 8px 24px;
+  transition: opacity 0.3s ease;
+}
+
+.button-wide {
+  width: 100%;
+}
+
+
+
