@@ -49,12 +49,16 @@
         <p>6-8 years</p>
         </div>
       </div>
+      <div class="aligned-content">
+      <div class="aligned-buttons">
       <%= f.input :photo, input_html: { class: "inputfile" }, label_html: { class: "black-bordered-btn" } %>
       <%= f.input :photo_cache, as: :hidden %>
-      <div class="aligned-buttons">
-        <%= f.button :submit, class: "two_last_buttons_signup" %>
-        <%= render "devise/shared/links" %>
-      </div>
+        <%= f.button :submit, class: "black-bordered-btn-two" %>
+        </div>
+        <div class="redirect-to-login">
+    </div>
+
+    <%= render "devise/shared/links" %>
     </div>
   <% end %>
 </div>

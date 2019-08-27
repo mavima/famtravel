@@ -21,3 +21,11 @@
     background-color: red;
 }
 }
+
+.reviews-buttons {
+    display: flex;
+    margin-top: 16px;
+    .black-bordered-btn {
+      margin-right: 10px;
+    }
+  }

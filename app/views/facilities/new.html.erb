@@ -15,8 +15,15 @@
     <%= f.input :category_id, collection: @categories, as: :hidden %>
     <%= f.input :city_id, collection: @cities %>
     <%= link_to "Can't find your city?", new_city_path(category_id: params[:category_id]), { :class=>"remove_text_decoration" } %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit "Add", class: "btn btn-primary", class: "black-bordered-btn-two" %>
+    <div class="facilities-buttons">
+      <div>
+      <%= f.input :photo, input_html: { class: "inputfile" }, label_html: { class: "btn black-bordered-btn" } %>
+      </div>
+      <%= f.input :photo_cache, as: :hidden %>
+      <div>
+      <%= f.submit "Add city", class: "btn black-bordered-btn-two" %>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>

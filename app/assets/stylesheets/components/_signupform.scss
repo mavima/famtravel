@@ -12,9 +12,6 @@
 margin: 0px 0px 0px 0px;
 padding: 0px 0px 0px 0px;
 }
-.btn {
-  margin-bottom: 50px;
-}
 .session-form {
   height: 700px;
 }
@@ -79,7 +76,16 @@ p {
   align-items: baseline;
   // background-color: #FCF7F7;
   .btn {
-    background-color: #49A04E;
+    background-color: #BE4A66;
+  }
+  .black-bordered-btn {
+    margin-right: 10px;
+    border-radius: 12px !important;
+
+  }
+  .black-bordered-btn-two {
+    margin-right: 10px;
+    border-radius: 12px !important;
   }
   a {
     color: black;
@@ -106,6 +112,11 @@ p {
 }
 }
 
-
+.redirect-to-login {
+ a {
+  color: black;
+  margin: 0px;
+  }
+}
 
 
