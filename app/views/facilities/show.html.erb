@@ -10,10 +10,10 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
     <h4><%= @facility.name  %></h4>
     <% if current_user&.favorited?(@facility) %>
     <% favourite = current_user.get_fav_instances(@facility) %>
-    <h6><%= link_to "", favourite_path(favourite), method: :delete, class: "fas fa-heart heart_unchecked" %></h6>
+    <p><%= link_to "", favourite_path(favourite), method: :delete, class: "fas fa-heart heart_unchecked" %></p>
 
     <% else %>
-    <h6><%= link_to "", facility_favourites_path(@facility), method: :post, class: "fas fa-heart heart_checked" %></h6>
+    <p><%= link_to "", facility_favourites_path(@facility), method: :post, class: "fas fa-heart heart_checked" %></p>
     <% end %>
   </div>
 
@@ -21,9 +21,9 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
 
   <div class="show_info">
     <div class="facility_details">
-      <h6><%= @facility.city.name %></h6>
-      <h6><%= @facility.address %></h6>
-      <h6><%= @facility.website_link %></h6>
+      <p><%= @facility.city.name %></p>
+      <p><%= @facility.address %></p>
+      <p><%= @facility.website_link %></p>
 
       <% @facility.average_rating.times do%>
       <span class="fa fa-star checked"></span>
