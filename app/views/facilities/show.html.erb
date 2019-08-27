@@ -31,11 +31,15 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
       <% (5 -@facility.average_rating).times do%>
       <span class="fa fa-star empty"></span>
       <% end %>
+      <div class="review-number">Reviews: <%= @facility.reviews.count %></div>
     </div>
+
       <!-- code added for the map -->
-      <%=  link_to facility_map_path(@facility) do  %>
-        <div id="map" style="width: 200px; height: 200px; "data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"> </div>
-      <% end %>
+      <div class="show-map">
+        <%=  link_to facility_map_path(@facility) do  %>
+          <div id="map" style="width: 200px; height: 200px; "data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"> </div>
+        <% end %>
+      </div>
 </div>
   <br>
   <%= link_to "Home page", root_path, class: "btn btn-primary" %>
@@ -55,9 +59,17 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
        <% end %>
         <br>
        <p><%= review.content %></p>
-       <p class="reviewer"><%=  review.user.first_name %> from <% review.user.country %></p>
        <% if review.photo.present? %>
-       <%= cl_image_tag review.photo, height: 150, width: 200, crop: :fill %></p>
+       <%= cl_image_tag review.photo, height: 150, width: 200, crop: :fill %>
+       <p class="reviewer"><%=  review.user.first_name %> from <% review.user.country %>
+      <% if review.user.baby %>
+        <i class="fas fa-baby-carriage review-icons"></i>
+      <%  elsif review.user.toddler %>
+        <i class="fas fa-child review-icons"></i>
+      <%  elsif review.user.child %>
+        <i class="fas fa-bicycle review-icons"></i>
+      <% end %>
+     </p>
        <% end %>
      </div>
      <br>
