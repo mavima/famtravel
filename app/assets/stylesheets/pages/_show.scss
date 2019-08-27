@@ -32,6 +32,7 @@
 }
 
 
+
   .review-box {
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     padding: 10px;
@@ -53,8 +54,21 @@
       font-size: 16px;
     }
   }
+}
+
+.back-btn .fa-arrow-circle-left {
+  font-size: 30px;
+  color: $pink;
+  opacity: .9;
+  margin-top: 640px;
+  margin-left: 15px;
+}
 
 
+.back-btn {
+  position: sticky;
+  bottom: 30px;
+  left: 30px;
 
 }
 

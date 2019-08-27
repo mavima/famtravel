@@ -57,7 +57,7 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
        <% (5 - review.rating).times do  %>
        <span class="fa fa-star empty"></span>
        <% end %>
-        <br>
+       <br>
        <p><%= review.content %></p>
        <% if review.photo.present? %>
        <%= cl_image_tag review.photo, height: 150, width: 200, crop: :fill %>
@@ -77,3 +77,8 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
      <br>
    </div>
  </div>
+ <div class="back-btn">
+  <%= link_to :back do %>
+  <i class="fas fa-arrow-circle-left"></i>
+  <% end %>
+</div>
