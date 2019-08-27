@@ -2,7 +2,7 @@ class FacilitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if params[:search][:keyword] == ""
+    if params[:search][:city_id] == ""
       flash[:notice] = "Please put a location"
       redirect_to root_path
       return
@@ -10,7 +10,7 @@ class FacilitiesController < ApplicationController
 
     @facilities = policy_scope(Facility)
 
-    @facilities = @facilities.joins(:city).where("cities.name ILIKE ?", params[:search][:keyword])
+    @facilities = @facilities.joins(:city).where(city_id: params[:search][:city_id])
     @facilities = @facilities.joins(:category).where("categories.id = ?", params[:search][:category_id]) if params[:search][:category_id].present?
   end
 

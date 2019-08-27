@@ -60,25 +60,27 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
        <br>
        <p><%= review.content %></p>
        <% if review.photo.present? %>
-       <%= cl_image_tag review.photo, height: 150, width: 200, crop: :fill %>
-       <p class="reviewer"><%=  review.user.first_name %> from <% review.user.country %>
+        <%= cl_image_tag review.photo, height: 150, width: 200, crop: :fill %>
+       <% end %>
+       <p class="reviewer"><%=  review.user.first_name %> from <%= review.user.country %>
       <% if review.user.baby %>
         <i class="fas fa-baby-carriage review-icons"></i>
-      <%  elsif review.user.toddler %>
+      <% end %>
+      <% if review.user.toddler %>
         <i class="fas fa-child review-icons"></i>
-      <%  elsif review.user.child %>
+      <% end %>
+      <% if review.user.child %>
         <i class="fas fa-bicycle review-icons"></i>
       <% end %>
      </p>
-       <% end %>
      </div>
      <br>
      <% end %>
      <br>
    </div>
- </div>
- <div class="back-btn">
+    <div class="back-btn">
   <%= link_to :back do %>
-  <i class="fas fa-arrow-circle-left"></i>
+    <i class="fas fa-arrow-circle-left"></i>
   <% end %>
 </div>
+ </div>
