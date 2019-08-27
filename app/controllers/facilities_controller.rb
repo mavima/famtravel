@@ -12,6 +12,7 @@ class FacilitiesController < ApplicationController
 
     @facilities = @facilities.joins(:city).where("cities.name ILIKE ?", params[:search][:keyword])
     @facilities = @facilities.joins(:category).where("categories.id = ?", params[:search][:category_id]) if params[:search][:category_id].present?
+    get_user_location
   end
 
   def new
@@ -66,6 +67,12 @@ class FacilitiesController < ApplicationController
   end
 
   private
+
+  def get_user_location
+    @user_location = Geocoder.search(request.remote_ip).first.coordinates
+    #REMOVE NEXT LINE IN PRODUCTION
+    @user_location = [51.509865, -0.118092]
+  end
 
   def facility_params
     params.require(:facility).permit(:city_id, :name, :address, :rating, :photo, :website_link, :latitude, :longitude, :category_id, :photo_cache, feature_ids: [])

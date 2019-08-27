@@ -38,5 +38,13 @@ class Facility < ApplicationRecord
     puts "testing"
   end
 
+  def get_distance(coordinates)
+    dist = Geocoder::Calculations.distance_between(coordinates, [self.latitude, self.longitude])
+    if dist.to_f.nan?
+      return "unknown"
+    else
+      return dist.round(2)
+    end
+  end
 
 end
