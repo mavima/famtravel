@@ -17,7 +17,7 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
     <% end %>
   </div>
 
-  <br>
+
 
   <div class="show_info">
     <div class="facility_details">
@@ -42,11 +42,11 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
       </div>
   </div>
   <br>
-      <ul>
+      <div class="features-grid">
         <% @features.each do |feature| %>
-        <li><i class="fa fa-check"></i> <%= feature.name %></li>
+        <div class="feature"><i class="fa fa-check"></i> <%= feature.name %></div>
         <% end %>
-      </ul>
+      </div>
       <br>
 
     <%= link_to "Add a review", new_facility_review_path(@facility), class: "review-btn" %>
