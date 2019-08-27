@@ -42,6 +42,7 @@ class FacilitiesController < ApplicationController
       {
         lat: @facility.latitude,
         lng: @facility.longitude,
+        image_url: helpers.asset_url('placemarker.png')
       }
     ]
     authorize @facility
@@ -73,7 +74,8 @@ class FacilitiesController < ApplicationController
     @markers = [
       {
         lat: @facility.latitude,
-        lng: @facility.longitude
+        lng: @facility.longitude,
+        image_url: helpers.asset_url('placemarker.png')
       }
     ]
     authorize @facility

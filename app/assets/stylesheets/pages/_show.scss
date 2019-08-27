@@ -2,7 +2,7 @@
 
 .show-container {
   background-color: white;
-  padding: 10px;
+  padding: 15px;
   margin: 0px;
 
   ul {
@@ -14,10 +14,16 @@
     font-size: 15px;
   }
 
+  h4 {
+    opacity: .9;
+    font-weight: bolder;
+  }
+
 .show_info {
   display: flex;
   overflow: hidden;
-  align-items: space_between;
+  // align-items: space_between;
+  // justify-content: space_between;
 
     .review-number {
     font-size: 12px;
@@ -25,22 +31,25 @@
     font-weight: 300;
   }
   .facility_details {
-    padding: 10px;
+    padding-right: 5px;
+    min-width: 184px;
   }
-
-
 }
-
-
 
   .review-box {
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     padding: 10px;
     margin-right: 0;
     margin-left: 0;
+    border-radius: 6px;
 
     p {
       font-size: 14px;
+    }
+    img {
+      height: 50px;
+      width: 65px;
+      margin-bottom: 16px;
     }
 
     .reviewer {
@@ -60,12 +69,36 @@
   font-size: 30px;
   color: $pink;
   opacity: .9;
-  margin-left: 15px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  border-radius: 50%;
 }
 
 
 .back-btn {
   width: 100vw;
+  position: sticky;
+  bottom: 38px;
+}
+
+.review-btn {
+  padding: 10px;
+  padding-left: 37%;
+  display: flex;
+  justify-item: center;
+  background-color: $pink;
+  border-radius: 12px;
+  color: white;
+}
+
+.show-name {
+  margin-bottom: 25px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // grid-gap: 10px;
+
 }
 
 

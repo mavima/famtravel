@@ -1,20 +1,42 @@
+.profile-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+
+  .name {
+    font-weight: 400;
+  }
+
+  .avatar {
+  width: 110px;
+  border-radius: 50%;
+  }
+}
+
+
+
 .js-tabs{
   width: 100%;
   padding-bottom: 0 !important;
   position: relative;
 }
-.tabs-header{
-  width: 100%;
+.tabs-header {
   display: flex;
   justify-content: left;
-  padding-left: 20px;
+  padding-left: 10px;
   background-color: $pink;
-  .tab{
-    padding: 10px 15px;
+  border-radius: 8px;
+  margin-right: 5%;
+  margin-left: 5%;
+  .tab {
+    margin: 10px 7px;
     color: white;
-    cursor: pointer;
     min-width: 90px;
-    transition: all 0.5s ;
+    transition: all 0.5s;
+    border-radius: 6px;
+    padding: 5px;
+    text-align: center;
+
   }
 }
 

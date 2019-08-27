@@ -5,25 +5,25 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
 <% end %>
 
 <div class="show-container">
+
+  <div class="show-name">
+    <h4><%= @facility.name  %></h4>
+    <% if current_user&.favorited?(@facility) %>
+    <% favourite = current_user.get_fav_instances(@facility) %>
+    <p><%= link_to "", favourite_path(favourite), method: :delete, class: "fas fa-heart heart_unchecked" %></p>
+
+    <% else %>
+    <p><%= link_to "", facility_favourites_path(@facility), method: :post, class: "fas fa-heart heart_checked" %></p>
+    <% end %>
+  </div>
+
+
+
   <div class="show_info">
-
     <div class="facility_details">
-      <h2><%= @facility.name  %></h2>
-      <ul>
-        <% @features.each do |feature| %>
-        <li><i class="fa fa-check"></i> <%= feature.name %></li>
-        <% end %>
-      </ul>
-      <h6><%= @facility.city.name %></h6>
-      <h6><%= @facility.address %></h6>
-      <h6><%= @facility.website_link %></h6>
-      <% if current_user&.favorited?(@facility) %>
-      <% favourite = current_user.get_fav_instances(@facility) %>
-      <h6><%= link_to "", favourite_path(favourite), method: :delete, class: "fas fa-heart heart_unchecked" %></h6>
-
-      <% else %>
-      <h6><%= link_to "", facility_favourites_path(@facility), method: :post, class: "fas fa-heart heart_checked" %></h6>
-      <% end %>
+      <p><%= @facility.city.name %></p>
+      <p><%= @facility.address %></p>
+      <p><%= @facility.website_link %></p>
 
       <% @facility.average_rating.times do%>
       <span class="fa fa-star checked"></span>
@@ -40,12 +40,17 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
           <div id="map" style="width: 200px; height: 200px; "data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"> </div>
         <% end %>
       </div>
-</div>
+  </div>
   <br>
-  <%= link_to "Home page", root_path, class: "btn btn-primary" %>
-  <%= link_to "Back to the list", :back, class: "btn btn-primary" %>
+      <div class="features-grid">
+        <% @features.each do |feature| %>
+        <div class="feature"><i class="fa fa-check"></i> <%= feature.name %></div>
+        <% end %>
+      </div>
+      <br>
 
-  <%= link_to "Add a review", new_facility_review_path(@facility), class: "btn btn-primary" %>
+    <%= link_to "Add a review", new_facility_review_path(@facility), class: "review-btn" %>
+
   <div>
     <br>
     <% @facility.reviews.each do |review| %>
@@ -79,8 +84,8 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
      <br>
    </div>
     <div class="back-btn">
-  <%= link_to :back do %>
+  <%= link_to facilities_path(search: {city_id: @facility.city_id}) do %>
     <i class="fas fa-arrow-circle-left"></i>
   <% end %>
 </div>
- </div>
+
