@@ -84,10 +84,7 @@ p {
   a {
     color: black;
   }
-}
-
-
-.inputfile {
+  .inputfile {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -107,4 +104,8 @@ p {
 .inputfile + label:hover {
     background-color: red;
 }
+}
+
+
+
 
