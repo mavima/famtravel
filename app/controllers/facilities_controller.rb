@@ -86,7 +86,7 @@ class FacilitiesController < ApplicationController
   def get_user_location
     @user_location = Geocoder.search(request.remote_ip).first.coordinates
     #REMOVE NEXT LINE IN PRODUCTION
-    @user_location = [51.509865, -0.118092]
+    #@user_location = [51.509865, -0.118092]
   end
 
   def facility_params
