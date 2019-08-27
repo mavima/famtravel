@@ -2,7 +2,7 @@
   width: 100%;
   padding: 60px 50px 50px 50px !important;
   margin: 0px !important;
-  background-color: #FCF7F7;
+  height: 1100px;
 .simple_form{
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -11,9 +11,6 @@
 .form-actions{
 margin: 0px 0px 0px 0px;
 padding: 0px 0px 0px 0px;
-}
-.btn {
-  margin-bottom: 50px;
 }
 .session-form {
   height: 700px;
@@ -74,20 +71,26 @@ p {
   display: flex;
   margin: 20px;
 }
-.d-flex {
-  display: flex !important;
-  align-items: baseline !important;
-  background-color: #FCF7F7;
+.aligned-buttons {
+  display: flex;
+  align-items: baseline;
+  // background-color: #FCF7F7;
   .btn {
-    background-color: #49A04E;
+    background-color: #BE4A66;
+  }
+  .black-bordered-btn {
+    margin-right: 10px;
+    border-radius: 12px !important;
+
+  }
+  .black-bordered-btn-two {
+    margin-right: 10px;
+    border-radius: 12px !important;
   }
   a {
     color: black;
   }
-}
-
-
-.inputfile {
+  .inputfile {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -107,4 +110,13 @@ p {
 .inputfile + label:hover {
     background-color: red;
 }
+}
+
+.redirect-to-login {
+ a {
+  color: black;
+  margin: 0px;
+  }
+}
+
 
