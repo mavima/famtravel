@@ -48,6 +48,7 @@ class FacilitiesController < ApplicationController
 
   def edit
     @facility = Facility.find(params[:id])
+    set_cats_and_feats
     authorize @facility
   end
 
