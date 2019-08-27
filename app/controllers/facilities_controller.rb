@@ -40,7 +40,7 @@ class FacilitiesController < ApplicationController
     @markers = [
       {
         lat: @facility.latitude,
-        lng: @facility.longitude
+        lng: @facility.longitude,
       }
     ]
     authorize @facility
