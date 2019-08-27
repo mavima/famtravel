@@ -22,7 +22,8 @@
 .show_info {
   display: flex;
   overflow: hidden;
-  align-items: space_between;
+  // align-items: space_between;
+  // justify-content: space_between;
 
     .review-number {
     font-size: 12px;
@@ -31,21 +32,16 @@
   }
   .facility_details {
     padding-right: 5px;
+    min-width: 184px;
   }
 }
-
-.show-name {
-  display: flex;
-  justify-content: space_between;
-  align-items: center;
-}
-
 
   .review-box {
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     padding: 10px;
     margin-right: 0;
     margin-left: 0;
+    border-radius: 6px;
 
     p {
       font-size: 14px;
@@ -81,13 +77,24 @@
 
 .review-btn {
   padding: 10px;
+  padding-left: 37%;
   display: flex;
   justify-item: center;
-  background-color: $green;
+  background-color: $pink;
   border-radius: 12px;
   color: white;
 }
 
+.show-name {
+  margin-bottom: 25px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // grid-gap: 10px;
+
+}
 
 
 
