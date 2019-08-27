@@ -1,8 +1,13 @@
-  .index-buttons {
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 10px;
-    padding-top: 10px;
-  }
 
+.index-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.black-bordered-btn {
+  border: solid 1px #49A04E;;
+  padding: 6px 12px;
+}
 

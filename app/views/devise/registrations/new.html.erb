@@ -48,12 +48,14 @@
     <%= image_tag "bike.png", alt: "Le Wagon", width: 80 %>      </label>
     <p>6-8 years</p>
     </div>
-    </div>
-    <%= f.input :photo %>
+     </div>
+    <%= f.input :photo, input_html: { class: "inputfile" }, label_html: { class: "black-bordered-btn" } %>
     <%= f.input :photo_cache, as: :hidden %>
     <div class="d-flex">
     <%= f.button :submit, class: "two_last_buttons_signup" %>
     <%= render "devise/shared/links" %>
-     </div>
+   </div>
 <% end %>
+</div>
+</div>
 </div>
