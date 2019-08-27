@@ -1,7 +1,8 @@
 .sign-up-form-our-famtravel-app {
   width: 100%;
-  padding: 90px 50px 50px 50px !important;
+  padding: 60px 50px 50px 50px !important;
   margin: 0px !important;
+  background-color: #FCF7F7;
 .simple_form{
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -12,16 +13,16 @@ margin: 0px 0px 0px 0px;
 padding: 0px 0px 0px 0px;
 }
 .btn {
-  border: 1px solid black;
+  margin-bottom: 50px;
 }
 .session-form {
   height: 700px;
 }
 h2{
-  margin-bottom: 55px;
+  margin-bottom: 30px;
 }
 .email_field{
-  margin: 0px 10px 0px 0px;
+  margin: 10px 10px 0px 0px;
   padding: 0px 0px 0px 0px;
   font-size: 24px;
 }
@@ -44,7 +45,7 @@ a{
 margin: 0px 0px 0px 8px;
 }
 .password-confirmation-field {
-  margin: 10px 0px 0px 0px;
+  margin: 10px 10px 0px 0px;
   font-size: 24px;
 }
 .first-name-field {
@@ -60,10 +61,10 @@ margin: 0px 0px 0px 8px;
   font-size: 24px;
 }
 .two_last_buttons_signup {
-  margin: 20px 0px 0px 0px;
+  margin: 0px 0px 50px 0px;
 }
 .password-confirmation-field {
- margin-top: 16px;
+ margin-top: 10px;
  }
 p {
   margin-left: 14px;
@@ -76,8 +77,34 @@ p {
 .d-flex {
   display: flex !important;
   align-items: baseline !important;
-  margin-top: 34px !important;
+  background-color: #FCF7F7;
   .btn {
-    border: 1px solid black;
+    background-color: #49A04E;
+  }
+  a {
+    color: black;
   }
 }
+
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+

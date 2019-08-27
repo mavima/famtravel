@@ -2,7 +2,7 @@ class Facility < ApplicationRecord
   belongs_to :user
   belongs_to :city
   belongs_to :category
-  has_many :feature_facilities
+  has_many :feature_facilities, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :favourites, dependent: :destroy
   has_many :features, through: :feature_facilities
@@ -38,5 +38,13 @@ class Facility < ApplicationRecord
     puts "testing"
   end
 
+  def get_distance(coordinates)
+    dist = Geocoder::Calculations.distance_between(coordinates, [self.latitude, self.longitude])
+    if dist.to_f.nan?
+      return "unknown"
+    else
+      return dist.round(2)
+    end
+  end
 
 end
