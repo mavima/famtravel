@@ -34,6 +34,11 @@ class ApplicationPolicy
     false
   end
 
+  # Added this method the 26 august for the map
+  def map?
+    false
+  end
+
   class Scope
     attr_reader :user, :scope
 

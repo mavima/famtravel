@@ -40,7 +40,7 @@ class FacilitiesController < ApplicationController
     @markers = [
       {
         lat: @facility.latitude,
-        lng: @facility.longitude
+        lng: @facility.longitude,
       }
     ]
     authorize @facility
@@ -48,6 +48,7 @@ class FacilitiesController < ApplicationController
 
   def edit
     @facility = Facility.find(params[:id])
+    set_cats_and_feats
     authorize @facility
   end
 
@@ -62,6 +63,18 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
     @facility.destroy
     redirect_to root_path
+    authorize @facility
+  end
+
+  def map
+    @facility = Facility.find(params[:id])
+    @features = @facility.features
+    @markers = [
+      {
+        lat: @facility.latitude,
+        lng: @facility.longitude
+      }
+    ]
     authorize @facility
   end
 

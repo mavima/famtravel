@@ -7,17 +7,30 @@
 
   ul {
     list-style-type: none;
+    padding-left: 0;
   }
 
-  i {
-    font-size: 14px;
+  li {
+    font-size: 15px;
   }
 
-  .show_info {
-    display: flex;
-    overflow: hidden;
-    align-items: space_between;
+.show_info {
+  display: flex;
+  overflow: hidden;
+  align-items: space_between;
+
+    .review-number {
+    font-size: 12px;
+    opacity: 0.8;
+    font-weight: 300;
   }
+  .facility_details {
+    padding: 10px;
+  }
+
+
+}
+
 
 
   .review-box {
@@ -35,6 +48,11 @@
       font-weight: 300;
       opacity: 0.8;
     }
+
+    .review-icons {
+      color: $pink;
+      font-size: 16px;
+    }
   }
 }
 
@@ -46,10 +64,13 @@
   margin-left: 15px;
 }
 
+
 .back-btn {
   position: sticky;
   bottom: 30px;
   left: 30px;
+
 }
+
 
 
