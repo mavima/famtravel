@@ -13,7 +13,7 @@
   <% end %>
 </div>
 
-<nav id="menu">
+<nav id="menu" hidden>
   <header>
     <div id="closeSlideOut">
 
@@ -64,3 +64,14 @@
 
 </header>
 </nav>
+
+
+<script>
+  const showMenu = () => {
+    const menu = document.getElementById("menu");
+    menu.hidden = false
+  }
+
+  setTimeout(showMenu, 100);
+
+</script>
