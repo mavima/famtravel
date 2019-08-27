@@ -84,7 +84,7 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
      <br>
    </div>
     <div class="back-btn">
-  <%= link_to :back do %>
+  <%= link_to facilities_path(search: {city_id: @facility.city_id}) do %>
     <i class="fas fa-arrow-circle-left"></i>
   <% end %>
 </div>
