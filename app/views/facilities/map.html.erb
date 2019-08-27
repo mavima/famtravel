@@ -1,3 +1,9 @@
-<div id="map" style="width: 100vw; height: 100vh; overflow: hidden; "data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class="container-map">
+  <div id="map" class="map-relative" style="width: 100vw; height: calc(100vh - 50px); overflow: hidden; "data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-
+  <div class="map-absolute">
+    <%= link_to facility_path do %>
+      <i class="fas fa-arrow-circle-left"></i>
+    <% end %>
+  </div>
+</div>
