@@ -1,0 +1,15 @@
+.container-map{
+position: relative;
+}
+
+.map-absolute{
+  position: absolute;
+  top: 80vh;
+  left: 40px;
+}
+
+.map-absolute .fa-arrow-circle-left {
+ font-size: 30px;
+ color: $pink;
+ opacity: .9;
+}
