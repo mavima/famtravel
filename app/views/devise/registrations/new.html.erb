@@ -1,61 +1,64 @@
 <div class="sign-up-form-our-famtravel-app">
-<h2>Sign up</h2>
+ <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+ <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs session-form">
-    <%= f.input :first_name,
-                required: true,
-                label_html:  { class: "first-name-field"}  %>
-    <%= f.input :last_name,
-                required: true,
-                label_html:  { class: "last-name-field"}  %>
-    <%= f.input :country,
-                required: true,
-                label_html:  { class: "country-field"}  %>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                label_html:  { class: "email_field" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                label_html:  { class: "password_field"}  %>
-    <%= f.input :password_confirmation,
-                required: true,
-                label_html:  { class: "password-confirmation-field"}  %>
-                <div class="icons">
-    <div>
-    <input type="checkbox" name="user[baby]" id="baby">
-    <label for="baby">
-    <%= image_tag "pram.png", alt: "Le Wagon", width: 80 %>      </label>
-    <p>0-2 years</p>
+    <div class="form-inputs session-form">
+      <%= f.input :first_name,
+                  required: true,
+                  label_html:  { class: "first-name-field"}  %>
+      <%= f.input :last_name,
+                  required: true,
+                  label_html:  { class: "last-name-field"}  %>
+      <%= f.input :country,
+                  required: true,
+                  label_html:  { class: "country-field"}  %>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  label_html:  { class: "email_field" }%>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  label_html:  { class: "password_field"}  %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  label_html:  { class: "password-confirmation-field"}  %>
+      <div class="icons">
+       <div>
+          <input type="checkbox" name="user[baby]" id="baby">
+          <label for="baby">
+          <%= image_tag "pram.png", alt: "Le Wagon", width: 80 %>      </label>
+          <p>0-2 years</p>
+        </div>
+        <%#= f.input :baby,
+                  label_html:  { class: "pram"}  %>
+        <div>
+         <input type="checkbox" name="user[toddler]" id="toddler">
+         <label for="toddler">
+         <%= image_tag "sandbox.png", alt: "Le Wagon", width: 80 %>      </label>
+         <p>3-5 years</p>
+        </div>
+        <%#= f.input :child,
+                  label_html:  { class: "bike"}  %>
+        <div>
+         <input type="checkbox" name="user[child]" id="child">
+         <label for="child">
+         <%= image_tag "bike.png", alt: "Le Wagon", width: 80 %>      </label>
+        <p>6-8 years</p>
+        </div>
+      </div>
+      <div class="aligned-content">
+      <div class="aligned-buttons">
+      <%= f.input :photo, input_html: { class: "inputfile" }, label_html: { class: "black-bordered-btn" } %>
+      <%= f.input :photo_cache, as: :hidden %>
+        <%= f.button :submit, class: "black-bordered-btn-two" %>
+        </div>
+        <div class="redirect-to-login">
     </div>
-    <%#= f.input :baby,
-                label_html:  { class: "pram"}  %>
-    <div>
-    <input type="checkbox" name="user[toddler]" id="toddler">
-    <label for="toddler">
-    <%= image_tag "sandbox.png", alt: "Le Wagon", width: 80 %>      </label>
-    <p>3-5 years</p>
-    </div>
-    <%#= f.input :child,
-                label_html:  { class: "bike"}  %>
-    <div>
-    <input type="checkbox" name="user[child]" id="child">
-    <label for="child">
-    <%= image_tag "bike.png", alt: "Le Wagon", width: 80 %>      </label>
-    <p>6-8 years</p>
-    </div>
-     </div>
-    <%= f.input :photo, input_html: { class: "inputfile" }, label_html: { class: "black-bordered-btn" } %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <div class="d-flex">
-    <%= f.button :submit, class: "two_last_buttons_signup" %>
+
     <%= render "devise/shared/links" %>
-   </div>
-<% end %>
-</div>
-</div>
+    </div>
+  <% end %>
 </div>

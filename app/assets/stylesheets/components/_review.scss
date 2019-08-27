@@ -1,14 +1,6 @@
-.form-add-city {
-margin: 0px;
-padding: 60px 40px 0px 70px;
-
-.form-control {
-  width: 270px;
-}
-.btn {
-  margin-top: 12px;
-}
-.inputfile {
+.review-all {
+  padding: 40px;
+  .inputfile {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -29,3 +21,11 @@ padding: 60px 40px 0px 70px;
     background-color: red;
 }
 }
+
+.reviews-buttons {
+    display: flex;
+    margin-top: 16px;
+    .black-bordered-btn {
+      margin-right: 10px;
+    }
+  }

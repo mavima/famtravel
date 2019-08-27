@@ -24,15 +24,21 @@
 .all-share-your-tip {
   .container{
     padding: 30px;
-    background-color: #FCF7F7;
 
   }
-  .slideout-panel {
-    background-color: #FCF7F7 !important;
+  .black-bordered-btn{
+    margin: 10px 10px 0px 0px;
+  }
+  .black-bordered-btn-two {
+    margin: 10px 0px 0px 0px;
   }
 }
+
+.facilities-buttons {
+  display: flex;
 
 .add-city {
   display: flex;
   justify-content: space-between;
+
 }
