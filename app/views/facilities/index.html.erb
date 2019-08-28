@@ -1,10 +1,10 @@
 <div class="entire-page">
   <div class="top-of-page">
 
-    <div class="banner-photo">
-      <h3><%= City.find(params[:search][:city_id]).name %></h3>
+    <div class="banner-photo city-photo" style="background-image: url(<%=  City.find(params[:search][:city_id]).photo%>)">
+      <h1><%= City.find(params[:search][:city_id]).name %></h1>
 
-      <%= cl_image_tag City.find(params[:search][:city_id]).photo, class: "city-photo" %>
+      <%#= cl_image_tag City.find(params[:search][:city_id]).photo, class: "city-photo" %>
     </div>
     <br>
     <br>
