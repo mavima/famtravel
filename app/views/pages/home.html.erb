@@ -13,7 +13,6 @@
     <div class="form-search">
       <%= simple_form_for :search, method: :get, url: facilities_path do |f| %>
 
-
         <div class="search-bar">
           <% @cities = City.all %>
           <%= f.input :city_id, collection: @cities, label: "Where are you travelling to?" %>

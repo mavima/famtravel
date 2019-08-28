@@ -88,6 +88,10 @@
   background-color: $pink;
   border-radius: 12px;
   color: white;
+  &:hover {
+    text-decoration: none;
+    color: white;
+ }
 }
 
 .show-name {
@@ -99,6 +103,8 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
+
+
 
 
 
