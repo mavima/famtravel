@@ -88,6 +88,10 @@
   background-color: $pink;
   border-radius: 12px;
   color: white;
+  &:hover {
+    text-decoration: none;
+    color: white;
+ }
 }
 
 .show-name {
