@@ -25,28 +25,35 @@
       <%= f.input :password_confirmation,
                   required: true,
                   label_html:  { class: "password-confirmation-field"}  %>
-      <div class="icons">
+      <div class="icons checkboxjs">
        <div>
-          <input type="checkbox" name="user[baby]" id="baby">
+          <input type="checkbox" name="user[baby]" class="age-buttons hidden">
           <label for="baby">
-          <%= image_tag "pram.png", alt: "Le Wagon", width: 80 %>      </label>
+            <div class="boxjs">
+              <%= image_tag "pram.png", alt: "Le Wagon", width: 80 %>      </label>
           <p>0-2 years</p>
+            </div>
         </div>
         <%#= f.input :baby,
                   label_html:  { class: "pram"}  %>
         <div>
-         <input type="checkbox" name="user[toddler]" id="toddler">
+         <input type="checkbox" name="user[toddler]" class="age-buttons hidden">
          <label for="toddler">
+          <div class="boxjs">
          <%= image_tag "sandbox.png", alt: "Le Wagon", width: 80 %>      </label>
          <p>3-5 years</p>
+         </div>
         </div>
         <%#= f.input :child,
                   label_html:  { class: "bike"}  %>
         <div>
-         <input type="checkbox" name="user[child]" id="child">
+         <input type="checkbox" name="user[child]" class="age-buttons hidden">
          <label for="child">
+          <div class="boxjs">
+
          <%= image_tag "bike.png", alt: "Le Wagon", width: 80 %>      </label>
         <p>6-8 years</p>
+        </div>
         </div>
       </div>
       <div class="aligned-content">
@@ -59,3 +66,7 @@
     </div>
   <% end %>
 </div>
+
+<script>
+
+</script>

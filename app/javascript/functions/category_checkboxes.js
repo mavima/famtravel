@@ -2,14 +2,20 @@ const checkboxSelect = () => {
   const container = document.querySelector(".checkboxjs");
   if (container)
   {
-    const inputs = container.querySelectorAll("input");
-    const images = container.querySelectorAll(".cat-icon");
+    const inputs = container.querySelectorAll(".age-buttons");
+    const images = container.querySelectorAll(".boxjs");
     images.forEach((img) => {
       img.addEventListener("click", () => {
-        images.forEach((img2) => {
-          img2.classList.remove("selected");
-        })
-        img.classList.add("selected");
+        if (img.classList.contains("selected"))
+        {
+          img.classList.remove("selected");
+          inputs[Array.from(images).indexOf(img)].checked = false
+        }
+        else
+        {
+          img.classList.add("selected");
+          inputs[Array.from(images).indexOf(img)].checked = true
+        }
       })
     })
   }
