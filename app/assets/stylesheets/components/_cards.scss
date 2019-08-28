@@ -12,6 +12,12 @@
       width: 100%;
       object-fit: cover;
     }
+    a {
+      text-decoration: none;
+    }
+    li {
+      color: black;
+    }
   }
 
 .card-facility-content {
@@ -27,8 +33,9 @@
      list-style-type: none;
      // text-indent: -25px;
   }
-  a {
+  h6 {
     font-weight: bolder;
+    font-size: 17px;
     color: #BE4A66;
   }
 }
