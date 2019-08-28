@@ -1,8 +1,9 @@
 // Specific CSS for your home-page
 .banner {
-  background-image: url("https://www.localpassportfamily.com/wp-content/uploads/2019/01/London-Westminster-Bridge-with-kids-1024x682.jpg");
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(0,0,0,0)), url("https://images.unsplash.com/photo-1458546450666-ebb1e605853f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1948&q=80");
   background-size: cover;
-  height: 736px;
+  height: 300px;
+  width: 414px;
   z-index: -10;
 }
 
