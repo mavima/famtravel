@@ -21,7 +21,6 @@ gem 'devise'
 gem 'pundit'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
-gem "algoliasearch-rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
