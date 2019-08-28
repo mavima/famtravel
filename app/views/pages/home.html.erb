@@ -17,12 +17,15 @@
           <% @cities = City.all %>
           <%= f.input :city_id, collection: @cities, label: "Where are you travelling to?" %>
           <%#= f.input :keyword, label: "Where are you travelling to?" %>
-          
+
+        </div>
+        <div class="vertical-center">
+        <button type="submit"><i class="fa fa-search"></i></button>
         </div>
       <% end %>
-      <div class="vertical-center">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </div>
+
+
+
     </div>
   </div>
   <div class="home-image"></div>
