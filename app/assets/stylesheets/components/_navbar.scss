@@ -77,6 +77,10 @@
   }
 }
 
+#panel {
+  height: 100vh;
+}
+
 .slideout-menu {
   position: fixed;
   top: 0;
@@ -119,4 +123,3 @@
 .slideout-open .slideout-menu {
   display: block;
 }
-

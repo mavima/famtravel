@@ -1,25 +1,26 @@
-<div class="banner">
-  <div class="container-home">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <div class="logo-home"><h1>Famtravel</h1></div>
-        <div class="form-search">
+<div class="home-container">
 
-          <%= simple_form_for :search, method: :get, url: facilities_path do |f| %>
+  <div class="home-top-wrap">
+    <h1 class="home-logo">Famtravel</h1>
+    <div>
+    <h5>For travelling families</h5>
+    <p>"The best tips from one parent to another"</p>
+    </div>
+    <div class="form-search">
+      <%= simple_form_for :search, method: :get, url: facilities_path do |f| %>
 
+        <div class="search-bar">
+          <% @cities = City.all %>
+          <%= f.input :city_id, collection: @cities, label: "Where are you travelling to?" %>
+          <%#= f.input :keyword, label: "Where are you travelling to?" %>
 
-
-
-          <div class="search-bar">
-            <% @cities = City.all %>
-            <%= f.input :city_id, collection: @cities, label: "Where are you travelling to?" %>
-            <%#= f.input :keyword, label: "Where are you travelling to?" %>
-          </div>
-
-          <button type="submit"><i class="fa fa-search"></i></button>
-          <% end %>
         </div>
-      </div>
+
+      <% end %>
+              <div>
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
     </div>
   </div>
+  <div class="home-image"></div>
 </div>

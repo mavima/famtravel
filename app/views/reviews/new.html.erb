@@ -4,7 +4,7 @@
 <h2>Share your opinion with other users</h2>
 <div>
     <%= simple_form_for([@facility, @review]) do |f| %>
-    <%= f.input :content, label: "Tell us what do you think of this #{@category.name}" %>
+    <%= f.input :content, label: "Tell us what do you think of this #{@facility.category.name}" %>
     <% 5.times do |n|%>
       <i id="star_rating" class="fas fa-star fa-lg" data-value="<%= n + 1%>"></i>
     <% end %>
