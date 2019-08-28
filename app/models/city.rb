@@ -3,5 +3,4 @@ class City < ApplicationRecord
   validates :name, presence: true
   validates :country_city, presence: true
   mount_uploader :photo, PhotoUploader
-
 end
