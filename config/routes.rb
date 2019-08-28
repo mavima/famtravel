@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get '/about', to: 'pages#about'
+  get '/facilities/map', to: 'facilities#maps', as: 'facilities_map'
 
   resources :categories, only: [:index, :new, :create] do
     resources :facilities, only: [:new, :create]
