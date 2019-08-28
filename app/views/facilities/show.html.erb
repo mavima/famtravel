@@ -1,8 +1,12 @@
+
 <% if @facility.photo.url != nil %>
 <div id="banner-show-override" class="banner-show banner-picture-show-border" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
 url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill %>')">
 </div>
 <% end %>
+
+
+
 
 <div class="show-container">
 

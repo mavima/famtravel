@@ -2,6 +2,7 @@
   <div class="top-of-page">
 
     <div class="banner-photo">
+      <h3><%= City.find(params[:search][:city_id]).name %></h3>
 
       <%= cl_image_tag City.find(params[:search][:city_id]).photo, class: "city-photo" %>
     </div>
@@ -22,12 +23,13 @@
 
         <div class="card-facility-content">
           <ul>
-            <div class="with-distance">
+
             <li><%= link_to facility.name, facility_path(facility) %></li>
             <li><p>
+              <%= @user_location %>
               <%= facility.get_distance(@user_location) %> km
             </p></li>
-            </div>
+
             <li><%= facility.address %></li>
             <li><%= facility.city.name %></li>
           </ul>
@@ -56,18 +58,33 @@
 
   </div>
   <div class="index-footer">
+    <div>
       <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Playground").id, city_id: params[:search][:city_id]} )) do %>
         <% Category.find_by_name("Playground").id == params[:search][:category_id].to_i ? image_tag("playground.png", class: "cat-icon selected") : image_tag("playground.png", class: "cat-icon") %>
       <% end %>
+      <p>Playground</p>
+      </div>
+
+      <div>
       <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Restaurant").id, city_id: params[:search][:city_id]} )) do %>
       <% Category.find_by_name("Restaurant").id == params[:search][:category_id].to_i ? image_tag("restaurant.png", class: "cat-icon selected") : image_tag("restaurant.png", class: "cat-icon") %>
       <% end %>
+      <p>Restaurant</p>
+      </div>
+
+      <div>
       <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Restroom").id, city_id: params[:search][:city_id]} )) do %>
       <% Category.find_by_name("Restroom").id == params[:search][:category_id].to_i ? image_tag("restroom.png", class: "cat-icon selected") : image_tag("restroom.png", class: "cat-icon") %>
       <% end %>
+      <p>Restroom</p>
+      </div>
+
+      <div>
       <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Activity").id, city_id: params[:search][:city_id]} )) do %>
       <% Category.find_by_name("Activity").id == params[:search][:category_id].to_i ? image_tag("activity.png", class: "cat-icon selected") : image_tag("activity.png", class: "cat-icon") %>
       <% end %>
+      <p>Activity</p>
+      </div>
   </div>
 </div>
 
