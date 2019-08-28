@@ -8,6 +8,9 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 import {jsTabs } from '../functions/js_tabs'
 
+import { reviewStars } from '../functions/stars_review'
+
 initMapbox();
 jsTabs();
 checkboxSelect();
+reviewStars();
