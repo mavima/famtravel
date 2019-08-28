@@ -63,7 +63,6 @@
       <div class="card-profile-review">
         <% @facility = review.facility %>
         <h6><%= link_to review.facility.name,  facility_path(@facility)%>
-          in
         <%= review.facility.city.name %> </h6>
         <p> <%= review.content %> </p>
       </div>
