@@ -9,7 +9,6 @@ class FacilitiesController < ApplicationController
       return
     end
 
-
     @facilities = @facilities.joins(:city).where(city_id: params[:search][:city_id])
     @facilities = @facilities.joins(:category).where("categories.id = ?", params[:search][:category_id]) if params[:search][:category_id].present?
     get_user_location
@@ -79,6 +78,28 @@ class FacilitiesController < ApplicationController
       }
     ]
     authorize @facility
+  end
+
+  # code for the map in index
+  def maps
+    @facilities = Facility.joins(:city).where(city_id: params[:search][:city_id])
+    @facilities = @facilities.joins(:category).where("categories.id = ?", params[:search][:category_id]) if params[:search][:category_id].present?
+    @markers = []
+    @facilities.each do |f|
+      @markers << {
+        lat: f.latitude,
+        lng: f.longitude,
+        image_url: helpers.asset_url('placemarker.png')
+      }
+    end
+    # @markers = @facilities.map do |f|
+    #   {
+    #     lat: f.latitude,
+    #     lng: f.longitude,
+    #     image_url: helpers.asset_url('placemarker.png')
+    #   }
+      authorize :facility, :map?
+    # end
   end
 
   private

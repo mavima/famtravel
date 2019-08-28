@@ -22,7 +22,7 @@
       <% if current_user.present? %>
       <ul>
         <li>
-          <h5><%= current_user.first_name %></h5>
+          <div class="user-firstname"><%= current_user.first_name %></div>
         </li>
         <li>
           <img src="https://i.pinimg.com/originals/77/fd/f0/77fdf077b7dae33dc550d64142007a35.jpg" alt="">
@@ -56,7 +56,7 @@
       </ul>
     </div>
     <div class="logout">
-      <%= link_to "Log out", destroy_user_session_path, method: :delete  %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-ghost" %>
     </div>
 
     <% else %>

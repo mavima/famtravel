@@ -14,7 +14,26 @@
   align-items: flex-end;
   h1 {
     color: #ffffff;
-    padding-left: 190px;
+    padding-left: 37px;
+    padding-bottom: 31px;
+    font-size: 50px;
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px #000;
+    opacity: .9;
+  }
+ }
+
+ .default-photo {
+  background-image: asset-url("defaultphoto.jpg");
+  background-color: $alabaster;
+  height: 250px;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  h1 {
+    color: #ffffff;
+    padding-left: 37px;
     padding-bottom: 31px;
     font-size: 50px;
     font-weight: bolder;
