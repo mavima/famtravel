@@ -12,11 +12,10 @@
 
           <div class="search-bar">
             <% @cities = City.all %>
-            <%= f.input :city_id, collection: @cities, label: "Where are you travelling to?" %>
+            <%= f.input :city_id, collection: @cities, label: false, prompt: "Where are you travelling?" %>
             <%#= f.input :keyword, label: "Where are you travelling to?" %>
+            <button type="submit"><i class="fa fa-search"></i></button>
           </div>
-
-          <button type="submit"><i class="fa fa-search"></i></button>
           <% end %>
         </div>
       </div>
