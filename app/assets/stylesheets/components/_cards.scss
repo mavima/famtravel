@@ -1,12 +1,4 @@
-  .banner-photo {
-    background-color: $alabaster;
-    height: 250px;
-    background-size: cover;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
 
-  }
   .card-facility {
     border-radius: 6px;
     background: transparent;
@@ -19,6 +11,12 @@
       height: 160px;
       width: 100%;
       object-fit: cover;
+    }
+    a {
+      text-decoration: none;
+    }
+    li {
+      color: black;
     }
   }
 
@@ -35,8 +33,9 @@
      list-style-type: none;
      // text-indent: -25px;
   }
-  a {
+  h6 {
     font-weight: bolder;
+    font-size: 17px;
     color: #BE4A66;
   }
 }
@@ -74,35 +73,29 @@
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
     padding: 8px;
     margin-bottom: 8px;
-
-
     img {
       height: 100px;
       width: 50%;
       object-fit: cover;
     }
-
     p {
       opacity: 0.7;
     }
-
     .fa-trash {
       color: $pink;
     }
   }
 
-    .card-profile-review {
-    border-radius: 6px;
-    background: transparent;
-    overflow: hidden;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    padding: 8px;
-    margin-bottom: 8px;
+      .card-profile-review {
+      border-radius: 6px;
+      background: transparent;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      padding: 8px;
+      margin-bottom: 8px;
 
-    p {
-      opacity: 0.7;
+      p {
+        opacity: 0.7;
+      }
     }
-
-
-  }
 
