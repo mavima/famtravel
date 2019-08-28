@@ -1,30 +1,39 @@
 // Specific CSS for your home-page
-.banner {
-  background-image: url("https://www.localpassportfamily.com/wp-content/uploads/2019/01/London-Westminster-Bridge-with-kids-1024x682.jpg");
-  background-size: cover;
-  height: 736px;
-  z-index: -10;
+
+.home-container {
+  height: calc(100vh - 320px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  // z-index: -10;
 }
 
-.container-home {
-  padding: 15px;
-}
+.home-top-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 50px;
+  margin-top: 20%;
+  justify-content: space-between;
 
-.logo-home {
-  padding-top: 200px;
-  padding-bottom: 150px;
-  opacity: .9;
-  font-family: 'Architects Daughter';
+  h5 {
+    opacity: 0.7;
+  }
+
+  p {
+    opacity: 0.7;
+  }
 }
 
 .search-bar {
-  width: 500px;
+  position: relative;
   padding-top: 20px;
-  padding-left: 70px;
+}
+
+.form-search {
   display: flex;
-  select {
-    margin-top: 13px;
-  }
+  justify-content: center;
+
 }
 
 .search button {
@@ -32,7 +41,17 @@
   top: 464px;
 }
 
+.home-image {
+  height: 320px;
+  background-image: linear-gradient(rgba(255,255,255,1),rgba(190,74,102,0.1)), url(https://renaesworld.com.au/wp-content/uploads/2019/02/paris-family-shoot-029-1080x720.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 
-
-
+.vertical-center {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column-reverse;
+  height: 85px;
+}
