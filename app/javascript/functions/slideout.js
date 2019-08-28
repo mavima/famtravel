@@ -15,7 +15,10 @@ document.getElementById('openSlideOut').addEventListener('click', (e) => {
     {
       slideout.close();
       const overlayElement = document.getElementById("panel_overlay")
-      overlayElement.remove();
+      if(overlayElement)
+      {
+        overlayElement.remove();
+      }
     }
   else
   {
@@ -28,5 +31,8 @@ document.getElementById('openSlideOut').addEventListener('click', (e) => {
 document.getElementById('panel').addEventListener('click', (e) => {
   slideout.close()
   const overlayElement = document.getElementById("panel_overlay")
-  overlayElement.remove();
+  if(overlayElement)
+  {
+    overlayElement.remove();
+  }
 })
