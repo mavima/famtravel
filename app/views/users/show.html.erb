@@ -28,17 +28,17 @@
       <% user.facilities.each do |facility| %>
       <div class="card-profile-facility">
         <div>
-        <h6><%= link_to facility.name,  facility_path(facility)%></h6>
-        <p><%= facility.city.name %> </p>
-        <% if current_user == facility.user %>
-        <%= link_to "update", edit_facility_path(facility) %>
-        <% end %>
+          <h6><%= link_to facility.name,  facility_path(facility)%></h6>
+          <p><%= facility.city.name %> </p>
+          <% if current_user == facility.user %>
+          <%= link_to "update", edit_facility_path(facility) %>
+          <% end %>
         </div>
-        <% if facility.photo.present? %>
-      <%= cl_image_tag facility.photo%>
+          <% if facility.photo.present? %>
+            <%= cl_image_tag facility.photo%>
+          <% end %>
       </div>
-    <% end %>
-        <br>
+
 
        <% end %>
     </div>

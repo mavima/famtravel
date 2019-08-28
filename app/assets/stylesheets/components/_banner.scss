@@ -24,6 +24,7 @@
  }
 
  .default-photo {
+  background-image: asset-url("defaultphoto.jpg");
   background-color: $alabaster;
   height: 250px;
   background-size: cover;
