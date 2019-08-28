@@ -1,8 +1,17 @@
 <div class="entire-page">
   <div class="top-of-page">
 
-    <div class="banner-photo city-photo" style="background-image: url(<%=  City.find(params[:search][:city_id]).photo%>)">
-      <h1><%= City.find(params[:search][:city_id]).name %></h1>
+
+    <% if City.find(params[:search][:city_id]).photo.present? %>
+      <div class="banner-photo city-photo" style="background-image: url(<%=City.find(params[:search][:city_id]).photo%>)">
+        <h1><%= City.find(params[:search][:city_id]).name %></h1>
+    <% else %>
+      <div class="default-photo" style="background-image: url('https://i.ytimg.com/vi/b0FXOqYn860/maxresdefault.jpg')">
+        <h1><%= City.find(params[:search][:city_id]).name %></h1>
+      </div>
+    <% end %>
+
+
 
       <%#= cl_image_tag City.find(params[:search][:city_id]).photo, class: "city-photo" %>
     </div>
