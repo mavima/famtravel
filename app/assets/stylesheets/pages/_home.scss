@@ -1,10 +1,10 @@
 // Specific CSS for your home-page
 
 .home-container {
-  height: 100%;
+  height: calc(100vh - 320px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   // z-index: -10;
 }
 
@@ -32,7 +32,7 @@
 
 .form-search {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .search button {
@@ -46,4 +46,12 @@
   background-image: linear-gradient(rgba(255,255,255,1),rgba(190,74,102,0.1)), url(https://renaesworld.com.au/wp-content/uploads/2019/02/paris-family-shoot-029-1080x720.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+
+.vertical-center {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column-reverse;
+  height: 85px;
 }

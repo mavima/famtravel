@@ -1,11 +1,15 @@
 <div class="home-container">
-
   <div class="home-top-wrap">
-    <h1 class="home-logo">Famtravel</h1>
-    <div>
-    <h5>For travelling families</h5>
-    <p>"The best tips from one parent to another"</p>
-    </div>
+    <h1 class="home-logo">
+      Famtravel
+    </h1>
+    <h5>
+      For travelling families
+    </h5>
+    <p>
+      "The best tips from one parent to another"
+    </p>
+  </div>
     <div class="form-search">
       <%= simple_form_for :search, method: :get, url: facilities_path do |f| %>
 
@@ -15,11 +19,10 @@
           <%#= f.input :keyword, label: "Where are you travelling to?" %>
 
         </div>
-
       <% end %>
-              <div>
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </div>
+      <div class="vertical-center">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </div>
     </div>
   </div>
   <div class="home-image"></div>
