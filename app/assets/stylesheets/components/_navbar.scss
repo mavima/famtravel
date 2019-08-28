@@ -10,10 +10,10 @@
 
 .slidepage {
   padding-top: 20px;
-  text-decoration: none;
   text-align: start;
   a {
     color: #9E9E9E;
+    text-decoration: none;
   }
   li {
     border-bottom: .7px solid #9E9E9E;
@@ -59,7 +59,11 @@
     color: #363636;
     font-weight: bolder;
   }
+  .user-firstname {
+    font-size: 24px;
+  }
 }
+
 
 .body {
   width: 100%;
