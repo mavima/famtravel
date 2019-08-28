@@ -13,9 +13,11 @@
       <%#= cl_image_tag City.find(params[:search][:city_id]).photo, class: "city-photo" %>
     </div>
     <!-- code for the map in index -->
-    <%= link_to "See map", facilities_map_path(search: {city_id: params[:search][:city_id]})  %>
-    <br>
-    <br>
+    <div style="text-align: center">
+      <%= link_to facilities_map_path(search: {city_id: params[:search][:city_id]}) do  %>
+      <%= image_tag("Map_Artboard.png", class: "icon-map-index") %>
+    <% end %>
+    </div>
 
 
     <% @facilities.each do |facility| %>
