@@ -1,22 +1,32 @@
-.heart_checked {
+.fa-heart {
   color: $pink;
-
-  &:hover {
+  font-size: 25px;
+  a {
   text-decoration: none;
-  font-size: 22px;
-  color: $pink;
-  opacity: 0.8;
+
   }
+
+
+  // &:hover {
+  // text-decoration: none;
+  // font-size: 22px;
+  // color: $pink;
+  // opacity: 0.8;
+  // }
 }
 .heart_unchecked {
-  color: $green;
-
-  &:hover {
-  font-size: 22px;
+  color: $pink;
+  font-size: 25px;
+  a {
   text-decoration: none;
-  color: $green;
-  opacity: 0.8;
+
   }
+  // &:hover {
+  // font-size: 22px;
+  // text-decoration: none;
+  // color: $green;
+  // opacity: 0.8;
+  // }
 
 }
 

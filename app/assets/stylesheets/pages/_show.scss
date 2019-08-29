@@ -20,12 +20,8 @@
   }
 
 .show_info {
-  display: flex;
-  overflow: hidden;
-  // align-items: space_between;
-  // justify-content: space_between;
-
-    .review-number {
+   line-height: 12pt;
+  .review-number {
     font-size: 12px;
     opacity: 0.8;
     font-weight: 300;
@@ -45,6 +41,7 @@
 
     p {
       font-size: 14px;
+
     }
     img {
       height: 50px;

@@ -20,7 +20,17 @@
     }
   }
 
+  .card-rating {
+    margin-top: -62px;
+    p {
+      padding-left: 274px;
+      color: black;
+      text-decoration: none;
+    }
+  }
+
 .card-facility-content {
+  line-height: 12pt;
   padding-top: 15px;
   display: flex;
   justify-content: space-between;
@@ -104,4 +114,10 @@
       }
 
 }
+
+  .cat-icon-card {
+    height: 30px !important;
+    width: 30px !important;
+    margin-top: 15px;
+  }
 
