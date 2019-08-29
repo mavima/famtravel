@@ -1,11 +1,11 @@
 <div class="container-nav">
   <% if current_page?("/")  %>
   <div class="burger dropdown">
-    <img class="icon dropdown-toggle" id="openSlideOut" src="https://cdn3.iconfinder.com/data/icons/menu-icons-1/100/menu-512.png"/>
+    <i class="fas fa-bars" id="openSlideOut"></i>
   </div>
   <% else %>
     <div class="burger dropdown with-home" style="background-color: RGBA(255,255,255,0.7)">
-      <img class="icon dropdown-toggle" id="openSlideOut" src="https://cdn3.iconfinder.com/data/icons/menu-icons-1/100/menu-512.png"/>
+      <i class="fas fa-bars" id="openSlideOut"></i>
       <%= link_to root_path do %>
         <i class="fas fa-home"></i>
       <% end %>
