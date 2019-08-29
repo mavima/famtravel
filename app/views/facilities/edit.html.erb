@@ -17,9 +17,7 @@
     <%= f.input :website_link, label: "Website" %>
     <%= f.association :features, collection: @features, as: :check_boxes, wrapper_html: { class: "features-grid" } %>
     <%= f.input :category_id, collection: @categories, as: :hidden %>
-
-
-
+    <%= f.input :photo, input_html: { class: "inputfile" }, label_html: { class: "photo-button" } %>
     <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit "Update", class: "button-pink button-wide" %>
     <% end %>
