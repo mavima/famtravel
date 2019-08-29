@@ -21,14 +21,20 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+    @facility = Facility.find(params[:facility_id])
+    @category = @facility.category
     authorize @review
   end
 
   def update
     @review = Review.find(params[:id])
-    authorize @review
-    # pending complete!!!
-    # authorize @review
+    @facility = @review.facility
+    if @review.update(review_strong_params)
+      redirect_to facility_path(@facility)
+    else
+      render :edit
+    end
+   authorize @review
   end
 
   def review_strong_params
