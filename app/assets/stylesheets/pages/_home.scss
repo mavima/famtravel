@@ -26,8 +26,9 @@
 }
 
 .search-bar {
-  position: relative;
+  // position: relative;
   padding-top: 20px;
+  display: flex;
 }
 
 .form-search {
@@ -36,11 +37,11 @@
 
 }
 
-.search button {
-  position: absolute;
-  right: 100px;
-  top: 280px;
-}
+// .search button {
+//   position: absolute;
+//   right: 100px;
+//   top: 280px;
+// }
 
 .home-image {
   height: 320px;
