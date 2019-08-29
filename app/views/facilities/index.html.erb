@@ -39,35 +39,42 @@
           <ul>
             <li> <h6><%= facility.name %></h6> </li>
             <li>
-              <p>
-                <%= facility.get_distance(@user_location) %> km
-              </p>
+              <%= facility.get_distance(@user_location) %> km
             </li>
 
-            <li><%= facility.address %></li>
+            <li>
+              <!-- here put the icon -->
+              <% theicon = facility.category.name %>
+              <%= image_tag("#{theicon.downcase}.png", class: "cat-icon-card") %>
+            </li>
 
           </ul>
           <br>
         </div>
 
         <% if facility.reviews.any? %>
-          <div class="card-facility-rating">
-          <% facility.average_rating.times do%>
-          <span class="fa fa-star checked"></span>
-          <% end %>
-          <% (5 -facility.average_rating).times do%>
-          <span class="fa fa-star empty"></span>
-          <% end %>
-          </div>
-        <% else %>
-
-        <div class="card-facility-rating">
-          <% 5.times do%>
+          <div class="card-rating">
+            <p>Reviews: <%= facility.reviews.count %></p>
+            <div class="card-facility-rating">
+              <% facility.average_rating.times do%>
+              <span class="fa fa-star checked"></span>
+              <% end %>
+            <% (5 -facility.average_rating).times do%>
             <span class="fa fa-star empty"></span>
-          <% end %>
-        </div>
+              <% end %>
+            </div>
+        <% else %>
+        <div class="card-rating">
+          <p>No reviews yet</p>
+          <div class="card-facility-rating">
+            <% 5.times do%>
+            <span class="fa fa-star empty"></span>
+              <% end %>
+          </div>
         <% end %>
       </div>
+      </div>
+    </div>
     <% end %>
   <% end %>
 </div>

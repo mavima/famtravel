@@ -16,34 +16,36 @@ url('<%= cl_image_path @facility.photo.url, height: 900, width: 540, crop: :fill
     <p><%= link_to "", favourite_path(favourite), method: :delete, class: "fas fa-heart heart_unchecked" %></p>
 
     <% else %>
-    <p><%= link_to "", facility_favourites_path(@facility), method: :post, class: "fas fa-heart heart_checked" %></p>
+    <p><%= link_to "", facility_favourites_path(@facility), method: :post, class: "far fa-heart" %></p>
     <% end %>
   </div>
 
 
 
   <div class="show_info">
-    <div class="facility_details">
+
       <p><%= @facility.city.name %></p>
       <p><%= @facility.address %></p>
       <p><%= @facility.website_link %></p>
 
+      <div class="review-number">Reviews: <%= @facility.reviews.count %></div>
       <% @facility.average_rating.times do%>
       <span class="fa fa-star checked"></span>
       <% end %>
       <% (5 -@facility.average_rating).times do%>
       <span class="fa fa-star empty"></span>
       <% end %>
-      <div class="review-number">Reviews: <%= @facility.reviews.count %></div>
     </div>
+
+    <br>
 
       <!-- code added for the map -->
       <div class="show-map">
         <%=  link_to facility_map_path(@facility) do  %>
-          <div id="map" style="width: 200px; height: 200px; "data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"> </div>
+          <div id="map" style="width: 100%; height: 200px; border-radius: 6px; "data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"> </div>
         <% end %>
       </div>
-  </div>
+
   <br>
       <div class="features-grid">
         <% @features.each do |feature| %>
