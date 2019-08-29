@@ -12,6 +12,14 @@
 margin: 0px 0px 0px 0px;
 padding: 0px 0px 0px 0px;
 }
+img {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #D4D7DD;
+  padding: 10px;
+  margin: 5px;
+}
+
 .session-form {
   height: 700px;
 }
@@ -60,20 +68,37 @@ margin: 0px 0px 0px 8px;
 .two_last_buttons_signup {
   margin: 0px 0px 50px 0px;
 }
+
 .password-confirmation-field {
  margin-top: 10px;
  }
 p {
   margin-left: 14px;
+  margin-bottom: 0px !important;
+  margin-top: 15px;
 }
+}
+
+.boxjs.selected {
+  img {
+    border-bottom: 1px solid #BE4A66;
+    // box-shadow: none !important;
+    // opacity: 1 !important;
+  }
 }
 .icons {
   display: flex;
-  margin: 20px;
+  margin: 4px;
+  justify-content: space-evenly;
+}
+.icons checkboxjs {
+  display: flex;
+  justify-content: space-evenly;
 }
 .aligned-buttons {
   display: flex;
   align-items: baseline;
+  margin-top: 40px;
   // background-color: #FCF7F7;
   .btn {
     background-color: #BE4A66;
@@ -119,6 +144,16 @@ p {
  a {
   color: black;
   margin: 0px;
+  }
+}
+.divicons {
+  label {
+  width: 82px;
+  height: 120px;
+  }
+  p {
+    height: 68px;
+    width: 48px;
   }
 }
 

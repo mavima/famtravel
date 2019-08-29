@@ -2,6 +2,9 @@
   width: 100%;
   padding: 90px 50px 50px 50px !important;
   margin: 0px !important;
+  p {
+    margin-top: 10px;
+  }
 .simple_form{
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -10,6 +13,9 @@
 .form-actions{
 margin: 0px 0px 0px 0px;
 padding: 0px 0px 0px 0px;
+}
+img {
+  border: 1px solid black;
 }
 .btn {
   border: 1px solid black;
