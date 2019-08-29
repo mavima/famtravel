@@ -1,14 +1,11 @@
-<div class="home-container">
+<div class="container">
   <div class="home-top-wrap">
     <h1 class="home-logo">
-      Famtravel
+      The best tips from one parent to another
     </h1>
     <h5>
-      For travelling families
+      Find kid's friendly places and facilities near you
     </h5>
-    <p>
-      "The best tips from one parent to another"
-    </p>
   </div>
     <div class="form-search">
       <%= simple_form_for :search, method: :get, url: facilities_path do |f| %>
@@ -18,7 +15,9 @@
           <%= f.input :city_id, collection: @cities, label: false, prompt: "Where are you travelling to?" %>
           <%#= f.input :keyword, label: "Where are you travelling to?" %>
 
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
+
+
         </div>
 
       <% end %>
