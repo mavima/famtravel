@@ -20,6 +20,26 @@
   color: white;
 }
 
+.review-button {
+  width: 175px;
+  border: solid 1px #BE4A66;
+  padding: 12px 22px;
+  background-color: #BE4A66;
+  font-size: 16px;
+  border-radius: 12px !important;
+  color: white;
+}
+
+.review-photo-button {
+  width: 170px;
+  color: $pink;
+  text-align: center;
+  border: solid 1px #BE4A66;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 12px !important;
+}
+
 .button-pink {
   background-color: $pink;
   color: white;
