@@ -1,13 +1,18 @@
 <div class="container-nav">
   <% if current_page?("/")  %>
-  <div class="burger dropdown">
+  <div class="burger dropdown with-home">
     <i class="fas fa-bars" id="openSlideOut"></i>
+    <%= link_to root_path do %>
+        <h3 class="logo mr-3 mt-1">Famtravel</h3>
+    <% end %>
+
   </div>
   <% else %>
     <div class="burger dropdown with-home" style="background-color: RGBA(255,255,255,0.7)">
       <i class="fas fa-bars" id="openSlideOut"></i>
       <%= link_to root_path do %>
-        <i class="fas fa-home"></i>
+        <h3 class="logo mr-3 mt-1">Famtravel</h3>
+        <!-- <i class="fas fa-home"></i> -->
       <% end %>
     </div>
   <% end %>
