@@ -26,7 +26,7 @@
         </li>
         <li>
         <% if current_user.photo.present? %>
-          <%= cl_image_tag current_user.photo, class: "avatar"%>
+          <%= cl_image_tag current_user.photo, height: 50, width: 50, class: "avatar"%>
         <% else %>
           <img src="https://i.pinimg.com/originals/77/fd/f0/77fdf077b7dae33dc550d64142007a35.jpg" alt="">
         <% end %>
