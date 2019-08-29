@@ -24,9 +24,8 @@
   opacity: .9;
 }
 
-.selected {
-  box-shadow: 0 8px 6px -6px black;
-  opacity: .7;
+.cat-icon.selected {
+  border-bottom: 1px solid #BE4A66;
 }
 
 .hidden {
