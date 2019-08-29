@@ -30,6 +30,8 @@ puts "created users"
 london = City.create!(name:"London", country_city:"United Kingdom", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566827895/photo-1505761671935-60b3a7427bad_pgxxw4.jpg")
 paris = City.create!(name:"Paris", country_city:"France", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566827938/photo-1524396309943-e03f5249f002_k6ibfr.jpg")
 madrid = City.create!(name:"Madrid", country_city:"Spain", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1566827975/photo-1543783207-ec64e4d95325_ux2mzx.jpg")
+barcelona = City.create!(name:"Barcelona", country_city:"Spain", remote_photo_url: "https://res.cloudinary.com/dbaejiyab/image/upload/v1567086177/cite_barcelone1_hvwqnm.jpg")
+
 
 puts "created cities"
 
