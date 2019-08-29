@@ -1,11 +1,11 @@
 <div class="container-nav">
   <% if current_page?("/")  %>
   <div class="burger dropdown">
-    <img class="avatar dropdown-toggle" id="openSlideOut" src="https://cdn3.iconfinder.com/data/icons/menu-icons-1/100/menu-512.png"/>
+    <img class="icon dropdown-toggle" id="openSlideOut" src="https://cdn3.iconfinder.com/data/icons/menu-icons-1/100/menu-512.png"/>
   </div>
   <% else %>
     <div class="burger dropdown with-home" style="background-color: RGBA(255,255,255,0.7)">
-      <img class="avatar dropdown-toggle" id="openSlideOut" src="https://cdn3.iconfinder.com/data/icons/menu-icons-1/100/menu-512.png"/>
+      <img class="icon dropdown-toggle" id="openSlideOut" src="https://cdn3.iconfinder.com/data/icons/menu-icons-1/100/menu-512.png"/>
       <%= link_to root_path do %>
         <i class="fas fa-home"></i>
       <% end %>
@@ -26,7 +26,7 @@
         </li>
         <li>
         <% if current_user.photo.present? %>
-          <%= cl_image_tag current_user.photo, height: 50, width: 50, class: "avatar"%>
+          <%= cl_image_tag current_user.photo, height: 100, width: 100, class: "avatar"%>
         <% else %>
           <img src="https://i.pinimg.com/originals/77/fd/f0/77fdf077b7dae33dc550d64142007a35.jpg" alt="">
         <% end %>
