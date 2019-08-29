@@ -18,98 +18,104 @@
       <%= link_to facilities_map_path(search: {city_id: params[:search][:city_id]}) do %>
       <i class="fas fa-map-marked-alt icon-button"></i>
       <%#= image_tag("Map_Artboard.png", class: "icon-map-index") %>
-    <% end %>
+      <% end %>
     </div>
 
 
     <% @facilities.each do |facility| %>
-      <%= link_to facility_path(facility) do %>
+    <%= link_to facility_path(facility) do %>
 
-        <div class="card-facility">
-          <% if facility.photo.url %>
-          <%= cl_image_tag facility.photo, height: 300, width: 400, crop: :fill %>
-          <% end %>
-          <%#part added%>
-          <% if current_user.nil? %>
-          <% facility_path(facility) %>
-          <% elsif current_user.admin? %>
-          <%= link_to "delete", facility_path(facility), method: :delete, data: { confirm: "Are you sure?" } %>
-          <%= link_to "update", edit_facility_path(facility) %>
-          <% end %>
+    <div class="card-facility">
+      <% if facility.photo.url %>
+      <%= cl_image_tag facility.photo, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <%#part added%>
+      <% if current_user.nil? %>
+      <% facility_path(facility) %>
+      <% elsif current_user.admin? %>
+      <%= link_to "delete", facility_path(facility), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to "update", edit_facility_path(facility) %>
+      <% end %>
 
-        <div class="card-facility-content">
-          <ul>
-            <li> <h6><%= facility.name %></h6> </li>
-            <li>
-              <%= facility.get_distance(@user_location) %> km
-            </li>
+      <div class="card-facility-content">
 
-            <li>
-              <!-- here put the icon -->
-              <% theicon = facility.category.name %>
-              <%= image_tag("#{theicon.downcase}.png", class: "cat-icon-card") %>
-            </li>
+        <h6><%= facility.name %></h6>
 
-          </ul>
-          <br>
-        </div>
+        <%= facility.get_distance(@user_location) %> km
 
-        <% if facility.reviews.any? %>
-          <div class="card-rating">
-            <p>Reviews: <%= facility.reviews.count %></p>
-            <div class="card-facility-rating">
-              <% facility.average_rating.times do%>
-              <span class="fa fa-star checked"></span>
-              <% end %>
-            <% (5 -facility.average_rating).times do%>
-            <span class="fa fa-star empty"></span>
-              <% end %>
-            </div>
-        <% else %>
-        <div class="card-rating">
-          <p>No reviews yet</p>
-          <div class="card-facility-rating">
-            <% 5.times do%>
-            <span class="fa fa-star empty"></span>
-              <% end %>
+        <div class="icon-review">
+          <div>
+
+            <!-- here put the icon -->
+            <% theicon = facility.category.name %>
+            <%= image_tag("#{theicon.downcase}.png", class: "cat-icon-card") %>
+
           </div>
-        <% end %>
+
+          <br>
+
+          <div>
+            <% if facility.reviews.any? %>
+            <div class="card-rating">
+              <p>Reviews: <%= facility.reviews.count %></p>
+              <div class="card-facility-rating">
+                <% facility.average_rating.times do%>
+                <span class="fa fa-star checked"></span>
+                <% end %>
+                <% (5 -facility.average_rating).times do%>
+                <span class="fa fa-star empty"></span>
+                <% end %>
+              </div>
+              <% else %>
+              <div class="card-rating">
+                <p>No reviews yet</p>
+                <div class="card-facility-rating">
+                  <% 5.times do%>
+                  <span class="fa fa-star empty"></span>
+                  <% end %>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
+
+
     </div>
     <% end %>
-  <% end %>
-</div>
-
-
-<div class="index-footer">
-  <div>
-    <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Playground").id, city_id: params[:search][:city_id]} )) do %>
-    <% Category.find_by_name("Playground").id == params[:search][:category_id].to_i ? image_tag("playground.png", class: "cat-icon selected") : image_tag("playground.png", class: "cat-icon") %>
     <% end %>
-    <p>Playground</p>
-  </div>
 
-  <div>
-    <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Restaurant").id, city_id: params[:search][:city_id]} )) do %>
-    <% Category.find_by_name("Restaurant").id == params[:search][:category_id].to_i ? image_tag("restaurant.png", class: "cat-icon selected") : image_tag("restaurant.png", class: "cat-icon") %>
-    <% end %>
-    <p>Restaurant</p>
-  </div>
 
-  <div>
-    <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Restroom").id, city_id: params[:search][:city_id]} )) do %>
-    <% Category.find_by_name("Restroom").id == params[:search][:category_id].to_i ? image_tag("restroom.png", class: "cat-icon selected") : image_tag("restroom.png", class: "cat-icon") %>
-    <% end %>
-    <p>Restroom</p>
-  </div>
 
-  <div>
-    <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Activity").id, city_id: params[:search][:city_id]} )) do %>
-    <% Category.find_by_name("Activity").id == params[:search][:category_id].to_i ? image_tag("activity.png", class: "cat-icon selected") : image_tag("activity.png", class: "cat-icon") %>
-    <% end %>
-    <p>Activity</p>
+    <div class="index-footer">
+      <div>
+        <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Playground").id, city_id: params[:search][:city_id]} )) do %>
+        <% Category.find_by_name("Playground").id == params[:search][:category_id].to_i ? image_tag("playground.png", class: "cat-icon selected") : image_tag("playground.png", class: "cat-icon") %>
+        <% end %>
+        <p>Playground</p>
+      </div>
+
+      <div>
+        <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Restaurant").id, city_id: params[:search][:city_id]} )) do %>
+        <% Category.find_by_name("Restaurant").id == params[:search][:category_id].to_i ? image_tag("restaurant.png", class: "cat-icon selected") : image_tag("restaurant.png", class: "cat-icon") %>
+        <% end %>
+        <p>Restaurant</p>
+      </div>
+
+      <div>
+        <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Restroom").id, city_id: params[:search][:city_id]} )) do %>
+        <% Category.find_by_name("Restroom").id == params[:search][:category_id].to_i ? image_tag("restroom.png", class: "cat-icon selected") : image_tag("restroom.png", class: "cat-icon") %>
+        <% end %>
+        <p>Restroom</p>
+      </div>
+
+      <div>
+        <%=  link_to facilities_path(request.parameters.dup.merge!(search: {category_id: Category.find_by_name("Activity").id, city_id: params[:search][:city_id]} )) do %>
+        <% Category.find_by_name("Activity").id == params[:search][:category_id].to_i ? image_tag("activity.png", class: "cat-icon selected") : image_tag("activity.png", class: "cat-icon") %>
+        <% end %>
+        <p>Activity</p>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 
