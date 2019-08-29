@@ -29,10 +29,14 @@
   }
 }
 
+.form-margin {
+  margin: 30px;
+}
+
+
 .search-bar {
   // position: relative;
   padding-top: 20px;
-  display: flex;
   width: 100%;
 }
 
@@ -43,7 +47,7 @@
 }
 
 .form-search .form-group {
-  width: 350px;
+  width: 100%;
 }
 
 .btn-search {
@@ -65,6 +69,7 @@
   background-image: linear-gradient(rgba(255,255,255,1),rgba(190,74,102,0.1)), url(https://renaesworld.com.au/wp-content/uploads/2019/02/paris-family-shoot-029-1080x720.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 
