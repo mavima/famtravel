@@ -4,6 +4,11 @@
   z-index: 2;
 }
 
+.fa-bars {
+  padding-left: 14px;
+  padding-top: 7px;
+}
+
 .container-nav {
   display: inline;
 }
@@ -77,8 +82,9 @@
   align-items: center;
   .fa-home {
     color: $pink;
-    font-size: 25px;
+    font-size: 22px;
     padding-right: 10px;
+    padding-top: 7px;
     opacity: .9;
   }
 }
