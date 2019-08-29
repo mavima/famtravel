@@ -27,33 +27,36 @@
     <div class="tab-content tab-selected" style="left: 0%">
       <% user.facilities.each do |facility| %>
       <div class="card-profile-facility">
-        <div>
+        <div class="profile-card-info">
           <h6><%= link_to facility.name,  facility_path(facility)%></h6>
           <p><%= facility.city.name %> </p>
           <% if current_user == facility.user %>
           <%= link_to "update", edit_facility_path(facility) %>
           <% end %>
         </div>
+        <div class="profile-card-img">
           <% if facility.photo.present? %>
             <%= cl_image_tag facility.photo%>
+
           <% end %>
+          </div>
       </div>
-
-
-       <% end %>
+      <% end %>
     </div>
     <div class="tab-content" style="left: 100%">
       <% user.favourites.each do |favourite| %>
-      <div class="card-profile-facility">
-        <div>
-        <% @facility = favourite.facility %>
-        <h6><%= link_to favourite.facility.name,  facility_path(@facility)%></h6>
-        <p><%= @facility.city.name %></p>
-        <%=  link_to "", favourite_path(favourite), method: :delete, data: { confirm: "are you sure?" }, class: "fa fa-trash pink" %></p>
-         </div>
-        <% if @facility.photo.present? %>
-      <%= cl_image_tag @facility.photo%>
-      <% end %>
+        <div class="card-profile-facility">
+          <div class="profile-card-info">
+            <% @facility = favourite.facility %>
+            <h6><%= link_to favourite.facility.name,  facility_path(@facility)%></h6>
+            <p><%= @facility.city.name %></p>
+            <%=  link_to "", favourite_path(favourite), method: :delete, data: { confirm: "are you sure?" }, class: "fa fa-trash pink" %></p>
+          </div>
+          <div class="profile-card-img">
+          <% if @facility.photo.present? %>
+            <%= cl_image_tag @facility.photo%>
+          </div>
+          <% end %>
         <br>
         </div>
       <% end %>
@@ -65,6 +68,7 @@
         <h6><%= link_to review.facility.name,  facility_path(@facility)%>
         <%= review.facility.city.name %> </h6>
         <p> <%= review.content %> </p>
+         <%= link_to "update", edit_facility_review_path(@facility) %>
       </div>
        <br>
       <% end %>
