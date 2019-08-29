@@ -45,4 +45,13 @@ a:hover {
  text-decoration: none;
 }
 
-
+.photo-button {
+  width: 100%;
+  background-color: white;
+  color: $pink;
+  border-radius: 12px;
+  border: solid 1px $pink;
+  padding: 8px 24px;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}

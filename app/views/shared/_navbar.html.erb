@@ -25,7 +25,11 @@
           <div class="user-firstname"><%= current_user.first_name %></div>
         </li>
         <li>
+        <% if current_user.photo.present? %>
+          <%= cl_image_tag current_user.photo, class: "avatar"%>
+        <% else %>
           <img src="https://i.pinimg.com/originals/77/fd/f0/77fdf077b7dae33dc550d64142007a35.jpg" alt="">
+        <% end %>
         </li>
 
         <div class="slidepage">
