@@ -78,10 +78,10 @@
 }
 
 .review-btn {
-  padding: 10px;
-  padding-left: 37%;
-  display: flex;
-  justify-item: center;
+  display: block;
+  width: 100%;
+  padding: 10px 0px;
+  text-align: center;
   background-color: $pink;
   border-radius: 12px;
   color: white;
