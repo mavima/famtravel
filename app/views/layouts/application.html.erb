@@ -3,15 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>FamTravel</title>
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <title></title>
     <%= favicon_link_tag 'suitcase_logo.ico' %>
-    <meta property="og:title" content="Famtravel - Helping families on the road">
-    <meta property="og:image" content="Family-travel.jpg">
-    <meta property="og:description" content="Famtravel helps parents travelling in new cities to find the best kids friendly places.">
-    <meta property="og:site_name" content="Famtravel"/>
+
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <link href="https://fonts.googleapis.com/css?family=Lobster+Two:400i,700i|Architects+Daughter|Delius+Unicase|Gloria+Hallelujah|Lakki+Reddy|Mali|Pacifico|Pangolin&display=swap" rel="stylesheet">
